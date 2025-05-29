@@ -1,6 +1,6 @@
 const KeyPolicyAreasData = [
   {
-    image: "/policies/policies/img-1.svg",
+    image: "/policies/key-policy/img-1.png",
     title: "RESEARCH ETHICS & APPROVAL",
     subtitle:
       "All research involving human or animal subjects, sensitive data, or community participation must undergo review and clearance by AYRA’s Institutional Ethics Committee (IEC).",
@@ -11,7 +11,7 @@ const KeyPolicyAreasData = [
     ],
   },
   {
-    image: "/policies/policies/img-2.svg",
+    image: "/policies/key-policy/img-2.png",
     title: "PLAGIARISM & ACADEMIC MISCONDUCT",
     subtitle: "AYRA follows a strict anti-plagiarism policy:",
     principles: [
@@ -21,7 +21,7 @@ const KeyPolicyAreasData = [
     ],
   },
   {
-    image: "/policies/policies/img-3.svg",
+    image: "/policies/key-policy/img-3.png",
     title: "COLLABORATIVE & FUNDED RESEARCH",
     subtitle:
       "Faculty or departments entering into research collaborations must",
@@ -33,7 +33,7 @@ const KeyPolicyAreasData = [
     ],
   },
   {
-    image: "/policies/policies/img-4.svg",
+    image: "/policies/key-policy/img-4.png",
     title: "DATA MANAGEMENT & PUBLICATION",
     subtitle: "AYRA encourages responsible data use and open access publication where feasible:",
     principles: [
@@ -44,7 +44,7 @@ const KeyPolicyAreasData = [
     ],
   },
   {
-    image: "/policies/policies/img-5.svg",
+    image: "/policies/key-policy/img-5.png",
     title: "STUDENT RESEARCH CONDUCT",
     subtitle: "Students engaging in independent or supervised research are expected to:",
     principles: [
@@ -55,7 +55,7 @@ const KeyPolicyAreasData = [
     ],
   },
   {
-    image: "/policies/policies/img-6.svg",
+    image: "/policies/key-policy/img-6.png",
     title: "SUPPORT & OVERSIGHT",
     subtitle: "The Centre for Research oversees policy implementation and provides:",
     principles: [

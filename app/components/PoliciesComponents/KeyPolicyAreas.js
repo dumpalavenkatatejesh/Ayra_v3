@@ -68,9 +68,9 @@ const KeyPolicyAreas = () => {
                     pointerEvents: opacity > 0.1 ? "auto" : "none",
                   }}
                 >
-                  <div className="flex container mx-auto py-8 justify-between gap-10">
+                  <div className="flex lg:flex-row flex-col container mx-auto lg:py-8 justify-between lg:gap-10">
                     {/* Image Block */}
-                    <div className="hidden lg:block w-1/2">
+                    <div className="w-1/2 lg:mt-0 mt-12 mx-auto lg:mx-0">
                       {item.image && (
                         <Image
                           src={item.image}
@@ -78,17 +78,17 @@ const KeyPolicyAreas = () => {
                           layout="responsive"
                           width={900}
                           height={600}
-                          className="w-[900px] h-auto object-cover"
+                          className="lg:w-[900px] h-auto object-cover"
                         />
                       )}
                     </div>
 
                     {/* Text Block */}
-                    <div className="flex flex-col w-full lg:w-1/2 py-8">
+                    <div className="flex flex-col w-full lg:w-1/2 lg:py-8 px-4 lg:px-0">
                       <h2 className="text-4xl md:text-6xl py-5 tracking-wide text-[#2050B1] font-schabo leading-tight text-center md:text-left">
                         KEY POLICY AREAS
                       </h2>
-                      <h3 className="text-2xl font-bold text-gray-800 mt-10 ">
+                      <h3 className="text-2xl font-bold text-gray-800 lg:mt-10 mt-5">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-gray-700">{item.subtitle}</p>
