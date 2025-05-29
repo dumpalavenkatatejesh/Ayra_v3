@@ -23,7 +23,7 @@ const CustomSelect = ({ label, options, onChange, value, error, innerRef }) => {
   return (
     <div ref={innerRef}>
       <div className="relative w-full" ref={dropdownRef}>
-        <label className="text-sm font-semibold mb-1 block">{label}</label>
+        <label className="text-sm font-tthoves-demibold mb-1 block">{label}</label>
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
@@ -275,7 +275,7 @@ export default function ApplicationForm() {
 
   return (
     <div className="max-w-7xl mx-auto lg:px-0 px-4 py-8">
-      <h2 className="text-3xl font-extrabold mb-6">APPLICATION FORM:</h2>
+      <h2 className="text-3xl font-tthoves-bold mb-6">APPLICATION FORM:</h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Row 1 */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
@@ -287,7 +287,7 @@ export default function ApplicationForm() {
             error={formErrors.title}
           />
           <div>
-            <label className="text-sm font-semibold mb-1 block">
+            <label className="text-sm font-tthoves-demibold mb-1 block">
               FIRST NAME
             </label>
             <input
@@ -309,7 +309,7 @@ export default function ApplicationForm() {
             )}
           </div>
           <div>
-            <label className="text-sm font-semibold mb-1 block">
+            <label className="text-sm font-tthoves-demibold mb-1 block">
               LAST NAME
             </label>
             <input
@@ -330,7 +330,7 @@ export default function ApplicationForm() {
           <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 gap-2 ">
             {["dobDay", "dobMonth", "dobYear"].map((key, i) => (
               <div key={key}>
-                <label className="text-sm font-semibold mb-1 block">
+                <label className="text-sm font-tthoves-demibold mb-1 block">
                   {["DD", "MM", "YYYY"][i]}
                 </label>
                 <select
@@ -406,7 +406,7 @@ export default function ApplicationForm() {
             error={formErrors.gender}
           />
           <div>
-            <label className="block font-bold uppercase">
+            <label className="block font-tthoves-demibold uppercase">
               Nationality
             </label>
             <select
@@ -427,7 +427,7 @@ export default function ApplicationForm() {
             )}
           </div>
           <div>
-            <label className="text-sm font-semibold mb-1 block">
+            <label className="text-sm font-tthoves-demibold mb-1 block">
               EMAIL ADDRESS
             </label>
             <input
@@ -451,7 +451,7 @@ export default function ApplicationForm() {
         {/* Row 3 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label className="text-sm font-semibold mb-1 block">
+            <label className="text-sm font-tthoves-demibold mb-1 block">
               PHONE NUMBER
             </label>
             <input
@@ -470,7 +470,7 @@ export default function ApplicationForm() {
             )}
           </div>
           <div>
-            <label className="text-sm font-semibold mb-1 block">
+            <label className="text-sm font-tthoves-demibold mb-1 block">
               CITY/TOWN
             </label>
             <input
@@ -520,7 +520,7 @@ export default function ApplicationForm() {
             error={formErrors.education}
           />
           <div>
-            <label className="text-sm font-semibold mb-1 block">
+            <label className="text-sm font-tthoves-demibold mb-1 block">
               NAME OF LAST ATTENDED INSTITUTION
             </label>
             <input
@@ -539,7 +539,7 @@ export default function ApplicationForm() {
             )}
           </div>
           <div>
-            <label className="text-sm font-semibold mb-1 block">
+            <label className="text-sm font-tthoves-demibold mb-1 block">
               GRADUATION YEAR
             </label>
             <input
@@ -590,7 +590,7 @@ export default function ApplicationForm() {
             {["declaration1", "declaration2"].map((key, i) => (
               <label
                 key={key}
-                className="flex items-start gap-2 cursor-pointer"
+                className="flex items-start gap-3 cursor-pointer"
               >
                 <div className="relative w-5 h-5 border border-[#A9B8D5] bg-white">
                   <input
@@ -627,7 +627,7 @@ export default function ApplicationForm() {
 
         {/* Response Message */}
         {responseMsg && (
-          <p className="text-sm font-semibold text-blue-600">{responseMsg}</p>
+          <p className="text-sm font-tthoves-demibold text-blue-600">{responseMsg}</p>
         )}
       </form>
     </div>
