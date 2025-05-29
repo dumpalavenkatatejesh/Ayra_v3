@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutAyra from '@/app/components/AdmissionsComponents/AboutAyraComponent'
+import AboutAyra from '@/app/components/AboutAyraComponent'
 const page = () => {
   return (
     <div>

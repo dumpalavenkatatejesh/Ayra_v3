@@ -1,5 +1,5 @@
 import React from 'react'
-import PlacementsComponent from '@/app/components/AdmissionsComponents/PlacementsComponent'
+import PlacementsComponent from '@/app/components/DistinctForYouComponents/PlacementsComponent' 
 
 const page = () => {
   return (
