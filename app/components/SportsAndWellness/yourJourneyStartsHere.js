@@ -21,19 +21,21 @@ const yourJourneyStartsHere = () => {
           and well-being into your lifestyle, AYRA’s Sports & Wellness Centre
           provides an open canvas for growth, exploration, and performance.
         </p>
-        <p className="text-xl font-bold text-center pt-3">Discover what’s possible at AYRA</p>
+        <p className="text-xl font-bold text-center pt-3">
+          Discover what’s possible at AYRA
+        </p>
       </div>
-      <div className="flex items-center justify-center mt-5">
-      <div className="group inline-block space-x-5">
-            <button className="relative px-10 py-2 bg-white group-hover:bg-white text-[#2050B1] border border-dashed border-[#000] group-hover:border-[#2050B1] overflow-hidden cursor-pointer transition-all duration-300">
-                Know more
-            </button>
-            <button className="relative px-10 py-2 bg-white group-hover:bg-white text-[#2050B1] border border-dashed border-[#000] group-hover:border-[#2050B1] overflow-hidden cursor-pointer transition-all duration-300">
+      <div className="flex flex-col items-center justify-center mt-5">
+        <div className="flex flex-col space-y-3 sm:flex-row sm:space-x-5 sm:space-y-0">
+          <button className="relative px-10 py-2 bg-white group-hover:bg-white text-[#2050B1] border border-dashed border-[#000] group-hover:border-[#2050B1] overflow-hidden cursor-pointer transition-all duration-300">
+            Know more
+          </button>
+          <button className="relative px-10 py-2 bg-white group-hover:bg-white text-[#2050B1] border border-dashed border-[#000] group-hover:border-[#2050B1] overflow-hidden cursor-pointer transition-all duration-300">
             Learn More
-            </button>
-            <button className="relative px-10 py-2 bg-white group-hover:bg-white text-[#2050B1] border border-dashed border-[#000] group-hover:border-[#2050B1] overflow-hidden cursor-pointer transition-all duration-300">
-            Explore Facilities 
-            </button>
+          </button>
+          <button className="relative px-10 py-2 bg-white group-hover:bg-white text-[#2050B1] border border-dashed border-[#000] group-hover:border-[#2050B1] overflow-hidden cursor-pointer transition-all duration-300">
+            Explore Facilities
+          </button>
         </div>
       </div>
     </div>

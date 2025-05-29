@@ -3,7 +3,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="bg-[url('/sports-and-wellness/sports-banner.png')] h-[90vh] bg-cover bg-center text-white relative">
+    <div className="lg:bg-[url('/sports-and-wellness/sports-banner.png')] bg-[url('/sports-and-wellness/mobile-sports-banner.png')] h-[90vh] bg-cover bg-center text-white relative">
       {/* Centered paragraph at bottom */}
       <div className="absolute lg:bottom-16 bottom-0 text-center lg:px-4 lg:left-[49%] lg:p-0 p-4 transform">
         <p className="text-base font-light text-start mx-auto opacity-90 lg:pe-10">
