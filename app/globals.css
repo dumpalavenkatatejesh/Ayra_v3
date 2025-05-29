@@ -172,15 +172,12 @@ p {
   width: 50px;
   background-color: #555;
 }
+ 
+/* font-schabo */
+.font-schabo {font-family: 'SCHABO Condensed', sans-serif;}
 
-.font-schabo {
-  font-family: 'SCHABO Condensed', sans-serif;
-}
-
-.font-tt-condensed-light {
-  font-family: 'TT Hoves Pro Condensed Light', sans-serif;
-}
-
+/* tthoves font */
+.font-tt-condensed-light {font-family: 'TT Hoves Pro Condensed Light', sans-serif;}
 .font-tthoves-thin { font-family: 'TTHoves', sans-serif; font-weight: 100; font-style: normal; }
 .font-tthoves-thin-italic { font-family: 'TTHoves', sans-serif; font-weight: 100; font-style: italic; }
 .font-tthoves-extralight { font-family: 'TTHoves', sans-serif; font-weight: 200; font-style: normal; }

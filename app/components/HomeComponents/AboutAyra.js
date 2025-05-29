@@ -8,11 +8,11 @@ const AboutAyra = () => {
                 {/* Left Side */}
                 <div className="flex flex-col items-start justify-center gap-6 w-full md:basis-[65%]">
                     <Image src="/home/home-about-ayra.png" alt="About Ayra" width={500} height={500} className="w-full max-w-xs md:max-w-md rounded-lg shadow-lg mb-4" />
-                    <h2 className="text-white text-3xl font-bold leading-tight">
+                    <h2 className="text-white text-3xl font-bold font-tthoves-medium">
                         WHERE POTENTIAL MEETS POSSIBILITY
                     </h2>
                     <p className="text-white max-w-xl">
-                        <span className='font-light'> Education is more than acquiring knowledge—it&apos;s about</span> unlocking potential, fostering creativity, and preparing you for the future.
+                        <span className='font-tthoves-extralight'> Education is more than acquiring knowledge—it&apos;s about</span> unlocking potential, fostering creativity, and preparing you for the future.
                     </p>
                 </div>
                 {/* Right Side */}
