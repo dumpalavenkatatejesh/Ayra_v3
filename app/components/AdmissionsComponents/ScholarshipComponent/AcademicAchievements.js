@@ -6,7 +6,7 @@ import { academicContent, sportsContent, achievementImages, entrepreneurShip, su
 const AcademicAchievements = () => {
   return (
     <>
-      <div className=" w-full flex items-center justify-center min-h-screen md:p-0 p-4">
+      <div className=" w-full flex items-center justify-center md:p-0 p-4">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row md:gap-24 container mx-auto">
             {/* Left Content */}
@@ -57,7 +57,6 @@ const AcademicAchievements = () => {
             </div>
 
             {/* Right Images */}
-            {/* Right Images */}
             <div className="lg:w-[35%] flex flex-col items-center">
               {achievementImages.map((src, index) => {
                 const isFirst = index === 0;
@@ -67,10 +66,10 @@ const AcademicAchievements = () => {
                   <div
                     key={index}
                     className={`
-          border-dashed border-[#3B76CB] p-10 w-full
-          ${isFirst ? 'border-l border-r md:border-t-0 border-t' : 'border-t border-l border-r'}
-          ${isLast ? 'md:border-b-0 border-b' : ''}
-        `}
+                      border-dashed border-[#A9B8D5] p-10 w-full
+                      ${isFirst ? 'border-l-2 border-r-2 md:border-t-0 border-t-2' : 'border-t-2 border-l-2 border-r-2'}
+                      ${isLast ? 'md:border-b-0 border-b-2' : ''}
+                    `}
                   >
                     <Image
                       src={src}

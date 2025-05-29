@@ -3,7 +3,7 @@ import MastersComponent from '../../components/AdmissionsComponents/MastersCompo
 const index = () => {
   return (
     <div>
-      {/* <MastersComponent /> */}
+      <MastersComponent />
     </div>
   )
 }

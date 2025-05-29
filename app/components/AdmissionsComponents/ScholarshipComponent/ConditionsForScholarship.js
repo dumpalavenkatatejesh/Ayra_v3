@@ -6,17 +6,19 @@ import { scholarshipConditions } from '../../../utils/AdmissionData/scholarshipD
 const ConditionsForScholarship = () => {
     return (
         <>
-            <div className="w-full flex flex-col items-center bg-gray-100">
-                {/* Top Image Section */}
-                <div className="w-full bg-[#002561] py-8 flex justify-center">
-                    <div className="relative w-full max-w-[700px] h-[300px]">
-                        <Image
-                            src="/admissions/scholarship/conditions_for_scholarship.png"
-                            alt="conditions for scholarship"
-                            fill
-                            className="object-contain md:px-0 px-4"
-                            priority
-                        />
+            <div className="w-full flex flex-col items-center bg-[#002561]">
+                <div className='container mx-auto flex flex-col items-center border-r-2 border-l-2 border-dashed border-[#A9B8D5] py-10'>
+                    {/* Top Image Section */}
+                    <div className="w-full py-8 flex justify-center">
+                        <div className="relative w-full max-w-[700px] h-[300px]">
+                            <Image
+                                src="/admissions/scholarship/conditions_for_scholarship.png"
+                                alt="conditions for scholarship"
+                                fill
+                                className="object-contain md:px-0 px-4"
+                                priority
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
