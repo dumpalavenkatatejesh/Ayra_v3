@@ -30,27 +30,30 @@ const stepsData = [
 
 const Steps = () => {
   return (
-    <div className="pt-14">
+    <div className="pt-14 px-4 sm:px-0">
+      {/* Centered Image */}
       <div className="flex justify-center mb-10">
         <Image
           src="/admissions/simple-steps-to-enrol.png"
           width={600}
           height={300}
           alt="simple steps to enrol"
+          className="w-full max-w-[600px] h-auto"
         />
       </div>
 
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center border-t border-dashed border-gray-300">
+      {/* Steps Grid */}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center border-t border-dashed border-gray-200">
         {stepsData.map((step, index) => {
           const isFirstColumnSm = index % 2 === 0
-          const isFirstColumnLg = index === stepsData.length - 1
+          const isLastColumnLg = (index + 1) % 4 === 0
 
           return (
             <li
               key={step.id}
-              className={`relative p-6 flex flex-col items-center border-t border-dashed border-gray-200 
-                ${!isFirstColumnSm ? "sm:border-r" : ""} 
-                ${!isFirstColumnLg ? "lg:border-r" : ""}`}
+              className={`relative p-6 flex flex-col items-center border-t border-dashed border-gray-200
+            ${!isFirstColumnSm ? "sm:border-l" : ""}
+            ${!isLastColumnLg ? "lg:border-r" : ""}`}
             >
               <Image
                 src={step.icon}

@@ -33,46 +33,53 @@ const LifeAtAyra = () => {
       {lifeAtAyraData.map((item, idx) => {
         const isEven = idx % 2 === 0
         return (
-          <div className="" key={idx}>
+          <div key={idx}>
+            {/* Grid Layout for Desktop */}
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 max-w-7xl mx-auto">
-              {/* Center Vertical Dashed Border */}
+              {/* Center Vertical Dashed Border (only for md+) */}
               <div className="hidden md:block absolute inset-y-0 left-1/2 w-px bg-dashed-border" />
 
-              {/* Left Side */}
+              {/* Mobile: Title always on top */}
+              <div className="block md:hidden px-6">
+                <h2
+                  className="text-2xl md:text-5xl text-[#002561] font-extrabold leading-tight text-center"
+                  dangerouslySetInnerHTML={{ __html: item.title }}
+                />
+              </div>
+
+              {/* Large Screen Layout: Even (Title left, Description right) */}
               {isEven ? (
                 <>
-                  {/* Title Left */}
-                  <div className="pr-6 md:pr-12">
+                  {/* Title Left (md+) */}
+                  <div className="hidden md:block pr-6 md:pr-12">
                     <h2
-                      className="text-4xl md:text-5xl text-[#002561] font-extrabold leading-tight text-center md:text-left"
+                      className="text-4xl md:text-5xl text-[#002561] font-extrabold leading-tight text-left"
                       dangerouslySetInnerHTML={{ __html: item.title }}
                     />
                   </div>
                   {/* Description Right */}
-                  <div className="pl-6 md:pl-12 space-y-5 text-[#002561] text-base md:text-lg">
-                    <div className="flex items-center gap-3">
-                      <p>{item.description}</p>
-                    </div>
+                  <div className="px-4 md:px-0 md:pl-12 space-y-5 text-[#002561] text-base md:text-lg">
+                    <p>{item.description}</p>
                   </div>
                 </>
               ) : (
                 <>
                   {/* Description Left */}
-                  <div className="pr-6 md:pr-12 space-y-5 text-[#002561] text-base md:text-lg">
-                    <div className="flex items-center gap-3">
-                      <p>{item.description}</p>
-                    </div>
+                  <div className="px-4 md:px-0 md:pr-12 space-y-5 text-[#002561] text-base md:text-lg">
+                    <p>{item.description}</p>
                   </div>
-                  {/* Title Right */}
-                  <div className="pl-6 md:pl-12">
+                  {/* Title Right (md+) */}
+                  <div className="hidden md:block pl-6 md:pl-12">
                     <h2
-                      className="text-4xl md:text-5xl text-[#002561] font-extrabold leading-tight text-center md:text-right"
+                      className="text-4xl md:text-5xl text-[#002561] font-extrabold leading-tight text-right"
                       dangerouslySetInnerHTML={{ __html: item.title }}
                     />
                   </div>
                 </>
               )}
             </div>
+
+            {/* Image Section */}
             <div className="w-full max-w-7xl mx-auto">
               <Image
                 src={item.image}
@@ -83,6 +90,7 @@ const LifeAtAyra = () => {
                 priority={idx === 0}
               />
             </div>
+
             <hr className="border-t border-dashed border-gray-300 mt-10" />
           </div>
         )

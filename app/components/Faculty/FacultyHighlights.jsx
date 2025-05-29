@@ -10,26 +10,28 @@ const FacultyHighlights = () => {
 
   return (
     <div className="bg-[#2050B1]">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 container mx-auto">
-        {/* Center Vertical Dashed Border */}
-        <div className="hidden md:block absolute inset-y-0 left-1/2 w-px bg-dashed-border" />
-        <div className="pr-6 md:pr-12">
-          {/* Title Left */}
+      <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 px-4">
+        {/* Center Vertical Dashed Border for md+ screens */}
+        <div className="hidden md:block absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-px bg-[repeating-linear-gradient(to_bottom,#fff,#fff_4px,transparent_4px,transparent_8px)] z-0" />
+
+        {/* Left Image */}
+        <div className="pr-6 md:pr-12 z-10">
           <Image
             src="/faculty/faculty-highlights.png"
             width={500}
             height={300}
             alt="faculty highlights"
-            className="object-center"
+            className="object-center mx-auto md:mx-0"
             priority
           />
         </div>
-        {/* Description Right */}
-        <div className="pl-6 md:pl-12 space-y-5 text-[#002561] text-base md:text-lg">
-          <h2 className="text-2xl text-white font-extrabold leading-tight">
+
+        {/* Right Description */}
+        <div className="pl-6 md:pl-12 space-y-5 text-white text-base md:text-lg z-10">
+          <h2 className="text-2xl font-extrabold leading-tight">
             Our growing team includes:
           </h2>
-          <ul className="mt-6 space-y-4 text-sm md:text-base text-white">
+          <ul className="mt-6 space-y-4 text-sm md:text-base">
             {highlights.map((text, idx) => (
               <li className="flex items-start gap-2" key={idx}>
                 <Image

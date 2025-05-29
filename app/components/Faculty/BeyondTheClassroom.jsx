@@ -11,12 +11,12 @@ const BeyondTheClassroom = () => {
 
   return (
     <div className="border-b border-dashed border-gray-300 mb-5">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 container mx-auto">
-        {/* Center Vertical Dashed Border */}
-        <div className="hidden md:block absolute inset-y-0 left-1/2 w-px bg-dashed-border" />
+      <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 px-4">
+        {/* Center Vertical Dashed Border (only visible on md and above) */}
+        <div className="hidden md:block absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-px bg-[repeating-linear-gradient(to_bottom,#ccc,#ccc_4px,transparent_4px,transparent_8px)]" />
 
         {/* Description */}
-        <div className="pr-6 md:pr-12 space-y-5 text-[#002561] text-base md:text-lg">
+        <div className="space-y-5 text-[#002561] text-base md:text-lg md:pr-12 z-10">
           <h2 className="text-2xl text-black font-extrabold leading-tight">
             AYRA faculty don’t disappear after lectures—they stay engaged,
             offering guidance on:
@@ -41,14 +41,14 @@ const BeyondTheClassroom = () => {
           </h2>
         </div>
 
-        <div className="pl-6 md:pl-12">
-          {/* Title Left */}
+        {/* Image */}
+        <div className="z-10 md:pl-12">
           <Image
             src="/faculty/beyond-the-classroom.png"
             width={500}
             height={300}
             alt="faculty highlights"
-            className="object-center"
+            className="object-center mx-auto md:mx-0"
             priority
           />
         </div>
