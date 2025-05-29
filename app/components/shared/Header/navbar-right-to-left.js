@@ -273,7 +273,16 @@ const NavBar = () => {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="fixed inset-0 z-50 flex">
-                    {/* Left panel 75% width with solid dark background */}
+                    {/* Transparent overlay on left 25% */}
+                    <div
+                        className="w-[25%] bg-black bg-opacity-50"
+                        onClick={() => {
+                            setIsMobileMenuOpen(false)
+                            setActiveSubmenu(null)
+                        }}
+                    />
+
+                    {/* Right panel 75% width with solid dark background */}
                     <div className="w-[75%] bg-[#002561] p-4 relative overflow-y-auto">
                         {/* Close button top right inside panel */}
                         <button
@@ -315,50 +324,101 @@ const NavBar = () => {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="text-white text-lg font-semibold"
                             >
-                                Contact us
+                                Contact Us
                             </Link>
                         </div>
 
-                        {/* Main menu with submenus */}
-                        <ul>
-                            {menuItems.map((item, index) => (
-                                <li key={index} className="border-b border-white/20">
-                                    <button
-                                        onClick={() =>
-                                            setActiveSubmenu(activeSubmenu === `${index}` ? null : `${index}`)
-                                        }
-                                        className="w-full flex justify-between items-center text-white px-4 py-3 text-lg font-semibold focus:outline-none"
-                                    >
-                                        {item.name}
-                                        {item.submenu?.length > 0 && (
-                                            <span>
-                                                {activeSubmenu === `${index}` ? (
-                                                    <MdKeyboardArrowUp size={24} />
-                                                ) : (
-                                                    <MdKeyboardArrowRight size={24} />
-                                                )}
-                                            </span>
+                        {/* Main Menu Items */}
+                        <div>
+                            {menuItems.map((item, index) => {
+                                const isOpen = activeSubmenu === index
+
+                                return (
+                                    <div key={index} className="border-b border-white/20">
+                                        <button
+                                            onClick={() =>
+                                                setActiveSubmenu(isOpen ? null : index)
+                                            }
+                                            className="w-full text-left flex justify-between items-center py-3 px-2 hover:bg-white/10 transition-colors text-lg font-semibold cursor-pointer"
+                                        >
+                                            {item.name}
+                                            {item.submenu?.length > 0 && (
+                                                <>
+                                                    {isOpen ? (
+                                                        <MdKeyboardArrowUp size={20} />
+                                                    ) : (
+                                                        <MdKeyboardArrowRight size={20} />
+                                                    )}
+                                                </>
+                                            )}
+                                        </button>
+
+                                        {isOpen && item.submenu?.length > 0 && (
+                                            <div className="bg-[#002561] pl-4">
+                                                {item.submenu.map((subitem, subIndex) => {
+                                                    if (typeof subitem === 'string') {
+                                                        return (
+                                                            <Link
+                                                                key={subIndex}
+                                                                href={generateHref(subitem, item.name)}
+                                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                                className="block py-2 px-4 border-b border-white/20 hover:bg-white/10 text-base font-normal cursor-pointer"
+                                                            >
+                                                                {subitem}
+                                                            </Link>
+                                                        )
+                                                    } else {
+                                                        // Submenu with nested items (like Focus Centre)
+                                                        const nestedIsOpen =
+                                                            activeSubmenu === `${index}-${subIndex}`
+                                                        return (
+                                                            <div key={subIndex} className="border-b border-white/20">
+                                                                <button
+                                                                    onClick={() => {
+                                                                        if (activeSubmenu === `${index}-${subIndex}`) {
+                                                                            setActiveSubmenu(null)
+                                                                        } else {
+                                                                            setActiveSubmenu(`${index}-${subIndex}`)
+                                                                        }
+                                                                    }}
+                                                                    className="w-full text-left flex justify-between items-center py-2 px-4 hover:bg-white/10 transition-colors text-base font-normal cursor-pointer"
+                                                                >
+                                                                    {subitem.name}
+                                                                    {subitem.submenu?.length > 0 && (
+                                                                        <>
+                                                                            {nestedIsOpen ? (
+                                                                                <MdKeyboardArrowUp size={18} />
+                                                                            ) : (
+                                                                                <MdKeyboardArrowRight size={18} />
+                                                                            )}
+                                                                        </>
+                                                                    )}
+                                                                </button>
+                                                                {nestedIsOpen && subitem.submenu?.length > 0 && (
+                                                                    <div className="bg-[#002561] pl-4">
+                                                                        {subitem.submenu.map((nestedItem, nestedIndex) => (
+                                                                            <Link
+                                                                                key={nestedIndex}
+                                                                                href={generateHref(nestedItem, subitem.name)}
+                                                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                                                className="block py-2 px-4 border-b border-white/20 hover:bg-white/10 text-sm font-normal cursor-pointer"
+                                                                            >
+                                                                                {nestedItem}
+                                                                            </Link>
+                                                                        ))}
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        )
+                                                    }
+                                                })}
+                                            </div>
                                         )}
-                                    </button>
-
-                                    {activeSubmenu === `${index}` && (
-                                        <div className="pl-4 bg-[#003070] overflow-hidden transition-transform duration-300 ease-in-out">
-                                            {renderSubmenu(item.submenu, 1, `${index}`, item.name)}
-                                        </div>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
-
-                    {/* Right side transparent overlay 25% width */}
-                    <div
-                        className="w-[25%] bg-black bg-opacity-50 cursor-pointer"
-                        onClick={() => {
-                            setIsMobileMenuOpen(false)
-                            setActiveSubmenu(null)
-                        }}
-                    />
                 </div>
             )}
         </nav>
