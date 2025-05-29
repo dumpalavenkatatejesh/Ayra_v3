@@ -137,12 +137,12 @@ export default function EnquiryForm() {
   return (
     <div className="flex flex-col lg:flex-row bg-white text-[#0D2556]">
       <div className="w-full lg:w-2/3 p-5 lg:p-10">
-        <h2 className="text-3xl mb-6 font-bold">ENQUIRY FORM</h2>
+        <h2 className="text-3xl mb-6 font-tthoves-bold">ENQUIRY FORM</h2>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Name fields */}
           <div>
-            <label className="block font-bold uppercase mb-2">Name</label>
+            <label className="block font-tthoves-demibold uppercase mb-2">Name</label>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <input
@@ -188,7 +188,7 @@ export default function EnquiryForm() {
 
           {/* Email */}
           <div>
-            <label className="block font-bold uppercase mb-2">
+            <label className="block font-tthoves-demibold uppercase mb-2">
               Email Address
             </label>
             <input
@@ -206,7 +206,7 @@ export default function EnquiryForm() {
           {/* City / State */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block font-bold uppercase mb-2">
+              <label className="block font-tthoves-demibold uppercase mb-2">
                 Nationality
               </label>
               <select
@@ -228,7 +228,7 @@ export default function EnquiryForm() {
             </div>
 
             <div>
-              <label className="block font-bold uppercase mb-2">State</label>
+              <label className="block font-tthoves-demibold uppercase mb-2">State</label>
               <select
                 name="state"
                 value={formData.state}
@@ -252,7 +252,7 @@ export default function EnquiryForm() {
           {/* Phone / Area of Interest */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block font-bold uppercase mb-2">
+              <label className="block font-tthoves-demibold uppercase mb-2">
                 City/Town
               </label>
               <input
@@ -267,7 +267,7 @@ export default function EnquiryForm() {
               )}
             </div>
             <div>
-              <label className="block font-bold uppercase mb-2">
+              <label className="block font-tthoves-demibold uppercase mb-2">
                 Phone Number
               </label>
               <input
@@ -282,7 +282,7 @@ export default function EnquiryForm() {
               )}
             </div>
             <div>
-              <label className="block font-bold uppercase mb-2">
+              <label className="block font-tthoves-demibold uppercase mb-2">
                 Area of Interest
               </label>
               <input
@@ -300,7 +300,7 @@ export default function EnquiryForm() {
 
           {/* Program */}
           <div>
-            <label className="block font-bold uppercase mb-2">
+            <label className="block font-tthoves-demibold uppercase mb-2">
               Program{" "}
               <span className="font-normal">(Bachelors or Masters)</span>
             </label>
@@ -327,10 +327,10 @@ export default function EnquiryForm() {
           {/* Submit Button */}
           <div>
             <button
-              // className="relative text-white font-bold px-5 py-1 w-60 bg-[#66A4F9] transition-all cursor-pointer group hover:shadow-inner border-dashed"
+              // className="relative text-white font-tthoves-demibold px-5 py-1 w-60 bg-[#66A4F9] transition-all cursor-pointer group hover:shadow-inner border-dashed"
               type="submit"
             >
-              <HoverButton5 text="Submit" />
+              <HoverButton5 text="Submit"/>
               {/* <span className="absolute top-0 right-0 w-0 h-0 border-solid border-transparent group-hover:border-r-[15px] group-hover:border-b-[15px] transition-all duration-75 ease-out border-r-white border-b-[#3B76CB]"></span> */}
             </button>
           </div>

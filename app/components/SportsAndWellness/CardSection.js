@@ -69,7 +69,7 @@ const CardSection = () => {
             className={`relative ${card.bgColor} flex flex-col items-start justify-start p-6 border border-[#D0E3FF] mx-auto mb-10 curved-shadow`}
           >
             <Image src={card.image} width={80} height={80} alt="icon" />
-            <h2 className="text-xl font-bold text-[#2050B1] mt-4 ">
+            <h2 className="text-xl font-tthoves-demibold text-[#2050B1] mt-4 ">
               {card.title}
             </h2>
             <p className="pt-4">{card.description}</p>
