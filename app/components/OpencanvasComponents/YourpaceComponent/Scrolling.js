@@ -78,11 +78,10 @@ export default function PaperFoldingScroll() {
         ref={sectionRef}
         className="sticky top-0 h-[100vh] flex items-center justify-center overflow-hidden bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center"
       >
-        <div className="relative z-10 flex flex-col-reverse md:flex-row-reverse w-full container mx-auto gap-6 md:gap-4 h-auto md:h-[100vh] py-10 md:py-0">
-          
-          {/* Image on right */}
+        <div className="relative z-10 flex flex-col md:flex-row-reverse w-full container mx-auto gap-6 md:gap-4 h-auto md:h-[100vh] py-10 md:py-0">
+          {/* Image on top for mobile, right for desktop */}
           <div className="w-full md:w-[29%] flex flex-col items-center justify-center gap-4 mb-6 md:mb-0">
-            <div className="relative w-40 h-40 md:w-52 md:h-52">
+            <div className="relative w-60 h-60 md:w-80 md:h-80">
               <Image
                 src={images[activeIndex]}
                 alt={`Rocket ${activeIndex + 1}`}
@@ -99,18 +98,17 @@ export default function PaperFoldingScroll() {
             <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 border-l border-dashed border-gray-400 h-full" />
           </div>
 
-          {/* Text on left */}
+          {/* Text on bottom for mobile, left for desktop */}
           <div className="w-full md:w-[70%] flex flex-col justify-center px-4 md:pr-4 relative text-center md:text-left">
             <div className="h-auto">
-              <h2 className="text-2xl md:text-5xl font-extrabold text-[#002561] mb-4 leading-tight">
+              <h2 className="text-2xl md:text-[60px] uppercase text-[#002561] mb-4 leading-tight font-schabo">
                 {headings[activeIndex]}
               </h2>
-              <p className="text-base md:text-xl text-[#002561] font-medium">
+              <p className="text-base md:text-xl text-black font-medium">
                 {subtexts[activeIndex]}
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>

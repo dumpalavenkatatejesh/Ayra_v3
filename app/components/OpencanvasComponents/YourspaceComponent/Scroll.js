@@ -14,7 +14,7 @@ const images = [
 ]
 
 const headings = [
-  "How will you define your academic journey?",
+  "HOW DO YOU WANT TO SPEND YOUR ACADEMIC YEARS?",
   "What does learning mean to you?",
   "Design your unique path to excellence",
   "Turn challenges into stepping stones",
@@ -76,17 +76,16 @@ export default function PaperFoldingScroll() {
 
   return (
     <>
+      {/* Scrollable Section */}
       <div ref={trackRef} style={{ height: trackHeight }} className="relative">
         <div
           ref={sectionRef}
-          className="sticky top-0 h-[100vh] flex items-center justify-center overflow-hidden bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center"
+          className="sticky top-0 h-[100vh] flex items-center justify-center overflow-hidden bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center" // <-- Background moved here
         >
-          <div className="absolute" />
-
           <div className="relative z-10 flex flex-col md:flex-row w-full container mx-auto gap-4 h-auto md:h-[100vh]">
             {/* Image */}
             <div className="w-full md:w-[30%] flex items-center justify-center py-8 md:py-0">
-              <div className="relative w-40 h-40 md:w-60 md:h-60">
+              <div className="relative w-60 h-60 md:w-80 md:h-80">
                 <Image
                   src={images[activeIndex]}
                   alt={`Rocket ${activeIndex + 1}`}
@@ -106,10 +105,10 @@ export default function PaperFoldingScroll() {
             {/* Text */}
             <div className="w-full md:w-[70%] flex flex-col justify-center pr-4 relative">
               <div className="h-auto px-6 md:ps-28">
-                <h2 className="text-2xl md:text-5xl font-extrabold text-[#002561] mb-4 leading-tight text-left">
+                <h2 className="text-2xl md:text-[60px] uppercase text-[#002561] mb-4 leading-tight text-left font-schabo">
                   {headings[activeIndex]}
                 </h2>
-                <p className="text-base md:text-xl text-[#002561] font-medium text-left">
+                <p className="text-base md:text-xl text-black font-medium text-left">
                   {subtexts[activeIndex]}
                 </p>
               </div>
