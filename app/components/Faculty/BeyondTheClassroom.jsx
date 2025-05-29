@@ -17,11 +17,11 @@ const BeyondTheClassroom = () => {
 
         {/* Description */}
         <div className="space-y-5 text-[#002561] text-base md:text-lg md:pr-12 z-10">
-          <h2 className="text-2xl text-black font-extrabold leading-tight">
+          <h2 className="text-2xl text-black font-tthoves-medium leading-tight">
             AYRA faculty don’t disappear after lectures—they stay engaged,
             offering guidance on:
           </h2>
-          <ul className="mt-6 space-y-4 text-sm md:text-base text-black">
+          <ul className="mt-6 space-y-4 text-sm md:text-base text-black font-tthoves-extralight">
             {highlights.map((text, idx) => (
               <li className="flex items-start gap-2" key={idx}>
                 <Image
@@ -35,7 +35,7 @@ const BeyondTheClassroom = () => {
               </li>
             ))}
           </ul>
-          <h2 className="text-xl text-black font-extrabold leading-tight">
+          <h2 className="text-xl text-black font-extrabold leading-tight font-tthoves-medium">
             They are sounding boards, accountability partners, and trusted
             guides throughout your time at AYRA.
           </h2>

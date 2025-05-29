@@ -36,11 +36,13 @@ const AdmissionDate = () => {
                 alt={item.month}
                 className="w-[125px] h-[150px]"
               />
-              <span className="absolute inset-0 flex items-center">
+              <span className="absolute inset-0 flex items-center font-tthoves-medium">
                 {item.month}
               </span>
             </div>
-            <h3 className="text-lg mt-6">{item.title}</h3>
+            <h3 className="text-lg mt-6 font-tthoves-extralight">
+              {item.title}
+            </h3>
           </div>
         ))}
       </div>

@@ -24,7 +24,7 @@ const WhatOurStudentsCanExpect = () => {
         {/* Overlay Content */}
         <div className="absolute right-0 bottom-20 flex justify-center items-center">
           <div className="text-white max-w-[70%]">
-            <ul className="mt-6 space-y-4 text-sm md:text-base">
+            <ul className="mt-6 space-y-4 text-sm md:text-base font-tthoves-extralight">
               {items.map((text, idx) => (
                 <li className="flex items-start gap-2" key={idx}>
                   <Image

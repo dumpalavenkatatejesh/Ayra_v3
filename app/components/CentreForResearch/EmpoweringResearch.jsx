@@ -22,7 +22,7 @@ const EmpoweringResearch = () => {
         {/* Overlay Content */}
         <div className="absolute bottom-10 left-4 right-4 md:right-20 md:left-auto flex justify-end items-center">
           <div className="text-white w-full md:max-w-[45%] bg-black/50 md:bg-transparent p-4 md:p-0 rounded-md">
-            <ul className="mt-2 md:mt-6 space-y-3 text-sm md:text-base">
+            <ul className="mt-2 md:mt-6 space-y-3 text-sm md:text-base font-tthoves-extralight">
               {items.map((text, idx) => (
                 <li className="flex items-start gap-2" key={idx}>
                   <span>{text}</span>

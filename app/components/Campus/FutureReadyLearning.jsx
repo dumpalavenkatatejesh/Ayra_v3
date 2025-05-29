@@ -25,7 +25,7 @@ const futureReadyData = [
 const FutureReadyLearning = () => {
   return (
     <div className="py-5 container mx-auto space-y-5 px-4 md:px-0">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#002561] text-center md:text-left">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-tthoves-demibold text-[#002561] text-center md:text-left">
         FUTURE-READY LEARNING SPACES
       </h1>
 

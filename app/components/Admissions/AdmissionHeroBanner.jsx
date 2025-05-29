@@ -6,7 +6,7 @@ const AdmissionHeroBanner = () => {
     <div className="h-[90vh] bg-cover bg-center flex pb-10 px-3 md:px-10 relative bg-[url('/admissions/admission-mob-banner.png')] md:bg-[url('/admissions/admission-banner.png')]">
       {/* Desktop Slanted Text */}
       <div className="absolute inset-0 top-[42%] left-[30%] md:left-[17%] flex items-center max-w-[300px] md:max-w-[400px]">
-        <p className="text-xs md:text-lg text-white -rotate-[27deg] md:-rotate-[13deg]">
+        <p className="text-xs md:text-lg text-white -rotate-[27deg] md:-rotate-[13deg] font-tthoves-extralight">
           Join a community where your aspirations take centre stage. Admissions
           are now open for the upcoming academic year
         </p>

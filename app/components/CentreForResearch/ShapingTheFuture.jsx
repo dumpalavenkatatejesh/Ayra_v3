@@ -19,13 +19,13 @@ const ShapingTheFuture = () => {
         <hr className="border-t border-dashed border-gray-300 my-5" />
 
         <div className="mb-5 flex flex-col items-center gap-4 text-white max-w-screen-lg mx-auto">
-          <p className="text-base sm:text-lg md:text-xl text-center px-2 sm:px-4">
+          <p className="text-base sm:text-lg md:text-xl text-center px-2 sm:px-4 font-tthoves-extralight">
             Whether it’s improving access to clean water, enhancing athlete
             performance, or designing sustainable energy systems, AYRA is
             committed to knowledge that matters.
           </p>
 
-          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-center w-full sm:w-4/5 px-4">
+          <p className="text-xl sm:text-2xl md:text-3xl font-tthoves-medium text-center w-full sm:w-4/5 px-4">
             At AYRA, research isn’t just supported—it’s celebrated. And it all
             starts with a question.
           </p>

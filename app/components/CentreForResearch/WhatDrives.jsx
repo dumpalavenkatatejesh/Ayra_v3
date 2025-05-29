@@ -31,10 +31,10 @@ const WhatDrives = () => {
 
           {/* Description Right */}
           <div>
-            <h2 className="text-xl md:text-3xl text-[#2050B1] font-bold">
+            <h2 className="text-xl md:text-3xl text-[#2050B1] font-tthoves-demibold">
               AYRA’S RESEARCH ECOSYSTEM IS BUILT AROUND THREE KEY GOALS:
             </h2>
-            <ul className="mt-6 md:mt-10 space-y-4 text-sm md:text-base text-black">
+            <ul className="mt-6 md:mt-10 space-y-4 text-sm md:text-base text-black font-tthoves-extralight">
               {highlights.map((text, idx) => (
                 <li className="flex items-start gap-2" key={idx}>
                   <Image

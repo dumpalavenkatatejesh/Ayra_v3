@@ -16,7 +16,7 @@ const DesignedForCommunity = () => {
       {/* Overlay Content */}
       <div className="absolute bottom-20 flex items-center">
         <div className="pl-6 md:pl-12 lg:pl-20 text-white max-w-[70%]">
-          <ul className="mt-6 space-y-4 text-sm md:text-base">
+          <ul className="mt-6 space-y-4 text-sm md:text-base font-tthoves-extralight">
             <li className="flex items-start gap-2">
               <Image
                 src="/rocket-icon.svg"

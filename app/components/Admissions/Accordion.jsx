@@ -55,14 +55,15 @@ const Accordion = () => {
         <div key={index} className="border-b border-dashed border-gray-400">
           <h2>
             <button
+              onClick={() => toggleAccordion(index)}
               type="button"
               className="flex items-center justify-between w-full py-5 font-medium text-[#2F2F2F] gap-3"
             >
-              <span className="text-left text-xl md:text-2xl font-bold">
+              <span className="text-left text-xl md:text-2xl text-[#002561] font-tthoves-demibold">
                 {service.ques}
               </span>
               <span
-                onClick={() => toggleAccordion(index)}
+                //onClick={() => toggleAccordion(index)}
                 className={`text-xl sm:text-3xl transform transition-transform duration-300 cursor-pointer text-[#002561] ${
                   openIndex === index ? "rotate-45" : ""
                 }`}
@@ -83,10 +84,10 @@ const Accordion = () => {
                 className="overflow-hidden"
               >
                 <div className="py-5 text-[#002561]">
-                  <span className="font-bold">Bachelor’s:</span>
-                  <p className="text-primary">{service.bachelor}</p>
-                  <span className="font-bold mt-3">Master’s:</span>
-                  <p className="text-primary">{service.master}</p>
+                  <span className="">Bachelor’s:</span>
+                  <p className="font-tthoves-extralight">{service.bachelor}</p>
+                  <span className="mt-3">Master’s:</span>
+                  <p className="font-tthoves-extralight">{service.master}</p>
                 </div>
               </motion.div>
             )}

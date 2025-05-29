@@ -20,7 +20,7 @@ const InvestingInYourFuture = () => {
             {/* <h3 className="text-4xl text-white font-bold">
               Develop skills, organise events, and make an impact.
             </h3> */}
-            <p className="text-lg font-light text-white">
+            <p className="text-lg font-tthoves-extralight text-white">
               We offer a range of scholarships and financial aid options to{" "}
               <br /> make education accessible for everyone.
             </p>

@@ -1,5 +1,5 @@
 import React from "react"
-import CentreForResearch from "../components/CentreForResearch/index"
+import CentreForResearch from "../../components/CentreForResearch/index"
 
 const page = () => {
   return (

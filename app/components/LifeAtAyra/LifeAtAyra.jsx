@@ -42,7 +42,7 @@ const LifeAtAyra = () => {
               {/* Mobile: Title always on top */}
               <div className="block md:hidden px-6">
                 <h2
-                  className="text-2xl md:text-5xl text-[#002561] font-extrabold leading-tight text-center"
+                  className="text-2xl md:text-5xl text-[#002561] font-tthoves-demibold leading-tight text-center"
                   dangerouslySetInnerHTML={{ __html: item.title }}
                 />
               </div>
@@ -53,25 +53,25 @@ const LifeAtAyra = () => {
                   {/* Title Left (md+) */}
                   <div className="hidden md:block pr-6 md:pr-12">
                     <h2
-                      className="text-4xl md:text-5xl text-[#002561] font-extrabold leading-tight text-left"
+                      className="text-4xl md:text-5xl text-[#002561] font-tthoves-demibold leading-tight text-left"
                       dangerouslySetInnerHTML={{ __html: item.title }}
                     />
                   </div>
                   {/* Description Right */}
-                  <div className="px-4 md:px-0 md:pl-12 space-y-5 text-[#002561] text-base md:text-lg">
+                  <div className="px-4 md:px-0 md:pl-12 space-y-5 text-[#002561] text-base md:text-lg font-tthoves-extralight">
                     <p>{item.description}</p>
                   </div>
                 </>
               ) : (
                 <>
                   {/* Description Left */}
-                  <div className="px-4 md:px-0 md:pr-12 space-y-5 text-[#002561] text-base md:text-lg">
+                  <div className="px-4 md:px-0 md:pr-12 space-y-5 text-[#002561] text-base md:text-lg font-tthoves-extralight">
                     <p>{item.description}</p>
                   </div>
                   {/* Title Right (md+) */}
-                  <div className="hidden md:block pl-6 md:pl-12">
+                  <div className="hidden md:block pl-6 md:pl-6">
                     <h2
-                      className="text-4xl md:text-5xl text-[#002561] font-extrabold leading-tight text-right"
+                      className="text-4xl md:text-5xl text-[#002561] font-tthoves-demibold leading-tight text-right"
                       dangerouslySetInnerHTML={{ __html: item.title }}
                     />
                   </div>

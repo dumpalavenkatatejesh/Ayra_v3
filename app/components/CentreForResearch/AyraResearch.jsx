@@ -16,7 +16,7 @@ const AyraResearch = () => {
             AYRA RESEARCH <br className="hidden md:block" /> CENTRES &
             INITIATIVES
           </h1>
-          <p className="text-base md:text-xl">
+          <p className="text-base md:text-xl font-tthoves-extralight">
             To bring this vision to life, AYRA has launched the AYRA Research
             and Consultancy Hub (ARCH)—a central space for ideation,
             experimentation, and collaboration. ARCH is home to shared research
@@ -32,7 +32,7 @@ const AyraResearch = () => {
               <h2 className="text-xl md:text-3xl text-white font-bold">
                 Key Features Include:
               </h2>
-              <ul className="mt-5 space-y-4 text-sm md:text-base text-white">
+              <ul className="mt-5 space-y-4 text-sm md:text-base text-white font-tthoves-extralight">
                 {highlights.map((text, idx) => (
                   <li className="flex items-start gap-2" key={idx}>
                     <Image
@@ -46,7 +46,7 @@ const AyraResearch = () => {
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-sm md:text-base text-white">
+              <p className="mt-5 text-sm md:text-base text-white font-tthoves-extralight">
                 From small beginnings—currently housed in a 1000 sq. ft
                 space—ARCH is envisioned to evolve into a network of Centres of
                 Excellence, aligned with AYRA’s long-term academic and societal

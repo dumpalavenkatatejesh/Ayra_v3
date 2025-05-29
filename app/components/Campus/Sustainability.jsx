@@ -16,7 +16,7 @@ const SustainabilitySection = () => {
         </div>
 
         {/* Right Side: List */}
-        <ul className="pl-6 md:pl-12 space-y-5 text-[#002561] text-base md:text-lg">
+        <ul className="pl-6 md:pl-12 space-y-5 text-[#002561] text-base md:text-lg font-tthoves-extralight">
           {[
             "Green, open spaces that inspire fresh thinking and mindfulness",
             "Holistic well-being programs, fitness zones, and outdoor recreational areas",

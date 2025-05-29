@@ -15,13 +15,13 @@ const Leadership = () => {
       />
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 top-40 flex justify-end items-center">
-        <div className="text-white max-w-[50%]">
-          <div className="space-y-4">
-            <h3 className="text-4xl text-white font-bold">
+      <div className="absolute inset-0 top-48 right-40 flex justify-end items-center">
+        <div className="text-white max-w-[40%]">
+          <div className="space-y-5">
+            <h3 className="text-3xl text-white font-tthoves-demibold">
               Develop skills, organise events, and make an impact.
             </h3>
-            <p className="text-lg font-light text-white">
+            <p className="text-lg font-light text-white font-tthoves-extralight">
               This is Your Space. Embrace It.
             </p>
             <div className="group inline-block">

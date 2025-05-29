@@ -31,7 +31,7 @@ const FacultyHighlights = () => {
           <h2 className="text-2xl font-extrabold leading-tight">
             Our growing team includes:
           </h2>
-          <ul className="mt-6 space-y-4 text-sm md:text-base">
+          <ul className="mt-6 space-y-4 text-sm md:text-base font-tthoves-extralight">
             {highlights.map((text, idx) => (
               <li className="flex items-start gap-2" key={idx}>
                 <Image

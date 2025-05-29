@@ -6,25 +6,25 @@ const stepsData = [
     id: 1,
     icon: "/admissions/steps/step1.svg",
     title: "Step 1",
-    description: "Fill out the online application form",
+    description: "Fill out the online <br /> application form",
   },
   {
     id: 2,
     icon: "/admissions/steps/step2.svg",
     title: "Step 2",
-    description: "Upload the required documents",
+    description: "Upload the required <br /> documents",
   },
   {
     id: 3,
     icon: "/admissions/steps/step3.svg",
     title: "Step 3",
-    description: "Attend an interview (if applicable)",
+    description: "Attend an interview <br /> (if applicable)",
   },
   {
     id: 4,
     icon: "/admissions/steps/step4.svg",
     title: "Step 4",
-    description: "Receive your offer letter and confirm your admission.",
+    description: "Receive your offer letter and <br /> confirm your admission.",
   },
 ]
 
@@ -62,10 +62,13 @@ const Steps = () => {
                 alt={step.title}
                 className="mb-4"
               />
-              <h3 className="text-xl font-semibold text-[#1B3C89] mb-1">
+              <h3 className="text-xl font-tthoves-medium text-[#1B3C89] mb-1">
                 {step.title}
               </h3>
-              <p className="text-sm text-[#1B3C89]">{step.description}</p>
+              <p
+                className=" text-[#1B3C89] font-tthoves-extralight"
+                dangerouslySetInnerHTML={{ __html: step.description }}
+              />
             </li>
           )
         })}
