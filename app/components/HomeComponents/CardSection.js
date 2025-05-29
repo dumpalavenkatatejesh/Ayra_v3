@@ -61,14 +61,14 @@ const CardSection = () => {
               {cardData.map((card, index) => (
                 <div
                   key={index}
-                  className={`relative ${card.bgColor} flex flex-col items-start justify-start p-6 gap-8 border border-[#D0E3FF] mx-auto curved-shadow`}
+                  className={`relative ${card.bgColor} flex flex-col items-start justify-start p-6 lg:gap-8 gap-4 border border-[#D0E3FF] mx-auto curved-shadow`}
                 >
                   <div className="lg:h-64">
                     <Image src={card.image} width={180} height={180} alt="icon" />
                   </div>
 
                   <div>
-                    <h2 className="text-xl font-bold text-[#002561] text-[60px] font-schabo">
+                    <h2 className="font-bold text-[#002561] text-[60px] font-schabo">
                       {card.title}
                     </h2>
                   </div>
