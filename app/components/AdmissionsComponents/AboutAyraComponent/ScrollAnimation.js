@@ -8,21 +8,27 @@ const TextSection = () => {
   const currentIndexRef = useRef(0);
   const isAnimatingRef = useRef(false);
   const scrollProgressRef = useRef(0);
-  const lastScrollY = useRef(window.scrollY);
+  const lastScrollY = useRef(0);
   const entryPointRef = useRef(null);
 
   const [active, setActive] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFullyVisible, setIsFullyVisible] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
-  
   const [canScroll, setCanScroll] = useState(true);
+
+  // Initialize lastScrollY after mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      lastScrollY.current = window.scrollY;
+    }
+  }, []);
 
   const blocks = [
     {
       type: 'text',
-      title: 'Future-Ready Curriculum',
-      text: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought."
+      title: 'THE OPEN CANVAS PHILOSOPHY',
+      text: "At AYRA, students co-create their journey. Whether they want to move faster or slower, specialise or stay broad, we support them in building an education that reflects who they are and who they want to become."
     },
     {
       type: 'image',
@@ -38,6 +44,11 @@ const TextSection = () => {
       type: 'image',
       src: '/admissions/masters_programs/what_set_us_1.png',
       alt: 'Designed Around You'
+    },
+    {
+      type: 'text',
+      title: 'Future-Ready Curriculum',
+      text: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought."
     }
   ];
 
@@ -45,25 +56,29 @@ const TextSection = () => {
   const resetStates = () => {
     setActive(false);
     setCanScroll(true);
-    document.body.style.overflow = '';
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+    }
     isAnimatingRef.current = false;
     scrollProgressRef.current = 0;
+    currentIndexRef.current = 0;
+    setCurrentSlide(0);
   };
 
   // Handle section visibility and initial direction
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleScroll = () => {
-      if (!isFullyVisible) {
-        const currentScrollY = window.scrollY;
-        const isUp = currentScrollY < lastScrollY.current;
+      const currentScrollY = window.scrollY;
+      const isUp = currentScrollY < lastScrollY.current;
+
+      if (!isFullyVisible && entryPointRef.current === null) {
         setIsScrollingUp(isUp);
-
-        if (entryPointRef.current === null) {
-          entryPointRef.current = isUp;
-        }
-
-        lastScrollY.current = currentScrollY;
+        entryPointRef.current = isUp;
       }
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -104,11 +119,11 @@ const TextSection = () => {
         observer.unobserve(section);
       }
     };
-  }, [blocks.length]);
+  }, [blocks.length, isFullyVisible]);
 
   // Handle wheel events
   useEffect(() => {
-    if (!active || !isFullyVisible) return;
+    if (typeof window === 'undefined' || !active || !isFullyVisible) return;
 
     const handleWheel = (e) => {
       if (isAnimatingRef.current) {
@@ -140,17 +155,14 @@ const TextSection = () => {
         if (entryPointRef.current) {
           // Entered from top (scrolling up)
           nextIndex = isScrollingDown ?
-            currentIndexRef.current + 1 :
-            currentIndexRef.current - 1;
+            Math.min(currentIndexRef.current + 1, blocks.length - 1) :
+            Math.max(currentIndexRef.current - 1, 0);
         } else {
           // Entered from bottom (scrolling down)
           nextIndex = isScrollingDown ?
-            currentIndexRef.current + 1 :
-            currentIndexRef.current - 1;
+            Math.min(currentIndexRef.current + 1, blocks.length - 1) :
+            Math.max(currentIndexRef.current - 1, 0);
         }
-
-        // Ensure nextIndex is within bounds
-        nextIndex = Math.max(0, Math.min(blocks.length - 1, nextIndex));
 
         if (nextIndex !== currentIndexRef.current) {
           setCurrentSlide(nextIndex);
@@ -186,42 +198,41 @@ const TextSection = () => {
   return (
     <div
       ref={sectionRef}
-      className={`h-screen flex bg-white transition-opacity duration-500 ${isFullyVisible ? 'opacity-100' : 'opacity-0'
-        }`}
+      className={`md:min-h-screen flex flex-col md:flex-row bg-white transition-opacity duration-500 ${isFullyVisible ? 'opacity-100' : 'opacity-0'}`}
     >
-      {/* Left Fixed Panel */}
-      <div className="w-1/2 flex justify-center items-center px-6 h-screen sticky top-0 bg-white">
-        <h2 className="text-4xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-start">
+      {/* Left Fixed Panel - Top on mobile */}
+      <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 h-[20vh] md:h-screen md:sticky md:top-0 bg-white pt-10`">
+        <h2 className="text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
           What Sets Us<br />Apart
         </h2>
       </div>
 
-      {/* Right Content Panel */}
-      <div className="w-1/2 h-screen overflow-hidden relative">
+      {/* Right Content Panel - Bottom on mobile */}
+      <div className="w-full md:w-1/2 h-[50vh] md:h-screen overflow-hidden relative">
         <div className="h-full w-full">
           {blocks.map((block, index) => (
             <div
               key={index}
               ref={(el) => (blocksRef.current[index] = el)}
-              className={`absolute top-0 left-0 w-full h-full flex justify-center items-center px-12 transition-all duration-1000 ease-out
+              className={`absolute top-0 left-0 w-full h-full flex justify-center items-center px-4 md:px-12 transition-all duration-1000 ease-out
                 ${index === currentSlide ? 'opacity-100 translate-x-0' :
                   entryPointRef.current ?
-                    (index > currentSlide ? 'opacity-0 -translate-x-full' : 'opacity-0 translate-x-full') :
+                    (index > currentSlide ? 'opacity-0 translate-x-full' : 'opacity-0 -translate-x-full') :
                     (index < currentSlide ? 'opacity-0 -translate-x-full' : 'opacity-0 translate-x-full')
                 }`}
             >
               {block.type === 'text' ? (
-                <div className="max-w-xl">
-                  <h3 className="text-xl md:text-2xl font-bold text-[#2050B1] mb-4 uppercase">
+                <div className="max-w-xl px-4 md:px-0">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-ebold text-[#2050B1] mb-2 md:mb-4 uppercase">
                     {block.title}
                   </h3>
-                  <p className="text-base md:text-lg text-gray-700">{block.text}</p>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-700">{block.text}</p>
                 </div>
               ) : (
                 <img
                   src={block.src}
                   alt={block.alt}
-                  className="w-full h-auto max-h-[80vh] rounded-xl shadow-lg"
+                  className="w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0"
                 />
               )}
             </div>

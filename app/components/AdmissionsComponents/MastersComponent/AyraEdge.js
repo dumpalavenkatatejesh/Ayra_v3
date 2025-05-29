@@ -24,7 +24,12 @@ const StartYourJourney = () => {
                     <p className="text-2xl font-light max-w-6xl">
                         Our master’s programs offer more than specialisation—they offer transformation. Whether you’re looking to deepen your skills, shift careers, or move into leadership, you’ll find the platform here.
                     </p>
-                    <HoverButton5 text="Know More" />
+                    {/* <HoverButton5 text="" /> */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <div className="border border-dashed border-gray-300 bg-white px-6 py-1 text-[#2050B1]">
+                            Know More
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

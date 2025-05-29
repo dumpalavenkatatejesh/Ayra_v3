@@ -21,6 +21,20 @@ module.exports = {
                 'x-8': '2rem',
                 'x-12': '3rem',
             },
+            keyframes: {
+                slideLeft: {
+                    '0%': { transform: 'translateX(100%)', opacity: '0' },
+                    '100%': { transform: 'translateX(0)', opacity: '1' }
+                },
+                slideRight: {
+                    '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                    '100%': { transform: 'translateX(0)', opacity: '1' }
+                }
+            },
+            animation: {
+                slideLeft: 'slideLeft 0.5s ease-in-out',
+                slideRight: 'slideRight 0.5s ease-in-out'
+            }
         },
     },
     plugins: [

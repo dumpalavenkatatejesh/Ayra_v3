@@ -20,7 +20,7 @@ const BreathExploreLearn = () => {
                         More than just a campus, it’s a space to think deeply, live mindfully, and grow freely.
                     </p>
 
-                    <div className='flex md:flex-row flex-col justify-center items-center gap-10'>
+                    <div className='flex md:flex-row flex-col justify-center items-center md:gap-10 gap-4'>
                         <div className="group inline-block">
                             <button className="relative px-5 py-1 bg-[#66A4F9] group-hover:bg-[#7db1fa] text-white overflow-hidden cursor-pointer transition-colors duration-300">
                                 Take a Virtual Campus Tour
