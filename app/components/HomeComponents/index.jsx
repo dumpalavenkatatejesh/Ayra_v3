@@ -19,7 +19,7 @@ const index = () => {
             {/* <SectionOpenCanvasDistinct /> */}
             <ExploreAyra />
             <FocusCenters />
-            <AdmissionNowOpen />
+            {/* <AdmissionNowOpen /> */}
             <BreathExploreLearn />
             <CampusLife />
             <NewsAndEvents />

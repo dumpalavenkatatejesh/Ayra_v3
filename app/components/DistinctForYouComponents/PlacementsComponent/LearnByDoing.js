@@ -1,15 +1,32 @@
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { HoverButton5 } from '@/app/utils/HoverButton';
 
 
 const ExploreAyra = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 640); // Tailwind's "sm" breakpoint
+        };
+
+        handleResize(); // Run initially
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const imageSrc = isMobile
+        ? '/admissions/placements/learn_by_doing_mob.png'
+        : '/admissions/placements/learn_by_doing.png';
+
     return (
         <div className="relative w-full h-[90vh] container mx-auto my-10 ">
             {/* Background Image */}
             <Image
-                src="/admissions/placements/learn_by_doing.png"
+                src={imageSrc}
                 alt="Leadership & Entrepreneurship Clubs"
                 fill
                 className="object-cover object-center"
@@ -19,7 +36,7 @@ const ExploreAyra = () => {
             {/* Overlay Content */}
             <div className="absolute inset-0 top-48 md:right-50 right-10 flex justify-end md:items-center items-end p-4">
                 <div className="text-white md:max-w-[30%] w-full">
-                    <div className="space-y-5">
+                    <div className="md:space-y-5">
                         <p className="text-sm font-light text-white font-tthoves-extralight">
                             AYRA was founded with a bold vision: to be an open canvas where curiosity meets possibility.
                             At AYRA, we don't just prepare — we empower them to shape it.

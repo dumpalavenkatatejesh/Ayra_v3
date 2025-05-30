@@ -4,12 +4,12 @@ import React from 'react';
 const HomeBanner = () => {
     return (
         <div className="md:bg-[url('/home/new/home_banner_img.jpg')] bg-[url('/home/new/home_mob_banner.jpg')] h-[90vh] bg-cover bg-center text-white relative">
-            <div className="flex w-full h-full">
+            <div className="flex w-full h-full container mx-auto">
                 {/* Left filler section */}
                 <div className="md:w-[80%]"></div>
 
                 {/* Right content section - vertical layout */}
-                <div className="md:w-[20%] flex flex-col md:justify-between justify-end py-8 md:pr-3 px-4 md:px-0">
+                <div className="md:w-[20%] flex flex-col md:justify-between justify-end pt-8 pb-4 px-4 md:px-0">
                     {/* Top content */}
                     <div className="space-y-2 text-left mt-10">
                         <p className="text-sm md:text-[1vw] leading-relaxed font-light">
