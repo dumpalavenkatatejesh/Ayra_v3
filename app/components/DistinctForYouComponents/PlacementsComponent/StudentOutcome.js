@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const StudentOutcome = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 py-16 container mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 py-16 container mx-auto px-4">
             {/* Left Section */}
             <div className="md:w-1/2 space-y-6 ">
                 <h1 className="text-4xl md:text-7xl font-schabo text-[#002D72] leading-tight">

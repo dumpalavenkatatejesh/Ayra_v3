@@ -1,34 +1,47 @@
-import React from 'react';
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { HoverButton5 } from '@/app/utils/HoverButton';
 
-const LearnByDoing = () => {
+
+const ExploreAyra = () => {
     return (
-        <div className='w-full px-8 py-4'>
-            <div className="bg-[url('/admissions/placements/learn_by_doing.png')] h-[90vh] bg-cover bg-center text-white relative " >
-                <div className='flex flex-row w-full h-full'>
-                    {/* Left section - 70% */}
-                    <div className='w-[70%] relative'>
-                        {/* You can add content for the left side here if needed */}
-                    </div>
+        <div className="relative w-full h-[90vh] container mx-auto my-10 ">
+            {/* Background Image */}
+            <Image
+                src="/admissions/placements/learn_by_doing.png"
+                alt="Leadership & Entrepreneurship Clubs"
+                fill
+                className="object-cover object-center"
+                priority
+            />
 
-                    {/* Right section - 40% */}
-                    <div className='w-[40%] flex items-end pb-28'>
-                        <div className="space-y-6 pr-12">
-                            <p className="text-[1vw] leading-relaxed font-light">
-                                AYRA was founded with a bold vision: to be an open canvas where curiosity meets possibility.
-                                At AYRA, we don't just prepare — we empower them to shape it.
-                            </p>
-                            <p className="text-[1vw] leading-relaxed font-light">
-                                We believe that education must be as dynamic as the world our students will enter.
-                                That's why we've designed a university experience that blends academic rigour with
-                                creative exploration, personal growth with global relevance, and tradition with bold,
-                                future-facing thinking.
-                            </p>
+            {/* Overlay Content */}
+            <div className="absolute inset-0 top-48 md:right-50 right-10 flex justify-end md:items-center items-end p-4">
+                <div className="text-white md:max-w-[30%] w-full">
+                    <div className="space-y-5">
+                        <p className="text-sm font-light text-white font-tthoves-extralight">
+                            AYRA was founded with a bold vision: to be an open canvas where curiosity meets possibility.
+                            At AYRA, we don't just prepare — we empower them to shape it.
+                        </p>
+                        <p className="text-sm font-light text-white font-tthoves-extralight">
+                            We believe that education must be as dynamic as the world our students will enter.
+                            That's why we've designed a university experience that blends academic rigour with
+                            creative exploration, personal growth with global relevance, and tradition with bold,
+                            future-facing thinking.
+                        </p>
+                        <div className="group inline-block">
+                            <button className="relative px-5 py-1 bg-blue-500 group-hover:bg-blue-400 text-white overflow-hidden cursor-pointer transition-colors duration-300">
+                                Explore Clubs
+                                <span className="absolute top-0 right-0 w-[12px] h-[12px] bg-[#002561] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
+                                <span className="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-l-[12px] border-t-transparent border-l-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default LearnByDoing;
+export default ExploreAyra

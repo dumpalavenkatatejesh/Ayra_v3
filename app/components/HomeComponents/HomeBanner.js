@@ -3,16 +3,16 @@ import React from 'react';
 
 const HomeBanner = () => {
     return (
-        <div className="bg-[url('/home/unfold-your-potential.png')] h-[90vh] bg-cover bg-center text-white relative">
+        <div className="md:bg-[url('/home/new/home_banner_img.jpg')] bg-[url('/home/new/home_mob_banner.jpg')] h-[90vh] bg-cover bg-center text-white relative">
             <div className="flex w-full h-full">
                 {/* Left filler section */}
-                <div className="w-[80%]"></div>
+                <div className="md:w-[80%]"></div>
 
                 {/* Right content section - vertical layout */}
-                <div className="w-[20%] flex flex-col justify-between py-8 pr-3">
+                <div className="md:w-[20%] flex flex-col md:justify-between justify-end py-8 md:pr-3 px-4 md:px-0">
                     {/* Top content */}
                     <div className="space-y-2 text-left mt-10">
-                        <p className="text-[1vw] leading-relaxed font-light">
+                        <p className="text-sm md:text-[1vw] leading-relaxed font-light">
                             At AYRA, learning is not confined to textbooks and lectures. It’s an evolving journey where you
                             set the pace, define your path, and shape your success.
                         </p>
@@ -20,7 +20,7 @@ const HomeBanner = () => {
 
                     {/* Bottom content */}
                     <div className="space-y-2 text-left pt-3">
-                        <p className="text-[1vw] leading-relaxed font-light">
+                        <p className="text-sm md:text-[1vw] leading-relaxed font-light">
                             Explore bachelor’s and master’s programs designed for limitless possibilities.
                         </p>
                         <HoverButton5 text="Explore More" />
