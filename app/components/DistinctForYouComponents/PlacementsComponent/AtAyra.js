@@ -4,7 +4,7 @@ const AtAyra = () => {
     return (
         <div className='w-full'>
             <div className='container mx-auto border-r border-l border-dashed border-gray-300'>
-                <div className="max-w-4xl mx-auto py-12 px-4 px-6 md:px-8 space-y-8">
+                <div className="max-w-4xl mx-auto py-12 px-4 md:px-8 space-y-8">
                     <div className=" text-center">
                         <p className="text-sm ">
                             At AYRA, we don't just prepare students for careers—we help them launch them.
