@@ -88,7 +88,7 @@ const KeyPolicyAreas = () => {
                       <h2 className="text-4xl md:text-6xl py-5 tracking-wide text-[#2050B1] font-schabo leading-tight text-center md:text-left">
                         KEY POLICY AREAS
                       </h2>
-                      <h3 className="text-2xl font-bold text-gray-800 lg:mt-10 mt-5">
+                      <h3 className="text-2xl font-tthoves-demibold text-gray-800 lg:mt-10 mt-5">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-gray-700">{item.subtitle}</p>

@@ -6,15 +6,27 @@ const PartOfYourDailyLife = () => {
     <div>
       <div className="">
         <div className="border-b-2 border-dashed border-[#D0E3FF] mb-10">
-          <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] max-w-7xl mx-auto my-4">
+          <div className="relative  lg:max-w-7xl mx-auto my-4">
             {/* Background Image */}
-            <Image
-              src="/sports-and-wellness/daily-life.png"
-              alt="Who Can Apply Background"
-              fill
-              className="object-cover pb-10"
-              priority
-            />
+
+            <div className="h-[500px] md:h-[600px] lg:h-[700px]">
+              <Image
+                src="/sports-and-wellness/daily-life.png"
+                alt="Who Can Apply Background"
+                fill
+                className="object-cover lg:block hidden"
+                priority
+              />
+            </div>
+            <div className="lg:h-auto h-[50vh] w-full">
+              <Image
+                src="/sports-and-wellness/daily-life-mobile.png"
+                alt="Who Can Apply Background"
+                fill
+                className="lg:hidden p-5"
+                priority
+              />
+            </div>
 
             {/* Overlay Content */}
             <div className="absolute lg:bottom-20 bottom-0 lg:left-[55%] left-[0%] flex items-center">
