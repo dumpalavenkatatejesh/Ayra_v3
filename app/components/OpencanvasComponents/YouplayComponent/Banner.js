@@ -6,12 +6,12 @@ const Banner = () => {
     <>
       {/* Top Banner Section */}
       <div
-        className=" h-[90vh] bg-cover bg-center text-white relative
+        className=" h-[100vh] lg:h-[90vh] bg-cover bg-center text-white relative
          bg-[url('/opencanvas/opc-mob-play.png')]  // mobile background
          md:bg-[url('/opencanvas/opc-banner-you-play.jpg')] // desktop background"
       >
         {/* Responsive Centered Paragraphs at Bottom */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[68%] lg:bottom-14">
+        <div className="absolute bottom-6 lg:bottom-14  left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[68%] ">
           <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
           Beyond Academics, How Do You Want to Express Yourself?
           </p>

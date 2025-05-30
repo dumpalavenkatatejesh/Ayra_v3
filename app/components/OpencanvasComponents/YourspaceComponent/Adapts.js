@@ -3,35 +3,30 @@ import React from "react"
 const Banner = () => {
   return (
     <>
-      <div className="bg-[url('/opencanvas/opc-img-01.jpg')] h-[90vh] bg-cover bg-center text-white relative lg:m-10">
-        <div className="flex flex-col md:flex-row w-full h-full">
-          {/* Left section - 70% on desktop */}
-          <div className="w-full md:w-[60%] relative">
-            {/* Optional left content */}
-          </div>
-
-          {/* Right section - 30% on desktop */}
-          <div className="w-full md:w-[50%] flex items-end pb-10 md:pb-24">
-            <div className="space-y-4 md:space-y-6 px-6 md:pr-[20%]">
-              <p className="text-base md:text-[1.1vw] leading-relaxed font-light">
-              At AYRA, we know that no two students are the same. That’s why we
+     <div className="lg:p-10 p-5">
+      <div
+        className=" h-[90vh] bg-cover bg-center text-white relative bg-[#002560]
+         bg-[url('/opencanvas/opc-img-space-footer.png')]  // mobile background
+         md:bg-[url('/opencanvas/opc-img-01.jpg')] // desktop background"
+      >
+        {/* Responsive Centered Paragraphs at Bottom */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[74%] lg:bottom-14">
+          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
+            At AYRA, we know that no two students are the same. That’s why we
             don’t shape you—you shape your own experience. Whether you need a
             quiet space to think, a lively hub to discuss ideas, or hands-on
             opportunities to create and innovate, we provide an environment that
             adapts to your learning style.
-              </p>
-              <p className="text-base md:text-[1.1vw] leading-relaxed font-light">
-              Our classrooms, research spaces, and discussion areas are designed
+          </p>
+
+          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
+            Our classrooms, research spaces, and discussion areas are designed
             for collaboration, exploration, and growth, ensuring that you own
             your education in a way that’s meaningful to you. Here, you won’t
             just study—you’ll shape your future, one idea at a time.
-              </p>
-            </div>
-          </div>
+          </p>
         </div>
-
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent" />
+      </div>
       </div>
     </>
   )

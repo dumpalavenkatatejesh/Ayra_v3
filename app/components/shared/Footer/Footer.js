@@ -2,15 +2,16 @@ import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa"
+import ScrollToTop from "../../ScrollToTop/ScrollToTop"
 
 const Footer = () => {
   return (
-    <footer className="bg-[#002561] text-white font-['TT_Hoves_Pro'] relative  ">
-      <div className="border-b border-dashed border-white/20  ">
+    <footer className="bg-[#002561] text-white font-['TT_Hoves_Pro'] relative px-4  ">
+      <div className="lg:border-b border-dashed border-white/20  ">
         {/* Main Footer Content */}
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8   relative container mx-auto ">
           {/* Location */}
-          <div className="border-r border-dashed border-white/20 pt-5">
+          <div className="lg:border-r border-dashed border-white/20 pt-5">
             <h3 className="text-xl font-semibold mb-4">Location</h3>
             <p className="text-gray-300 text-[14px] 2xl:text-[18px] leading-[27px] font-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -19,7 +20,7 @@ const Footer = () => {
           </div>
 
           {/* Get In Touch */}
-          <div className="border-r border-dashed border-white/20 py-5">
+          <div className="lg:border-r border-dashed border-white/20 py-5">
             <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
             <ul className="space-y-2">
               <li>
@@ -50,7 +51,7 @@ const Footer = () => {
           </div>
 
           {/* Login */}
-          <div className="border-r border-dashed border-white/20 py-5">
+          <div className="lg:border-r border-dashed border-white/20 py-5">
             <h3 className="text-xl font-semibold mb-4">Login</h3>
             <ul className="space-y-2">
               <li>
@@ -111,7 +112,7 @@ const Footer = () => {
             </ul>
 
             {/* Back to Top Button inside this section top-right */}
-            <div className="absolute top-0 right-0 flex flex-col items-center pt-5">
+            {/* <div className="absolute top-0 right-0 flex flex-col items-center pt-5">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className=" transition-colors"
@@ -127,7 +128,7 @@ const Footer = () => {
                 </div>
               </button>
               <span className="text-[12px] text-white mt-1">Back to Top</span>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -163,18 +164,20 @@ const Footer = () => {
         </div>
 
         {/* Logo */}
-        <div className="flex justify-center">
-          <Image
-            className="w-40 h-40"
-            src="/ayra-logo.svg"
-            alt="AYRA Logo"
-            width={80}
-            height={80}
-          />
+        <div className="flex justify-center p-5">
+          <Link href="/">
+            <Image
+              className="w-24 h-24"
+              src="/Ayra-logo.png"
+              alt="AYRA Logo"
+              width={80}
+              height={80}
+            />
+          </Link>
         </div>
 
         {/* Terms & Privacy */}
-        <div className="flex justify-center md:justify-end items-center space-x-2 text-[14px] 2xl:text-[18px] text-gray-300">
+        <div className="flex justify-center md:justify-end items-center space-x-2 text-[14px] 2xl:text-[18px] text-gray-300 py-5">
           <Link href="/terms" className="hover:text-white transition-colors">
             Terms and Conditions
           </Link>
@@ -184,6 +187,8 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+      <ScrollToTop />
+      {/* Bottom Copyright */}
     </footer>
   )
 }

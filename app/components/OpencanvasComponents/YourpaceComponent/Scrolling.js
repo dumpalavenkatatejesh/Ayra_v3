@@ -70,7 +70,9 @@ export default function PaperFoldingScroll() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [scrollPerSection, activeIndex])
 
-  const trackHeight = `calc(100vh + ${(headings.length - 1) * scrollPerSection}px)`
+  const trackHeight = `calc(100vh + ${
+    (headings.length - 1) * scrollPerSection
+  }px)`
 
   return (
     <div ref={trackRef} style={{ height: trackHeight }} className="relative">
@@ -95,7 +97,7 @@ export default function PaperFoldingScroll() {
 
           {/* Divider */}
           <div className="hidden md:block w-[1px] bg-gray-300 relative">
-            <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 border-l border-dashed border-gray-400 h-full" />
+            <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 border-l-2 border-dotted border-gray-400 h-full" />
           </div>
 
           {/* Text on bottom for mobile, left for desktop */}

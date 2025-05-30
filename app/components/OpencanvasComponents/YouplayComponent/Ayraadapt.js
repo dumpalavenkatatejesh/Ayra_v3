@@ -1,37 +1,32 @@
 import React from "react"
 
-const Banner = () => {
+const Ayraadapt = () => {
   return (
     <>
-      <div className="bg-[url('/opencanvas/opc-you-img-04.jpg')] h-[90vh] bg-cover bg-center text-white relative lg:m-10">
-        <div className="flex flex-col md:flex-row w-full h-full">
-          {/* Left section - 70% on desktop */}
-          <div className="w-full md:w-[60%] relative">
-            {/* Optional left content */}
-          </div>
+      <div className="lg:p-10 p-5">
+      <div
+        className=" h-[90vh] bg-cover bg-center text-white relative  bg-[#002560] 
+         bg-[url('/opencanvas/opc-play-footer.png')]  // mobile background
+         md:bg-[url('/opencanvas/opc-you-img-04.jpg')] // desktop background"
+      >
+        {/* Responsive Centered Paragraphs at Bottom */}
+        <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[74%] lg:bottom-20">
+          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
+            At AYRA, your academic path isn’t predefined—it’s built by you.
+            Whether you want to blend multiple disciplines, explore
+            unconventional career paths, or specialise in an emerging field, you
+            have the flexibility to create a curriculum that works for your
+            goals.
+          </p>
 
-          {/* Right section - 30% on desktop */}
-          <div className="w-full md:w-[50%] flex items-end pb-10 md:pb-40">
-            <div className="space-y-4 md:space-y-6 px-6 md:pr-[20%]">
-              <p className="text-base md:text-[1.1vw] leading-relaxed font-light">
-                At AYRA, your academic path isn’t predefined—it’s built by you.
-                Whether you want to blend multiple disciplines, explore
-                unconventional career paths, or specialise in an emerging field,
-                you have the flexibility to create a curriculum that works for
-                your goals.
-              </p>
-              <p className="text-base md:text-[1.1vw] leading-relaxed font-light">
-                This is your education. You choose how to shape it.
-              </p>
-            </div>
-          </div>
+          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
+            This is your education. You choose how to shape it.
+          </p>
         </div>
-
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent" />
+      </div>
       </div>
     </>
   )
 }
 
-export default Banner
+export default Ayraadapt

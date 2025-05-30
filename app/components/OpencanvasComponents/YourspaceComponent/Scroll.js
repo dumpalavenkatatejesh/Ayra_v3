@@ -80,7 +80,7 @@ export default function PaperFoldingScroll() {
       <div ref={trackRef} style={{ height: trackHeight }} className="relative">
         <div
           ref={sectionRef}
-          className="sticky top-0 h-[100vh] flex items-center justify-center overflow-hidden bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center" // <-- Background moved here
+          className="sticky top-0 h-[100vh] flex items-center justify-center overflow-hidden bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center"
         >
           <div className="relative z-10 flex flex-col md:flex-row w-full container mx-auto gap-4 h-auto md:h-[100vh]">
             {/* Image */}
@@ -98,12 +98,12 @@ export default function PaperFoldingScroll() {
             </div>
 
             {/* Divider */}
-            <div className="hidden md:block w-[1px] bg-gray-300 relative">
-              <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 border-l border-dashed border-gray-400 h-full" />
+            <div className="hidden md:block w-[1px] bg-gray-300 relative items-center justify-center">
+              <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 border-l-2 border-dotted border-gray-400 h-full" />
             </div>
 
             {/* Text */}
-            <div className="w-full md:w-[70%] flex flex-col justify-center pr-4 relative">
+            <div className="w-full md:w-[70%] flex flex-col  pr-4 relative items-center justify-center">
               <div className="h-auto px-6 md:ps-28">
                 <h2 className="text-2xl md:text-[60px] uppercase text-[#002561] mb-4 leading-tight text-left font-schabo">
                   {headings[activeIndex]}
