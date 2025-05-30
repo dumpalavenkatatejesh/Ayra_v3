@@ -31,7 +31,7 @@ const WhatWeOffer = () => {
   return (
     <>
       <div className="container mx-auto">
-        <div className="w-full py-8 px-14">
+        <div className="w-full py-8 px-4 md:px-14">
           {/* What We Offer */}
           <div className="pb-8 flex justify-center items-center">
             <Image
@@ -39,8 +39,10 @@ const WhatWeOffer = () => {
               alt="What We Offer"
               width={600}
               height={400}
+              priority
             />
           </div>
+
           {/* Image */}
           <div>
             <Image
@@ -49,49 +51,50 @@ const WhatWeOffer = () => {
               width={1200}
               height={600}
               className="w-full"
+              priority
             />
           </div>
-          {/* Points  */}
-          <div className="py-6">
-            <div className="grid grid-cols-5 divide-x divide-dashed divide-[#4FA6FF]">
-              {items.map((item, index) => (
-                <div key={index} className="px-4">
-                  {/* Fix title height: */}
 
+          {/* Points */}
+          <div className="py-6">
+            <div className="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-dashed divide-[#4FA6FF]">
+              {items.map((item, index) => (
+                <div key={index} className="px-4 py-4">
                   <h1
-                    className="text-2xl text-[#2050B1] font-tthoves-bold"
+                    className="text-base md:text-2xl text-[#2050B1] font-tthoves-bold"
                     dangerouslySetInnerHTML={{ __html: item.title }}
                   ></h1>
-
-                  <p className="text-sm mt-3">{item.description}</p>
+                  <p className="text-sm mt-2 font-tthoves-light">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Image */}
-          <div className="relative h-[500px] md:h-[590px]">
+          <div className="relative h-[500px] md:h-[560px] ">
             {/* Background image */}
             <Image
-              src="/teaching-and-learning/CTL.png"
+              src="/entrepreneurship/img2.png"
               alt="Discover Your Campus"
-              layout="responsive"
               width={1200}
               height={600}
-              className="w-full"
+              className="w-full h-full"
+              priority
             />
 
             {/* Overlay text */}
-            <div className="absolute right-20 bottom-36  flex justify-end items-center">
-              <div className="text-white max-w-[42%] space-y-4">
-                <p>
+            <div className="absolute md:right-10 bottom-28  flex justify-end items-center ">
+              <div className="text-white md:max-w-[42%] space-y-4">
+                <p className="font-tthoves-extralight text-xs md:text-base">
                   We’re not only building founders—we’re shaping entrepreneurial
                   mindsets. From entrepreneurs driving innovation within
                   organisations to change-makers solving local and global
                   challenges, the Centre empowers students to take initiative
                   and lead with purpose.
                 </p>
-                <p>
+                <p className="font-tthoves-extralight text-xs md:text-base">
                   If you’re ready to imagine boldly, solve creatively, and build
                   fearlessly, the Centre for Entrepreneurship is your starting
                   point.

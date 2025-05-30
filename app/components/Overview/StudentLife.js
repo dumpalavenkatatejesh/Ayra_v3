@@ -34,7 +34,7 @@ const StudentLife = () => {
             Your Life at AYRA
           </h1>
 
-          <p className="text-sm md:text-base text-[#002561] mt-2 max-w-md">
+          <p className="text-sm md:text-base text-[#002561] mt-2 max-w-md font-tthoves-light">
             AYRA is where friendships spark, ideas grow, and every week brings
             something new. Dive into the energy of life beyond lectures.
           </p>

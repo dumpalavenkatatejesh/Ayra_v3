@@ -39,7 +39,10 @@ const CTLOffer = () => {
         {/* Scrollable Paragraphs */}
         <div className="md:max-w-3xl md:mx-auto text-center stext-center h-[100px] overflow-y-auto no-scrollbar ">
           {paragraphs.map((text, index) => (
-            <p key={index} className="md:text-2xl mb-8 px-4 md:px-0">
+            <p
+              key={index}
+              className="md:text-2xl mb-8 px-4 md:px-0 font-tthoves-light"
+            >
               {text}
             </p>
           ))}
@@ -48,7 +51,7 @@ const CTLOffer = () => {
 
       {/* Bottom CTA Section */}
       <div className="bg-[#002561] text-white py-8  text-sm md:text-2xl px-2 md:px-0 flex items-center justify-center border-b border-gray-300 border-dashed">
-        <h2 className=" text-center md:max-w-6xl ">
+        <h2 className=" text-center md:max-w-6xl font-tthoves-light ">
           For learners and educators who believe in growing together, the Centre
           for Teaching & Learning is your space to evolve.
         </h2>

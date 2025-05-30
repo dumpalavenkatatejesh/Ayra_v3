@@ -7,15 +7,15 @@ const DiscoverYourCampus = () => {
     <>
       <div className="container mx-auto px-4 pt-10 md:pt-14 md:pb-6 w-full flex flex-col md:flex-row md:h-[500px]">
         {/* Left Side Content */}
-        <div className="md:w-1/2 flex flex-col items-start justify-center space-y-4">
+        <div className="md:w-1/2 flex flex-col items-start justify-center space-y-4 ">
           {/* Discover your Champs */}
           <Image
             src="/overview/Discover-Your-Campus.png"
             alt="Discover Your Campus"
             width={400}
-            height={300}
+            height={400}
             priority
-            className="ml-[-12px]"
+            className="ml-[-12px] md:h-[300px] md:w-[500px]"
           />
 
           {/* Title */}
@@ -24,7 +24,7 @@ const DiscoverYourCampus = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-sm md:text-base text-[#002561] max-w-md">
+          <p className="text-sm md:text-base text-[#002561] max-w-md font-tthoves-light">
             Explore the classrooms, green learning nooks, play areas and
             everything in between. Every path, hallway, and hangout spot has a
             story. Discover the spaces that’ll soon feel like home.

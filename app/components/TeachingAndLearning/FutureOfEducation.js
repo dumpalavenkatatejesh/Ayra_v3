@@ -13,14 +13,14 @@ const FutureOfEducation = () => {
           </div>
 
           <div className="px-6 md:px-0">
-            <p>
+            <p className="font-tthoves-light">
               Higher education is undergoing a transformation across the
               world—and India is no exception. With the adoption of the National
               Education Policy (NEP) 2020, there is an urgent need to evolve how
               we teach, how we learn, and how we prepare learners for a world in
               constant motion.
             </p>
-            <p className="mt-3">
+            <p className="mt-3 font-tthoves-light">
               At AYRA, we see this not as a challenge—but as an opportunity to
               lead with intention. That’s where the Centre for Teaching &
               Learning (CTL) comes in.
