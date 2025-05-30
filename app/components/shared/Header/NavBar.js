@@ -193,7 +193,7 @@ const NavBar = () => {
 
                             <Link href="/contact-us">
                                 <div className="group inline-block">
-                                    <button className="relative px-5 py-1 text-[14px] 2xl:text-[18px] bg-[#8772F7] group-hover:bg-[#8772F7] text-white overflow-hidden cursor-pointer transition-colors duration-300">
+                                    <button className="relative px-5 py-0.5 text-[14px] 2xl:text-[18px] bg-[#8772F7] group-hover:bg-[#8772F7] text-white overflow-hidden cursor-pointer transition-colors duration-300">
                                         Contact us
                                         <span className="absolute top-0 right-0 w-[12px] h-[12px] bg-[#002561] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" />
                                         <span className="absolute top-0 right-0 w-0 h-0 border-t-[12px] border-l-[12px] border-t-transparent border-l-[#4b89e8] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
