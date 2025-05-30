@@ -1,5 +1,5 @@
 import React from "react"
-import Faculty from "../components/Faculty/index"
+import Faculty from "../../components/Faculty/index"
 
 const page = () => {
   return (

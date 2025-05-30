@@ -1,10 +1,10 @@
 import React from "react"
 import FacultyHeroBanner from "./FacultyHeroBanner"
-import OurFacultyPhilosophy from "./OurFacultyPhilosophy"
 import FacultyHighlights from "./FacultyHighlights"
 import BeyondTheClassroom from "./BeyondTheClassroom"
 import WhatOurStudentsCanExpect from "./WhatOurStudentsCanExpect"
 import AtAyra from "./AtAyra"
+import OurFacultyPhilosophy from "./OurFacultyPhilosophy"
 
 const index = () => {
   return (

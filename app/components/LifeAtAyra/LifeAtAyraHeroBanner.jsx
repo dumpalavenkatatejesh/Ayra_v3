@@ -5,7 +5,7 @@ const LifeAtAyraHeroBanner = () => {
   return (
     <div className="relative h-[90vh] w-full pb-16 px-6 md:px-52">
       {/* Background Images */}
-      <div className="absolute inset-0 bg-cover md:bg-[url('/life-at-ayra/student-life-banner.png')] bg-[url('/life-at-ayra/student-life-mob-banner.png')]"></div>
+      <div className="absolute inset-0 bg-cover md:bg-[url('/life-at-ayra/student-life-banner.png')] bg-[url('/life-at-ayra/mob-banner.png')]"></div>
 
       {/* Overlay */}
       <div className="absolute inset-0 z-10">

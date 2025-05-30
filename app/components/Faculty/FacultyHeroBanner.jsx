@@ -3,7 +3,7 @@ import React from "react"
 const FacultyHeroBanner = () => {
   return (
     <>
-      <div className="bg-[url('/faculty/faculty-mob-banner.png')] md:bg-[url('/faculty/faculty-banner.png')] h-[80vh] md:h-[90vh] bg-cover"></div>
+      <div className="bg-[url('/faculty/mob-banner.png')] md:bg-[url('/faculty/faculty-banner.png')] h-[80vh] md:h-[90vh] bg-cover"></div>
       <div className="container mx-auto space-y-4 py-5 md:py-16 px-4 md:px-0">
         <h3 className="text-base md:text-xl text-black font-light w-full md:w-11/12 font-tthoves-extralight">
           At AYRA, our faculty are more than subject experts—they are inspiring
