@@ -6,12 +6,13 @@ const Action = () => {
     <>
       <div>
         <div className="border-b border-dashed border-[#3B76CB]">
-          <div className="flex justify-center w-full  my-10 px-4 md:px-0 ">
+          <div className="flex justify-center w-full  my-10 px-4 md:px-0">
             <Image
               src="/leadership/LIA.png"
               alt="Discover Your Campus"
-              width={500}
-              height={339}
+              width={650}
+              height={400}
+              priority
             />
           </div>
         </div>
@@ -30,7 +31,7 @@ const Action = () => {
               Because here, leadership is not about hierarchy.
             </p>
 
-            <h1 className="text-xl md:text-2xl  py-2 max-w-3xl font-tthoves-light">
+            <h1 className="text-xl md:text-2xl  py-2 max-w-3xl ">
               It’s about holding space—for growth, for risk-taking, for
               transformation.
             </h1>

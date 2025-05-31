@@ -1,15 +1,8 @@
 import React from "react"
 import Image from "next/image"
+import Scroll from "./Scroll"
 
 const CTLOffer = () => {
-  const paragraphs = [
-    "Training and support for educators to adopt innovative teaching methods and adapt to evolving learner needs.",
-    "Curriculum Co-Design in collaboration with Schools and Focus Centres to ensure courses remain current, rigorous, and interdisciplinary",
-    "Assessment Innovation through meaningful evaluation frameworks that reflect real student growth and potential",
-    "Collaborative Educational Research with institutions in India and abroad to drive thought leadership in higher education",
-    "Executive & Certification program focused on upskilling educators and working professionals",
-  ]
-
   return (
     <>
       <div className="container mx-auto py-8">
@@ -36,17 +29,8 @@ const CTLOffer = () => {
           />
         </div>
 
-        {/* Scrollable Paragraphs */}
-        <div className="md:max-w-3xl md:mx-auto text-center stext-center h-[100px] overflow-y-auto no-scrollbar ">
-          {paragraphs.map((text, index) => (
-            <p
-              key={index}
-              className="md:text-2xl mb-8 px-4 md:px-0 font-tthoves-light"
-            >
-              {text}
-            </p>
-          ))}
-        </div>
+        {/* Scr ollable Paragraphs */}
+        <Scroll />
       </div>
 
       {/* Bottom CTA Section */}
