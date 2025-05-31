@@ -119,7 +119,7 @@ const TextSection = () => {
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
         {/* Left Panel */}
-        <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 h-[20vh] md:h-screen md:sticky md:top-0 bg-white pt-10">
+        <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 md:h-screen md:sticky md:top-0 bg-white">
           <h1 className="text-4xl md:text-8xl font-schabo text-[#2050B1] tracking-wide text-center md:text-left leading-tight">
             OUR FACULTY <br className="hidden md:block" /> PHILOSOPHY
           </h1>
@@ -147,10 +147,10 @@ const TextSection = () => {
               >
                 {block.type === "text" ? (
                   <div className="max-w-xl px-4 md:px-0">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-ebold text-[#2050B1] mb-2 md:mb-4 uppercase">
+                    <h3 className="text-lg sm:text-xl md:text-4xl font-ebold text-[#2050B1] font-tthoves-medium mb-2 md:mb-4 uppercase">
                       {block.title}
                     </h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-700">
+                    <p className="text-sm sm:text-base md:text-2xl text-gray-700 font-tthoves-light">
                       {block.text}
                     </p>
                   </div>

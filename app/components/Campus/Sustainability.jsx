@@ -4,13 +4,13 @@ import { FaPaperPlane } from "react-icons/fa"
 const SustainabilitySection = () => {
   return (
     <section className="my-7 border-t border-dashed border-gray-300">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 max-w-7xl mx-auto">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 container mx-auto">
         {/* Center Vertical Dashed Border */}
         <div className="hidden md:block absolute inset-y-0 left-1/2 w-px bg-dashed-border" />
 
         {/* Left Side: Title */}
         <div className="pr-6 md:pr-12">
-          <h2 className="text-4xl md:text-6xl tracking-wide text-[#002561] font-schabo leading-tight text-center md:text-left">
+          <h2 className="text-4xl md:text-7xl tracking-wide text-[#002561] font-schabo leading-tight text-center md:text-left">
             SUSTAINABILITY &<br /> WELLBEING AT THE CORE
           </h2>
         </div>
@@ -36,7 +36,7 @@ const SustainabilitySection = () => {
           ))}
         </ul>
       </div>
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full container mx-auto">
         <Image
           src="/campus/sustainability-banner02.png"
           alt="Sustainability Banner"

@@ -45,7 +45,7 @@ const BeyondTheClassroom = () => {
         <div className="z-10 md:pl-12">
           <Image
             src="/faculty/beyond-the-classroom.png"
-            width={500}
+            width={550}
             height={300}
             alt="faculty highlights"
             className="object-center mx-auto md:mx-0"

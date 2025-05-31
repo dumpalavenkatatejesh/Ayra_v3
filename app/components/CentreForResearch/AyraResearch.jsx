@@ -11,12 +11,12 @@ const AyraResearch = () => {
   return (
     <div className="bg-[#2050B1] py-10">
       <div className="container mx-auto px-4 md:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-white">
-          <h1 className="text-3xl md:text-7xl tracking-wider font-schabo">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5 text-white">
+          <h1 className="text-3xl md:text-8xl tracking-wider font-schabo">
             AYRA RESEARCH <br className="hidden md:block" /> CENTRES &
             INITIATIVES
           </h1>
-          <p className="text-base md:text-xl font-tthoves-extralight">
+          <p className="text-base md:text-xl font-tthoves-extralight self-center">
             To bring this vision to life, AYRA has launched the AYRA Research
             and Consultancy Hub (ARCH)—a central space for ideation,
             experimentation, and collaboration. ARCH is home to shared research

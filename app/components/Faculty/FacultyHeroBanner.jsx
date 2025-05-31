@@ -4,7 +4,7 @@ const FacultyHeroBanner = () => {
   return (
     <>
       <div className="bg-[url('/faculty/mob-banner.png')] md:bg-[url('/faculty/faculty-banner.png')] h-[80vh] md:h-[90vh] bg-cover"></div>
-      <div className="container mx-auto space-y-4 py-5 md:py-16 px-4 md:px-0">
+      <div className="container mx-auto py-5 md:pt-14 px-4 md:px-0">
         <h3 className="text-base md:text-xl text-black font-light w-full md:w-11/12 font-tthoves-extralight">
           At AYRA, our faculty are more than subject experts—they are inspiring
           coaches, dedicated to helping each student discover and unfold their
@@ -14,7 +14,7 @@ const FacultyHeroBanner = () => {
           studio.
         </h3>
 
-        <h3 className="text-base md:text-xl text-black font-light w-full md:w-11/12 font-tthoves-extralight">
+        <h3 className="text-base md:text-xl text-black font-light w-full md:w-11/12 font-tthoves-extralight mt-4">
           You won’t find one-size-fits-all teaching here. AYRA faculty design
           experiences, not just syllabi. They encourage you to ask better
           questions, challenge assumptions, and connect ideas across

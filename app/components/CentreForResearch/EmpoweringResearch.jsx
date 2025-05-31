@@ -9,7 +9,7 @@ const EmpoweringResearch = () => {
 
   return (
     <>
-      <div className="relative w-full h-[500px] md:h-[600px] container mx-auto mb-5">
+      <div className="relative w-full h-[500px] md:h-[600px] container mx-auto mb-5 hidden md:block">
         {/* Background Image */}
         <Image
           src="/centre-for-research/empowering.png"
@@ -30,6 +30,18 @@ const EmpoweringResearch = () => {
               ))}
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div className="my-10 bg-[url('/centre-for-research/empowering-mob.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#002561]">
+        <div className="flex items-center px-4 pb-10">
+          <ul className="mt-2 md:mt-6 space-y-3 text-sm font-tthoves-extralight text-white">
+            {items.map((text, idx) => (
+              <li className="flex items-start gap-2" key={idx}>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

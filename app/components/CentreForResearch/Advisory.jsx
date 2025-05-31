@@ -5,7 +5,7 @@ const Advisory = () => {
   return (
     <div className="py-10">
       <div className="container mx-auto px-4 md:px-0">
-        <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#002561]">
+        <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561]">
           THE AYRA RESEARCH ADVISORY <br className="hidden md:block" />{" "}
           COMMITTEE (RAC)
         </h1>

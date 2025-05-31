@@ -6,7 +6,7 @@ const Leadership = () => {
   return (
     <>
       {/* Large Screen Layout */}
-      <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] container mx-auto my-10 hidden lg:block">
+      <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] container mx-auto my-10 hidden md:block">
         {/* Background Image */}
         <Image
           src="/life-at-ayra/leadership.png"
@@ -39,7 +39,7 @@ const Leadership = () => {
       </div>
 
       {/* Small Screen Layout */}
-      <div className="my-10 bg-[url('/life-at-ayra/leadership-mob.png')] bg-cover bg-center h-screen flex items-end lg:hidden bg-[#002561]">
+      <div className="my-10 bg-[url('/life-at-ayra/leadership-mob.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#002561]">
         <div className="flex items-center px-4 pb-20">
           <div className="text-white">
             <div className="space-y-5">

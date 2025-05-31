@@ -12,7 +12,7 @@ const WhatDrives = () => {
   return (
     <div className="py-10">
       <div className="container mx-auto px-4 md:px-0">
-        <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6">
+        <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#2050B1] mb-6">
           WHAT DRIVES RESEARCH <br className="hidden md:block" /> AT AYRA?
         </h1>
 

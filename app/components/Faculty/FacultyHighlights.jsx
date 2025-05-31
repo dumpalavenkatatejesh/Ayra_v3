@@ -18,7 +18,7 @@ const FacultyHighlights = () => {
         <div className="pr-6 md:pr-12 z-10">
           <Image
             src="/faculty/faculty-highlights.png"
-            width={500}
+            width={550}
             height={300}
             alt="faculty highlights"
             className="object-center mx-auto md:mx-0"

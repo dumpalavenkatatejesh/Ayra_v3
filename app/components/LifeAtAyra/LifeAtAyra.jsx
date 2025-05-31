@@ -33,9 +33,9 @@ const LifeAtAyra = () => {
       {lifeAtAyraData.map((item, idx) => {
         const isEven = idx % 2 === 0
         return (
-          <div key={idx}>
+          <div key={idx} className="container mx-auto">
             {/* Grid Layout for Desktop */}
-            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 max-w-7xl mx-auto">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10">
               {/* Center Vertical Dashed Border (only for md+) */}
               <div className="hidden md:block absolute inset-y-0 left-1/2 w-px bg-dashed-border" />
 
@@ -51,7 +51,7 @@ const LifeAtAyra = () => {
               {isEven ? (
                 <>
                   {/* Title Left (md+) */}
-                  <div className="hidden md:block pr-6 md:pr-12">
+                  <div className="hidden md:block pr-6 md:pr-10">
                     <h2
                       className="text-4xl md:text-5xl text-[#002561] font-tthoves-demibold leading-tight text-left"
                       dangerouslySetInnerHTML={{ __html: item.title }}
@@ -80,7 +80,7 @@ const LifeAtAyra = () => {
             </div>
 
             {/* Image Section */}
-            <div className="w-full max-w-7xl mx-auto">
+            <div className="w-full">
               <Image
                 src={item.image}
                 alt="student life"

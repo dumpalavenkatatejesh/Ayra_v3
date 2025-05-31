@@ -11,7 +11,7 @@ const WhatOurStudentsCanExpect = () => {
 
   return (
     <>
-      <div className="relative w-full h-[500px] md:h-[600px] container mx-auto mb-5">
+      <div className="relative w-full h-[500px] md:h-[625px] container mx-auto mb-5">
         {/* Background Image */}
         <Image
           src="/faculty/what-our-student.png"

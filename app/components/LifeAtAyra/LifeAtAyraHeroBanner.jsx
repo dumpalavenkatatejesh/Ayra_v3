@@ -9,9 +9,9 @@ const LifeAtAyraHeroBanner = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 z-10">
-        {/* Slanted Caption for Desktop */}
-        <div className="absolute bottom-[130px] left-[28%] hidden md:block">
-          <p className="text-lg text-white -rotate-[14deg] font-tthoves-regular">
+        {/* Slanted Caption for Desktop (large screens only) */}
+        <div className="hidden md:block absolute left-[27%] bottom-[18%]">
+          <p className="text-sm md:text-base xl:text-lg text-white -rotate-[13deg] font-tthoves-regular">
             Beyond the Classroom, Into Possibility
           </p>
         </div>
@@ -30,8 +30,8 @@ const LifeAtAyraHeroBanner = () => {
         </div>
 
         {/* Main Description for Desktop */}
-        <div className="absolute bottom-4 right-4 md:right-16 md:max-w-3xl text-white max-w-[90%] text-sm md:text-lg md:left-auto left-4 hidden md:block">
-          <p>
+        <div className="hidden md:block absolute inset-x-0 right-0 md:bottom-[4%] lg:bottom-[8%] 2xl:bottom-[13%] px-3 md:px-16 w-full md:max-w-[55%] lg:max-w-[50%] ml-auto">
+          <p className="text-white text-xs xl:text-sm font-tthoves-extralight">
             At AYRA, your experience isn’t just about academics—it’s about the
             spaces you explore, the connections you make, and the passions you
             pursue. Whether you’re looking for a quiet corner to reflect, a
