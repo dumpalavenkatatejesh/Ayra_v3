@@ -20,14 +20,10 @@ const Ayraedge = () => {
             part of how we prepare students for life, leadership, and learning
             in a globalised world. Guided by our open canvas philosophy, the
             International Centre creates pathways that are as ambitious and
-            individual as each student we serve.At AYRA, internationalisation is
-            not an add-on—it’s an essential part of how we prepare students for
-            life, leadership, and learning in a globalised world. Guided by our
-            open canvas philosophy, the International Centre creates pathways
-            that are as ambitious and individual as each student we serve.
+            individual as each student we serve.
           </p>
 
-          <h1 className="text-xl md:text-2xl font-bold py-2 max-w-3xl text-white">
+          <h1 className="text-xl md:text-3xl font-bold py-2 max-w-3xl text-white">
             Wherever you want to go, your journey can start here—with us.
           </h1>
 

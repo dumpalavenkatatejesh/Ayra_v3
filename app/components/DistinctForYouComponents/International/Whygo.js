@@ -49,27 +49,42 @@ const Whygo = () => {
         </div>
 
         {/* Image + Overlay */}
-        <div className="relative h-[300px] md:h-[500px] lg:h-[590px] my-4">
+        <div className="relative w-full h-[80vh] container mx-auto my-10 ">
+          {/* Background Image */}
           <Image
             src="/international/int-img-3.png"
-            alt="Discover Your Campus"
-            layout="fill"
-            objectFit="cover"
-            className="w-full"
+            alt="Leadership & Entrepreneurship Clubs"
+            fill
+            className="object-cover object-center"
+            priority
           />
+
+          {/* Overlay Content */}
+          <div className="absolute inset-0 top-60 md:right-50 right-10 flex justify-end md:items-center items-end p-4">
+            <div className="text-white md:max-w-[30%] w-full">
+              <div className="space-y-5">
+                <p className="text-sm font-light text-white font-tthoves-extralight">
+                  AYRA regularly hosts international experts, visiting scholars,
+                  and guest faculty to enrich classroom discussions and bring
+                  global expertise into every school. From masterclasses to
+                  collaborative workshops. students benefit from a global
+                  learning ecosystem-right here on campus.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="flex flex-col md:flex-row  gap-8 md:gap-16 py-16 container mx-auto px-4">
         {/* Left Section */}
-        <div className="md:w-1/2 space-y-6 ">
+        <div className="md:w-1/2 space-y-4">
           <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6">
             STUDENT OUTCOMES <br /> WE AIM FOR
           </h1>
 
           <div>
-           
-          <h2 className=" text-xl mt-4 text-black font-tthoves-extralight mb-4">
+            <h2 className=" text-2xl mt-4 text-black font-tthoves-regular mb-4 ">
               The International Centre supports AYRA students in achieving:
             </h2>
             <ul className="space-y-3 text-gray-700">
@@ -79,7 +94,6 @@ const Whygo = () => {
                 "Global internships and cross-border placements",
                 "Participation in international conferences and competitions",
                 "Lifelong connections with peers, mentors, and institutions around the world",
-               
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <Image

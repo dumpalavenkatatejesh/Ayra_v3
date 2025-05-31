@@ -8,7 +8,7 @@ const Banner = () => {
       <div
         className="  h-[100vh] lg:h-[90vh] bg-cover bg-center text-white relative
          bg-[url('/opencanvas/opc-mob-space.png')]  // mobile background
-         md:bg-[url('/opencanvas/opc-banner-img.jpg')] // desktop background"
+         md:bg-[url('/opencanvas/opc-banner-spc-img.png')] // desktop background"
       >
         {/* Responsive Centered Paragraphs at Bottom */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[68%] lg:bottom-14">

@@ -93,22 +93,22 @@ const Footer = () => {
                   Admissions
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/school-of-hospitality"
                   className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
                 >
                   School of Hospitality
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href="/ethics"
                   className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
                 >
                   Quality and Code of Ethics
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
             {/* Back to Top Button inside this section top-right */}

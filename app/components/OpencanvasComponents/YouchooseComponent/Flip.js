@@ -37,8 +37,8 @@ const FoldOnHoverRoll = () => {
   }
 
   return (
-    <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center relative px-4 py-10">
-      <div className="lg:w-[100vh] lg:h-[40vh] pt-10 pb-10 container mx-auto">
+    <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center relative px-4 lg:py-20 py-6">
+      <div className="lg:w-[100vh] lg:h-[34vh] h-[15vh] lg:pt-10 pb-10 container mx-auto">
         <Image
           src="/opencanvas/opc-choose-img-text.png"
           alt="Next Section"
@@ -51,7 +51,7 @@ const FoldOnHoverRoll = () => {
       {/* Desktop */}
       {!isMobile && (
         <div
-          className="relative mb-10 container mx-auto flex"
+          className="relative  container mx-auto flex mb-5"
           onMouseEnter={() => setHovered(true)}
           style={{
             perspective: "1500px",

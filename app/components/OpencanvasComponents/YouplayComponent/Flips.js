@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react"
 import Image from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const sectionsData = [
   {
@@ -57,7 +58,7 @@ const FoldOnHoverRoll = () => {
   return (
     <>
       <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center relative px-4 sm:px-10 md:px-16 lg:px-20 pb-5">
-        <div className="lg:w-[100vh] lg:h-[40vh] pt-10 pb-10 container mx-auto">
+        <div className="lg:w-[100vh] lg:h-[34vh] h-[15vh] lg:pt-20 pt-10 pb-10 container mx-auto">
           <Image
             src="/opencanvas/opc-img-text.png"
             alt="Next Section"
@@ -69,9 +70,9 @@ const FoldOnHoverRoll = () => {
 
         {/* Desktop View */}
         {!isMobile && (
-          <div className="mt-10 mb-10 flex flex-col justify-center items-center">
+          <div className="mt-20 mb-20 flex flex-col justify-center items-center">
             <p
-              className={`text-blue-600 font-semibold text-[35px] mb-4 transition-all duration-500 ${
+              className={`text-[#2050B1] font-semibold text-[25px] mb-4 font-tthoves-bold transition-all duration-500 ${
                 hovered
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 -translate-y-full"
@@ -95,12 +96,12 @@ const FoldOnHoverRoll = () => {
                 const delay = hovered
                   ? index * 0.2
                   : (sectionsData.length - index - 1) * 0.2
-                const content = isFirst && !hovered ? introText : section.title
+                const content = isFirst && !hovered ? "" : section.title
 
                 return (
                   <div
                     key={section.id || index}
-                    className={`absolute top-0 shadow-lg ${section.bgColor}`}
+                    className={`absolute top-0 mt-6 shadow-lg ${section.bgColor}`}
                     style={{
                       width: `${sectionWidth}px`,
                       height: panelHeight,
@@ -121,15 +122,17 @@ const FoldOnHoverRoll = () => {
                     }}
                   >
                     <div className="p-6 md:p-8 h-full flex flex-col justify-center">
-                      <h3
-                        className={`${
-                          isFirst && !hovered
-                            ? "text-blue-600 font-semibold"
-                            : "text-black font-semibold"
-                        } text-md md:text-md text-left break-words max-w-[280px]`}
-                      >
-                        {content}
-                      </h3>
+                      {content && (
+                        <h3
+                          className={`${
+                            isFirst && !hovered
+                              ? "text-[#2050B1] "
+                              : "text-black "
+                          } text-md md:text-md text-left break-words max-w-[280px]`}
+                        >
+                          {content}
+                        </h3>
+                      )}
                     </div>
                   </div>
                 )
@@ -140,8 +143,8 @@ const FoldOnHoverRoll = () => {
 
         {/* Mobile View */}
         {isMobile && (
-          <div className="mt-10 mb-10 flex flex-col justify-center items-center">
-            <p className="text-blue-600 font-semibold text-[25px] mb-4 text-center">
+          <div className="mt-14 mb-10 flex flex-col justify-center items-center">
+            <p className="text-[#2050B1] font-tthoves-bold text-[25px] mb-4 text-center">
               {introText}
             </p>
 
@@ -150,22 +153,22 @@ const FoldOnHoverRoll = () => {
               style={{ height: panelHeight }}
             >
               <div className="p-6 md:p-8 h-full flex flex-col justify-center items-center text-center">
-                <h3 className="text-black font-semibold text-xl break-words max-w-[90%]">
+                <h3 className="text-black text-md break-words max-w-[90%]">
                   {sectionsData[currentSectionIndex].title}
                 </h3>
               </div>
               <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-4">
                 <button
                   onClick={goToPrevSection}
-                  className="bg-blue-500 text-white p-4 rounded-full"
+                  className="bg-blue-500 text-white p-3 rounded-full flex items-center justify-center"
                 >
-                  &larr;
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={goToNextSection}
-                  className="bg-blue-500 text-white p-4 rounded-full"
+                  className="bg-blue-500 text-white p-3 rounded-full flex items-center justify-center"
                 >
-                  &rarr;
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
             </div>

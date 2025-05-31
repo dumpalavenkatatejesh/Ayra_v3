@@ -13,7 +13,7 @@ const Banner = () => {
         <div className="absolute bottom-6 md:bottom-24 text-center px-4 w-full md:w-1/2 left-1/2 lg:left-[25%] transform -translate-x-1/2">
           <p className="text-sm md:text-base font-light text-start w-full md:w-2/3 mx-auto opacity-90">
             At AYRA, learning isn’t one-size-fits-all. Whether you prefer
-            structured coursework, self-directed exploration, or hands-on
+            structured coursework, <p className="mb-0"></p>self-directed exploration, or hands-on
             experiences, you’ll find a rhythm that works for you.
           </p>
         </div>

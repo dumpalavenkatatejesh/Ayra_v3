@@ -1,5 +1,5 @@
 import React from 'react'
-import International from "../../components/International"
+import International from "../../components/DistinctForYouComponents/International"
 const page = () => {
   return (
     <div><International/></div>

@@ -57,10 +57,10 @@ export default function GlobalExchangePrograms() {
             {/* Description Right */}
             <div>
               <h2 className="text-xl md:text-4xl text-[#2050B1] font-tthoves-demibold">
-                GLOBAL EXCHANGE <br className="hidden md:block" /> PROGRAMS
+                GLOBAL EXCHANGE PROGRAMS
               </h2>
 
-              <h2 className=" text-xl mt-4 text-black font-tthoves-extralight">
+              <h2 className=" text-2xl mt-4 text-black  font-tthoves-regular ">
                 Experience education from a new perspective.
               </h2>
 
@@ -84,8 +84,7 @@ export default function GlobalExchangePrograms() {
       </div>
 
       <h2 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6 mt-8 container mx-auto px-4 ">
-        <span class="block">WHY GO GLOBAL WITH </span>
-        <span class="block">AYRA?</span>
+        <span class="block">WHY GO GLOBAL WITH AYRA?</span>
       </h2>
 
       <div className="w-full container mx-auto px-4 py-10">

@@ -10,8 +10,8 @@ const Ayraadapt = () => {
          md:bg-[url('/opencanvas/opc-you-img-04.jpg')] // desktop background"
       >
         {/* Responsive Centered Paragraphs at Bottom */}
-        <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[74%] lg:bottom-20">
-          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
+        <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[74%] lg:bottom-28">
+          <p className="text-sm font-light text-start lg:w-[500px] mx-auto opacity-90 lg:text-base">
             At AYRA, your academic path isn’t predefined—it’s built by you.
             Whether you want to blend multiple disciplines, explore
             unconventional career paths, or specialise in an emerging field, you
@@ -19,7 +19,7 @@ const Ayraadapt = () => {
             goals.
           </p>
 
-          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
+          <p className="text-sm font-light text-start lg:w-[500px] mx-auto opacity-90 lg:text-base">
             This is your education. You choose how to shape it.
           </p>
         </div>

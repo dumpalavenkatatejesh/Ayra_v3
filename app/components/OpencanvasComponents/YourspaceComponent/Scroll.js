@@ -15,22 +15,22 @@ const images = [
 
 const headings = [
   "HOW DO YOU WANT TO SPEND YOUR ACADEMIC YEARS?",
-  "What does learning mean to you?",
-  "Design your unique path to excellence",
-  "Turn challenges into stepping stones",
-  "Dream big. Learn endlessly. Succeed consistently.",
-  "Reimagine your learning experience",
-  "Empower your future, one step at a time",
+  "HOW DO YOU WANT TO SPEND YOUR ACADEMIC YEARS?",
+  " How do you want to shape your learning experience? ",
+  " How do you like to engage with knowledge?",
+  "What kind of space fuels your best ideas?",
+  "What inspires you to push boundaries? ",
+  " What kind of community do you want to be part of? ",
 ]
 
 const subtexts = [
-  "Become a trusted expert in your domain with relentless curiosity.",
-  "Unlock new perspectives and reshape how you absorb knowledge.",
-  "Forge your own way with courage, creativity, and consistency.",
-  "Every obstacle is an opportunity to grow stronger and wiser.",
-  "Your journey to success begins with a hunger to evolve every day.",
-  "Discover how personalized learning can unlock your true potential.",
-  "Build resilience, leadership, and confidence with every challenge.",
+  "Soaking up new ideas and seeing the world from different perspectives",
+  "Diving deep into my field and becoming the go-to expert ",
+  "I want the freedom to explore different subjects and see what excites me ",
+  "Clear, structured discussions where I know exactly what I’m learning",
+  "A quiet, tucked-away spot where I can get lost in my thoughts ",
+  "Having the freedom to experiment, fail, and try again",
+  "A group of like-minded people who share my interests and passions",
 ]
 
 export default function PaperFoldingScroll() {
@@ -103,12 +103,12 @@ export default function PaperFoldingScroll() {
             </div>
 
             {/* Text */}
-            <div className="w-full md:w-[70%] flex flex-col  pr-4 relative items-center justify-center">
+            <div className="w-full md:w-[70%] flex flex-col  pr-4 relative items-center justify-center ">
               <div className="h-auto px-6 md:ps-28">
-                <h2 className="text-2xl md:text-[60px] uppercase text-[#002561] mb-4 leading-tight text-left font-schabo">
+                <h2 className="text-2xl md:text-[60px] uppercase text-[#002561] mb-4 leading-tight lg:text-left text-center font-schabo">
                   {headings[activeIndex]}
                 </h2>
-                <p className="text-base md:text-xl text-black font-medium text-left">
+                <p className="text-base md:text-xl text-black font-medium lg:text-left text-center ">
                   {subtexts[activeIndex]}
                 </p>
               </div>

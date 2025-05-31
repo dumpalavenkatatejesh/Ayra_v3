@@ -14,23 +14,23 @@ const images = [
 ]
 
 const headings = [
-  "How will you define your academic journey?",
-  "What does learning mean to you?",
-  "Design your unique path to excellence",
-  "Turn challenges into stepping stones",
-  "Dream big. Learn endlessly. Succeed consistently.",
-  "Reimagine your learning experience",
-  "Empower your future, one step at a time",
+  "How do you like to approach learning?  ",
+  "What kind of flexibility do you need?",
+  "How do you see yourself applying what you learn?",
+  "How important is experiential learning to you?",
+  "Are you interested in earning certifications alongside your degree?",
+  "Do you see sports as part of your future?",
+  "What kind of campus experience excites you?",
 ]
 
 const subtexts = [
-  "Become a trusted expert in your domain with relentless curiosity.",
-  "Unlock new perspectives and reshape how you absorb knowledge.",
-  "Forge your own way with courage, creativity, and consistency.",
-  "Every obstacle is an opportunity to grow stronger and wiser.",
-  "Your journey to success begins with a hunger to evolve every day.",
-  "Discover how personalized learning can unlock your true potential.",
-  "Build resilience, leadership, and confidence with every challenge.",
+  "I like having a clear roadmap—structured, guided learning with milestones to hit.",
+  "I’d love to explore different subjects before deciding on my final path.",
+  "I want to launch something of my own—a startup, a business, or a big idea.",
+  "I learn by doing—hands-on projects and real-world applications.",
+  "Absolutely—certifications that give me a career edge sound great.",
+  "Yes! I want to build a career in sports or a related industry",
+  "A 24/7 learning space where I can explore ideas whenever inspiration hits ",
 ]
 
 export default function PaperFoldingScroll() {
