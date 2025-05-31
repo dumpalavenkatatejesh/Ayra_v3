@@ -12,6 +12,7 @@ const ComingSoon = () => {
             width={1200}
             height={400}
             className="w-full max-w-[1200px] h-auto"
+            priority
           />
         </div>
       </div>

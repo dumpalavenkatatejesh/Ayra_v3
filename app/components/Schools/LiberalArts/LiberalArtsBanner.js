@@ -30,26 +30,14 @@
 
 // export default LiberalArtsBanner
 
-import React from "react";
+import React from "react"
 
 const Banner = () => {
   return (
     <div className="relative h-[110vh] md:h-[90vh] w-screen md:w-full">
-      <div
-        className="absolute inset-0 bg-cover md:bg-[url('/schools/liberal-arts/liberal-arts-banner.png')] 
-//                       bg-[url('/schools/liberal-arts/arts-mobile.png')]"
-      >
-        {/* Rotated text */}
-        <p className="absolute text-white text-sm md:text-base md:max-w-2xl lg:max-w-3xl rotate-[-30deg] md:rotate-[-12deg] md:bottom-20 bottom-44 md:top-[67%] left-6 md:left-[46%] font-tthoves-light">
-          Our programs are designed to help you think critically, communicate
-          effectively, and engage with ideas across disciplines. Whether your
-          interest lies in psychology, media, performance, or economics, you’ll
-          find the space here to experiment, specialise, and shape a path that’s
-          uniquely your own.
-        </p>
-      </div>
+      <div className="absolute inset-0 bg-cover  md:bg-[url('/schools/liberal-arts/liberal-arts-banner.png')] bg-[url('/schools/liberal-arts/arts-mobile.png')]"></div>
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

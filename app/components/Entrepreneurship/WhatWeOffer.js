@@ -71,37 +71,6 @@ const WhatWeOffer = () => {
               ))}
             </div>
           </div>
-
-          {/* Image */}
-          <div className="relative h-[500px] md:h-[560px] ">
-            {/* Background image */}
-            <Image
-              src="/entrepreneurship/img2.png"
-              alt="Discover Your Campus"
-              width={1200}
-              height={600}
-              className="w-full h-full"
-              priority
-            />
-
-            {/* Overlay text */}
-            <div className="absolute md:right-10 bottom-28  flex justify-end items-center ">
-              <div className="text-white md:max-w-[42%] space-y-4">
-                <p className="font-tthoves-extralight text-xs md:text-base">
-                  We’re not only building founders—we’re shaping entrepreneurial
-                  mindsets. From entrepreneurs driving innovation within
-                  organisations to change-makers solving local and global
-                  challenges, the Centre empowers students to take initiative
-                  and lead with purpose.
-                </p>
-                <p className="font-tthoves-extralight text-xs md:text-base">
-                  If you’re ready to imagine boldly, solve creatively, and build
-                  fearlessly, the Centre for Entrepreneurship is your starting
-                  point.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </>

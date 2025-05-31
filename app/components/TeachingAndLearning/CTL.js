@@ -9,32 +9,45 @@ const CTL = () => {
   ]
 
   return (
-    <div className="container mx-auto relative h-[500px] md:h-[600px]">
-      {/* Background image */}
-      <Image
-        src="/teaching-and-learning/CTL.png"
-        alt="Discover Your Campus"
-        width={1200}
-        height={600}
-        className="w-full h-full"
-        priority
-      />
+    <>
+      <div className="relative w-full h-[500px] md:h-[600px] container mx-auto mb-5 hidden md:block">
+        {/* Background image */}
+        <Image
+          src="/teaching-and-learning/CTL.png"
+          alt="Discover Your Campus"
+          fill
+          className="object-cover object-center"
+          priority
+        />
 
-      {/* Overlay text */}
-      <div className="absolute right-12 bottom-14 flex justify-end items-center">
-        <div className="text-white md:max-w-[44%] space-y-4">
-          {paragraphs.map((text, index) => (
-            <p
-              key={index}
-              className="font-tthoves-extralight text-xs md:text-base"
-            >
-              {text}
-            </p>
-          ))}
+        {/* Overlay text */}
+        <div className="absolute bottom-10 left-4 right-4 md:right-19 md:left-auto flex justify-end items-center">
+          <div className="text-white w-full md:max-w-[45%] p-4 md:p-0 rounded-md">
+            <ul className="mt-2 md:mt-6 space-y-3 text-sm md:text-base font-tthoves-extralight">
+              {paragraphs.map((text, idx) => (
+                <li className="flex items-start gap-2" key={idx}>
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+      {/* Mobile  */}
+      <div className="my-10 bg-[url('/teaching-and-learning/CTL-Mobile.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#002561]">
+        <div className="flex items-center px-4 pb-10 ">
+          <ul className="mt-2 md:mt-10 space-y-5 text-[13px] font-tthoves-extralight text-white">
+            {paragraphs.map((text, idx) => (
+              <li className="flex items-start gap-2" key={idx}>
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </>
   )
 }
 
 export default CTL
+// /teaching-and-learning/CTL-Mobile.png
