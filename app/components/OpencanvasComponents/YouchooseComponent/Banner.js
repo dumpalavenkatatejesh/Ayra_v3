@@ -22,7 +22,7 @@ const Banner = () => {
 
     const imageSrc = isMobile
         ? '/opencanvas/your_choose_mob_banner.png'
-        : '/opencanvas/your_choose_bannerr.png';
+        : '/opencanvas/your_choose_banner.png';
 
     return (
         <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
