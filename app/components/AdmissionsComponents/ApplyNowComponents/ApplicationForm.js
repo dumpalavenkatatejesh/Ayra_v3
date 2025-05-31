@@ -2,10 +2,12 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Check } from "lucide-react";
 import Image from "next/image";
-import { Country, State } from "country-state-city";
+import { Country, State, City } from "country-state-city";
+import { motion, AnimatePresence } from "framer-motion";
 const CustomSelect = ({ label, options, onChange, value, error, innerRef }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  
 
 
   useEffect(() => {
@@ -95,7 +97,43 @@ export default function ApplicationForm() {
   const [responseMsg, setResponseMsg] = useState("");
   const [countries, setCountries] = useState([]);
   const [states, setStates] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const popupRef = useRef(null);
 
+  // Disable body scroll when popup is open
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showPopup]);
+
+  // Close on click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setShowPopup(false);
+      }
+    };
+
+    if (showPopup) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showPopup]);
+
+  useEffect(() => {
+    const countryList = Country.getAllCountries();
+    setCountries(countryList);
+  }, []);
 
   useEffect(() => {
     const countryList = Country.getAllCountries();
@@ -106,20 +144,37 @@ export default function ApplicationForm() {
     setFormData({ ...formData, [name]: value });
 
     if (name === "nationality") {
-      const selectedCountry = countries.find(
-        (country) => country.name === value
-      );
+      const selectedCountry = countries.find((c) => c.name === value);
       if (selectedCountry) {
         const stateList = State.getStatesOfCountry(selectedCountry.isoCode);
         setStates(stateList);
       } else {
         setStates([]);
       }
-      setFormData({ ...formData, [name]: value, state: "" });
+      setCities([]);
+      setFormData({ ...formData, [name]: value, state: "", city: "" });
+    }
+
+    if (name === "state") {
+      const selectedCountry = countries.find(
+        (c) => c.name === formData.nationality
+      );
+      const selectedState = states.find((s) => s.name === value);
+      if (selectedCountry && selectedState) {
+        const cityList = City.getCitiesOfState(
+          selectedCountry.isoCode,
+          selectedState.isoCode
+        );
+        setCities(cityList);
+      } else {
+        setCities([]);
+      }
+      setFormData({ ...formData, [name]: value, city: "" });
     }
 
     setFormErrors({ ...formErrors, [name]: "" });
   };
+
 
   console.log(responseMsg)
   console.log(formData)
@@ -260,9 +315,11 @@ export default function ApplicationForm() {
 
       const result = await res.json();
       if (result.status === "mail_sent") {
-        setResponseMsg("✅ Application submitted successfully!");
+        setResponseMsg("Application submitted successfully!");
         setFormData(initialState);
         setFormErrors({});
+        setFormErrors({});
+      setShowPopup(true);
       } else {
         setResponseMsg("❌ Submission failed. Please try again.");
       }
@@ -470,25 +527,6 @@ export default function ApplicationForm() {
             )}
           </div>
           <div>
-            <label className="text-sm font-tthoves-demibold mb-1 block">
-              CITY/TOWN
-            </label>
-            <input
-              type="text"
-              className={`w-full border ${formErrors.city
-                ? "border-red-500"
-                : "border-dashed border-[#A9B8D5] focus:outline-none"
-                } p-2`}
-              value={formData.city}
-              onChange={(e) =>
-                setFormData({ ...formData, city: e.target.value })
-              }
-            />
-            {formErrors.city && (
-              <p className="text-red-600 text-sm">{formErrors.city}</p>
-            )}
-          </div>
-          <div>
             <label className="block font-bold uppercase">State</label>
             <select
               name="state"
@@ -508,6 +546,29 @@ export default function ApplicationForm() {
               <p className="text-red-500 text-sm">{formErrors.state}</p>
             )}
           </div>
+          <div>
+              <label className="block font-tthoves-demibold uppercase">
+                City/Town
+              </label>
+              <select
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full border-dashed border-[#A9B8D5] border focus:outline-none p-2"
+                disabled={!cities.length}
+              >
+                <option value="">Select a city</option>
+                {cities.map((city) => (
+                  <option key={city.name} value={city.name}>
+                    {city.name}
+                  </option>
+                ))}
+              </select>
+              {formErrors.city && (
+                <p className="text-red-500 text-sm">{formErrors.city}</p>
+              )}
+            </div>
+          
         </div>
 
         {/* Row 4 */}
@@ -627,8 +688,54 @@ export default function ApplicationForm() {
 
         {/* Response Message */}
         {responseMsg && (
-          <p className="text-sm font-tthoves-demibold text-blue-600">{responseMsg}</p>
+          <p className="text-sm text-gray-500">{responseMsg}</p>
         )}
+        {/* Popup on submission */}
+        <AnimatePresence>
+            {showPopup && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4"
+              >
+                <motion.div
+                  ref={popupRef}
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative bg-[#0d2456] rounded-2xl p-8 max-w-4xl w-full mx-auto shadow-xl text-center"
+                >
+                  {/* Close button */}
+                  <button
+                    onClick={() => setShowPopup(false)}
+                    className="absolute top-0 right-4 text-white hover:text-gray-800 text-4xl font-bold"
+                    aria-label="Close"
+                  >
+                    &times;
+                  </button>
+                  <div className="flex justify-center items-center">
+                    <Image src="/Ayra-logo.png" width={100} height={100} />
+                  </div>
+                  {/* Thank You Message */}
+                  <h2 className="text-4xl pt-4 font-tthoves-demibold text-[#fff] mb-4">
+                    Thank you for contacting us!
+                  </h2>
+                  <p className="text-[#66A4F9] text-md">
+                    We’ve received your submission and will get back to you
+                    shortly.
+                  </p>
+                  <p className="text-[#66A4F9] text-md">
+                    Our team is reviewing your message with care.
+                  </p>
+                  <p className="text-[#66A4F9] text-md">
+                    Expect a response within the next 24–48 hours.
+                  </p>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
       </form>
     </div>
   );

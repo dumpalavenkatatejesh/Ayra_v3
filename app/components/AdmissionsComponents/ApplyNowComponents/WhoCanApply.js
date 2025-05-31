@@ -48,7 +48,7 @@ const WhoCanApply = () => {
                 <HoverButton5 text="Know more" />
               </div> */}
               <div>
-                <button className="relative text-white font-bold px-5 py-1 w-36 bg-[#66A4F9] transition-all cursor-pointer group hover:shadow-inner border-dashed">
+                <button className="relative text-white px-5 py-1 w-36 bg-[#66A4F9] transition-all cursor-pointer group hover:shadow-inner border-dashed">
                   Know more
                   <span className="absolute top-0 right-0 w-0 h-0 border-solid border-transparent group-hover:border-r-[15px] group-hover:border-b-[15px] transition-all duration-75 ease-out border-r-[#012461] border-b-[#3B76CB]"></span>
                 </button>

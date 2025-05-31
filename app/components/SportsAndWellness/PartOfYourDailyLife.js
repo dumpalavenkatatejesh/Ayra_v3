@@ -4,9 +4,9 @@ import React from "react";
 const PartOfYourDailyLife = () => {
   return (
     <div>
-      <div className="">
-        <div className="border-b-2 border-dashed border-[#D0E3FF] mb-10">
-          <div className="relative  lg:max-w-7xl mx-auto my-4">
+      <div className="border-b-2 border-dashed border-[#D0E3FF]">
+        <div className="lg:m-10">
+          <div className="relative mx-auto lg:my-4">
             {/* Background Image */}
 
             <div className="h-[500px] md:h-[600px] lg:h-[700px]">

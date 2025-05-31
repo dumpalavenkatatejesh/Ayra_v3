@@ -10,7 +10,7 @@ const YourApplication = () => {
         <Image
           src="/admissions/apply-now/your-app.png"
           alt="yourApplication"
-          width={500}
+          width={1000}
           height={300}
           className="p-5"
         />
