@@ -43,9 +43,9 @@ const menuItems = [
         submenu: [
             { name: 'Apply', slug: 'apply-now' },
             { name: 'Scholarships', slug: 'scholarships' },
-            { name: "Bachelor's Program", slug: 'bachelors-programs' },
-            { name: "Master's Program", slug: 'masters-programs' },
-            { name: 'Academics', slug: 'academics' },
+            { name: "Bachelor's Programs", slug: 'bachelors-programs' },
+            { name: "Master's Programs", slug: 'masters-programs' },
+            // { name: 'Academics', slug: 'academics' },
         ],
     },
     {
@@ -320,7 +320,7 @@ const NavBar = () => {
         <>
             {/* Static NavBar (always visible) */}
             <nav
-                className="bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] w-full"
+                className="bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] w-full border-b border-white/20"
                 style={{
                     position: 'static',
                     opacity: 1,
