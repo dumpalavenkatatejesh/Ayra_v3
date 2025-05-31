@@ -61,7 +61,7 @@ const WhatWeOffer = () => {
               {items.map((item, index) => (
                 <div key={index} className="px-4 py-4">
                   <h1
-                    className="text-base md:text-2xl text-[#2050B1] font-tthoves-bold"
+                    className="text-base md:text-2xl text-[#2050B1] font-semibold leading-snug"
                     dangerouslySetInnerHTML={{ __html: item.title }}
                   ></h1>
                   <p className="text-sm mt-2 font-tthoves-light">
