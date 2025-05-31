@@ -6,7 +6,7 @@ const ContactPanel = () => {
        <div className="w-full lg:w-2/3 bg-[#0D2556] text-white mt-10 lg:mt-10 lg:p-20 p-5 space-y-8 ">
         {/* Email Us */}
         <div>
-          <h3 className="text-3xl font-tthoves-demibold text-blue-300 mb-2">EMAIL US</h3>
+          <h3 className="text-3xl font-tthoves-demibold text-[#66A4F9] mb-2">EMAIL US</h3>
           <p className="text-md text-[#D7DEEB]">
             For inquiries, program details, or application guidance, drop us a
             message
@@ -17,7 +17,7 @@ const ContactPanel = () => {
 
         {/* Call Us */}
         <div>
-          <h3 className="text-3xl font-tthoves-demibold text-blue-300 mb-2">CALL US</h3>
+          <h3 className="text-3xl font-tthoves-demibold text-[#66A4F9] mb-2">CALL US</h3>
           <p className="text-md text-[#D7DEEB]">
             Prefer to speak with someone directly? Our admissions and support
             teams are happy to assist.
@@ -28,7 +28,7 @@ const ContactPanel = () => {
 
         {/* Visit Us */}
         <div>
-          <h3 className="text-3xl font-tthoves-demibold text-blue-300 mb-2">VISIT US</h3>
+          <h3 className="text-3xl font-tthoves-demibold text-[#66A4F9] mb-2">VISIT US</h3>
           <p className="text-md text-[#D7DEEB]">
             Come explore our campus, meet faculty and students, and experience
             AYRA in person. Schedule a visit or attend one of our open house

@@ -8,7 +8,7 @@ const WhatYouFind = () => {
         <Image
           src="/sports-and-wellness/what-youl-find-here.png"
           alt="yourApplication"
-          width={500}
+          width={800}
           height={300}
           className="p-5"
         />
