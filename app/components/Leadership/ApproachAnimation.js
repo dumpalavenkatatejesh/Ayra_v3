@@ -56,7 +56,6 @@ const ApproachAnimation = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Handle internal transitions (both directions)
   useEffect(() => {
     const handleWheel = (e) => {
       if (!insideRef.current) return
@@ -64,13 +63,10 @@ const ApproachAnimation = () => {
       const atFirst = currentIndexRef.current === 0
       const atLast = currentIndexRef.current === blocks.length - 1
 
-      // If at first or last, allow scroll out
       if ((e.deltaY < 0 && atFirst) || (e.deltaY > 0 && atLast)) return
 
-      // Prevent scrolling page
       e.preventDefault()
 
-      // Reset progress if scroll direction changes
       if (
         (scrollProgressRef.current > 0 && e.deltaY < 0) ||
         (scrollProgressRef.current < 0 && e.deltaY > 0)
@@ -118,11 +114,9 @@ const ApproachAnimation = () => {
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
         {/* Left Panel */}
-        <div className="w-full md:w-1/2 flex justify-center items-start md:items-center px-4 md:px-6 mt-8 md:mt-0 pt-14  md:pt-10 h-[30vh] md:h-screen md:sticky md:top-0 bg-white ">
-          <h2 className="text-7xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-start">
-            WHAT GUIDES OUR <br />
-            LEADERSHIP <br />
-            APPROACH
+        <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
+          <h2 className="text-5xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
+            WHAT GUIDES OUR <br /> LEADERSHIP <br /> APPROACH
           </h2>
         </div>
 
@@ -160,7 +154,7 @@ const ApproachAnimation = () => {
                   <img
                     src={block.src}
                     alt={block.alt}
-                    className="w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain"
+                    className="w-full max-w-[90%] max-h-[45vh] sm:max-h-[50vh] md:max-h-[80vh] object-contain mx-auto shadow-lg"
                   />
                 )}
               </div>
@@ -173,4 +167,3 @@ const ApproachAnimation = () => {
 }
 
 export default ApproachAnimation
-// dangerouslySetInnerHTML={{ __html: block.title }}
