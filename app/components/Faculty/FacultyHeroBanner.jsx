@@ -3,7 +3,19 @@ import React from "react"
 const FacultyHeroBanner = () => {
   return (
     <>
-      <div className="bg-[url('/faculty/mob-banner.png')] md:bg-[url('/faculty/faculty-banner.png')] h-[80vh] md:h-[90vh] bg-cover"></div>
+      <div className="bg-[url('/faculty/mob-banner.png')] md:bg-[url('/faculty/faculty-banner.png')] h-[80vh] md:h-[90vh] bg-cover hidden md:block"></div>
+
+      {/* Mobile Banner - shown on small screens */}
+      <div className="relative w-full h-[80vh] overflow-hidden block md:hidden">
+        <div className="">
+          <img
+            src="/faculty/mob-banner.png"
+            alt="EAT Mobile Banner"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
       <div className="container mx-auto py-5 md:pt-14 px-4 md:px-0">
         <h3 className="text-base md:text-xl text-black font-light w-full md:w-11/12 font-tthoves-extralight">
           At AYRA, our faculty are more than subject experts—they are inspiring
