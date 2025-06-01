@@ -1,14 +1,26 @@
 import React from "react"
-import CustomHoverButton from "../../../utils/CustomHoverButton"
 
 const SSBanner = () => {
   return (
-    <>
-      {/* Responsive Banner Section */}
-      <div className="relative h-[110vh] md:h-[90vh] w-full">
-        <div className="absolute inset-0 bg-cover bg-center md:bg-[url('/schools/sports-and-sciences/sport-sciences-banner.png')] bg-[url('/schools/sports-and-sciences/sport-sciences-mobile.png')] "></div>
+    <div className="relative w-full h-screen md:h-[90vh] overflow-hidden">
+      {/* Mobile Banner (shown on small screens) */}
+      <div className="block md:hidden">
+        <img
+          src="/schools/sports-and-sciences/sport-sciences-mobile.png"
+          alt="Sports and Sciences Mobile Banner"
+          className="w-full h-full object-cover"
+        />
       </div>
-    </>
+
+      {/* Desktop Banner (shown on medium and larger screens) */}
+      <div className="hidden md:block">
+        <img
+          src="/schools/sports-and-sciences/sport-sciences-banner.png"
+          alt="Sports and Sciences Desktop Banner"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
   )
 }
 

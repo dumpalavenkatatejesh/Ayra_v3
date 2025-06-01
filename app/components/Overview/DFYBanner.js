@@ -1,11 +1,26 @@
 import React from "react"
+
 const DFYBanner = () => {
   return (
-    <>
-      <div className="relative h-[100vh] md:h-[90vh] w-full ">
-        <div className="absolute inset-0 bg-cover  md:bg-[url('/overview/distinct_banner.png')] bg-[url('/overview/Mobile-Banner.png')]"></div>
+    <div className="relative w-full h-screen md:h-[90vh] overflow-hidden">
+      {/* Mobile Banner for screens < md */}
+      <div className="block md:hidden">
+        <img
+          src="/overview/Mobile-Banner.png"
+          alt="Mobile Banner"
+          className="w-full h-full object-cover"
+        />
       </div>
-    </>
+
+      {/* Desktop Banner for md and up */}
+      <div className="hidden md:block">
+        <img
+          src="/overview/distinct_banner.png"
+          alt="Desktop Banner"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
   )
 }
 

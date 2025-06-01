@@ -2,11 +2,25 @@ import React from "react"
 
 const EATBanner = () => {
   return (
-    <>
-      <div className="relative h-[110vh] md:h-[90vh] w-screen md:w-full">
-        <div className=" absolute inset-0 bg-cover  md:bg-[url('/schools/engg_and_tech/EngTechBanner.png')] bg-[url('/schools/engg_and_tech/Engg-Mobile-banner.png')]"></div>
+    <div className="relative w-full h-screen md:h-[90vh] overflow-hidden">
+      {/* Mobile Banner - shown on small screens */}
+      <div className="block md:hidden">
+        <img
+          src="/schools/engg_and_tech/Engg-Mobile-banner.png"
+          alt="EAT Mobile Banner"
+          className="w-full h-full object-cover"
+        />
       </div>
-    </>
+
+      {/* Desktop Banner - shown on medium and larger screens */}
+      <div className="hidden md:block">
+        <img
+          src="/schools/engg_and_tech/EngTechBanner.png"
+          alt="EAT Desktop Banner"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
   )
 }
 
