@@ -9,7 +9,7 @@ const index = () => {
     <>
       <LeadershipBanner />
       <AyraGuide />
-      <div className="border-t border-dashed border-[#D5DEEC]">
+      <div className=" mt-2 md:mt-0 border-t border-dashed border-[#D5DEEC]">
         <ApproachAnimation />
       </div>
       <Vision />

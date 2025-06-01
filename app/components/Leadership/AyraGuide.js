@@ -3,7 +3,7 @@ import React from "react"
 const AyraGuide = () => {
   return (
     <>
-      <div className="py-10 px-12 md:px-3 container mx-auto space-y-6">
+      <div className="md:py-10 py-3 px-12 md:px-3 container mx-auto space-y-6  ">
         <p className="text-base md:text-xl md:w-4/5 font-tthoves-light">
           AYRA is guided by a leadership team that believes education must be
           bold in vision, agile in execution, and deeply human in approach. Our
