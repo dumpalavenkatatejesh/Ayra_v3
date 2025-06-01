@@ -11,13 +11,13 @@ const WhatOurStudentsCanExpect = () => {
 
   return (
     <>
-      <div className="relative w-full h-[500px] md:h-[625px] container mx-auto mb-5">
+      <div className="relative w-full h-[500px] md:h-[600px] container mx-auto mb-5 hidden md:block">
         {/* Background Image */}
         <Image
           src="/faculty/what-our-student.png"
           alt="Design for Community & Comfort"
           fill
-          className="object-center"
+          className="object-cover object-center"
           priority
         />
 
@@ -41,6 +41,26 @@ const WhatOurStudentsCanExpect = () => {
           </div>
         </div>
       </div>
+
+      <div className="my-10 bg-[url('/faculty/what-our-student-mobile.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#002561]">
+        <div className="flex items-center px-4 pb-16">
+          <ul className="mt-2 md:mt-6 space-y-3 text-sm font-tthoves-extralight text-white">
+            {items.map((text, idx) => (
+              <li className="flex items-start gap-2" key={idx}>
+                <Image
+                  src="/rocket-icon.svg"
+                  width={20}
+                  height={16}
+                  className="w-5 h-4 rotate-45 mt-1.5"
+                  alt="rocket-logo"
+                />
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
       <hr className="border-t border-dashed border-gray-300" />
     </>
   )
