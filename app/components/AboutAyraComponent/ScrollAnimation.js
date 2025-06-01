@@ -57,44 +57,71 @@ const TextSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle internal transitions (both directions)
+  // Handle desktop wheel and mobile touch
   useEffect(() => {
+    const threshold = 100;
+    let touchStartY = 0;
+
     const handleWheel = (e) => {
       if (!insideRef.current) return;
 
       const atFirst = currentIndexRef.current === 0;
       const atLast = currentIndexRef.current === blocks.length - 1;
 
-      // If at first or last, allow scroll out
+      // Prevent scrolling past bounds
       if ((e.deltaY < 0 && atFirst) || (e.deltaY > 0 && atLast)) return;
 
-      // Prevent scrolling page
       e.preventDefault();
 
-      // Reset progress if scroll direction changes
-      if (
-        (scrollProgressRef.current > 0 && e.deltaY < 0) ||
-        (scrollProgressRef.current < 0 && e.deltaY > 0)
-      ) {
-        scrollProgressRef.current = 0;
-      }
-
-      scrollProgressRef.current += e.deltaY;
-
-      const threshold = 100;
-
-      if (Math.abs(scrollProgressRef.current) >= threshold && !isAnimatingRef.current) {
+      // Only change slide if not currently animating
+      if (!isAnimatingRef.current) {
         isAnimatingRef.current = true;
 
-        let nextIndex =
-          scrollProgressRef.current > 0
-            ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
-            : Math.max(currentIndexRef.current - 1, 0);
+        // Determine direction based on scroll 
+        const nextIndex = e.deltaY > 0
+          ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
+          : Math.max(currentIndexRef.current - 1, 0);
 
         setCurrentSlide(nextIndex);
         currentIndexRef.current = nextIndex;
-        scrollProgressRef.current = 0;
 
+        // Reset animation lock after transition
+        setTimeout(() => {
+          isAnimatingRef.current = false;
+        }, 700);
+      }
+    };
+
+    const handleTouchStart = (e) => {
+      if (!insideRef.current) return;
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!insideRef.current) return;
+
+      const touchEndY = e.touches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+
+      const atFirst = currentIndexRef.current === 0;
+      const atLast = currentIndexRef.current === blocks.length - 1;
+
+      if ((deltaY < 0 && atFirst) || (deltaY > 0 && atLast)) return;
+
+      e.preventDefault();
+
+      // Only change slide if the touch movement is significant and not currently animating
+      if (Math.abs(deltaY) >= 50 && !isAnimatingRef.current) {
+        isAnimatingRef.current = true;
+
+        const nextIndex = deltaY > 0
+          ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
+          : Math.max(currentIndexRef.current - 1, 0);
+
+        setCurrentSlide(nextIndex);
+        currentIndexRef.current = nextIndex;
+
+        // Reset animation lock after transition
         setTimeout(() => {
           isAnimatingRef.current = false;
         }, 700);
@@ -102,7 +129,14 @@ const TextSection = () => {
     };
 
     window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
   }, [blocks.length]);
 
   return (
@@ -112,7 +146,7 @@ const TextSection = () => {
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
         {/* Left Panel */}
-        <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 h-[100vh] bg-white">
+        <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
           <h2 className="text-5xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
             What Sets Us
             <br />
@@ -121,23 +155,27 @@ const TextSection = () => {
         </div>
 
         {/* Right Panel */}
-        <div className="w-full md:w-1/2 h-[100vh] overflow-hidden relative flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-[50vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
           <div className="relative w-full h-full">
             {blocks.map((block, index) => (
               <div
                 key={index}
                 ref={(el) => (blocksRef.current[index] = el)}
                 className={`absolute top-0 left-0 w-full h-full flex justify-center items-center px-4 md:px-12 transition-all duration-700 ease-out
-                  ${index === currentSlide ? 'opacity-100 translate-x-0' :
-                    index < currentSlide ? 'opacity-0 -translate-x-full' : 'opacity-0 translate-x-full'
+                  ${index === currentSlide
+                    ? 'opacity-100 translate-x-0'
+                    : index < currentSlide
+                      ? 'opacity-0 -translate-x-full'
+                      : 'opacity-0 translate-x-full'
                   }`}
                 style={{
                   transitionProperty: 'opacity, transform',
-                  zIndex: index === currentSlide ? 1 : 0
+                  zIndex: index === currentSlide ? 1 : 0,
                 }}
               >
                 {block.type === 'text' ? (
-                  <div className="max-w-xl px-4 md:px-0 text-center md:text-left">
+                  <div className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}>
                     <h3 className="text-lg sm:text-xl md:text-2xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
                       {block.title}
                     </h3>
@@ -147,7 +185,8 @@ const TextSection = () => {
                   <img
                     src={block.src}
                     alt={block.alt}
-                    className="w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain"
+                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
                   />
                 )}
               </div>

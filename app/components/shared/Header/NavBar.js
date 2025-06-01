@@ -27,7 +27,7 @@ const menuItems = [
             { name: 'International Centre', slug: 'international-centre' },
             { name: 'Placements & Internship', slug: 'placements-internship' },
             {
-                name: 'Focus Centre',
+                name: 'Focus Centres',
                 slug: 'focus-centre',
                 submenu: [
                     { name: 'Sports & Wellness', slug: 'sports-and-wellness-centre' },
@@ -97,7 +97,7 @@ const generateHref = (item, parent) => {
     //     if (item.slug === 'masters-programs') return '/admissions/masters-programs'
     //     return `/admissions/${item.slug}`
     // }
-    if (parent === 'Focus Centre') return `/focus-centre/${item.slug}`
+    if (parent === 'Focus Centres') return `/focus-centre/${item.slug}`
     return `/${item.slug}`
 }
 

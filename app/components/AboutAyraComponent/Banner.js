@@ -9,7 +9,7 @@ const Banner = () => {
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 640);
-        }; 
+        };
 
         // Initial check
         handleResize();
@@ -24,7 +24,7 @@ const Banner = () => {
         : '/admissions/about/new_about_banner.png';
 
     return (
-        <div className="relative w-full h-[90vh] bg-[#2050B2]">
+        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
             <Image
                 src={imageSrc}
                 alt="Bachelor Program Banner"

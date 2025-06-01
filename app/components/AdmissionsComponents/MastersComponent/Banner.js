@@ -23,7 +23,8 @@ const Banner = () => {
         : '/admissions/masters_programs/masters_banner.png';
 
     return (
-        <div className="relative w-full h-[90vh]">
+        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
+
             <Image
                 src={imageSrc}
                 alt="Masters Program Banner"

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { HoverButton5 } from '@/app/utils/HoverButton';
+import { HoverButton5 } from '../../utils/HoverButton';
 
 const AyraIsForTheStudent = () => {
     const slides = [
