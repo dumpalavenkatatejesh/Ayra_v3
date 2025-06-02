@@ -1,22 +1,46 @@
+import Image from "next/image"
 import React from "react"
+import Breadcrumbs from "../../utils/Breadcrumbs"
 
 const FacultyHeroBanner = () => {
   return (
     <>
-      <div className="bg-[url('/faculty/mob-banner.png')] md:bg-[url('/faculty/faculty-banner.png')] h-[80vh] md:h-[90vh] bg-cover hidden md:block"></div>
+      <div className="relative w-full bg-[#2050B2]">
+        {/* Desktop Image */}
+        <div className="hidden md:block w-full">
+          <Image
+            src="/faculty/faculty-banner.png"
+            alt="Faculty"
+            width={1920}
+            height={1080}
+            className="object-cover object-center w-full h-auto"
+            priority
+          />
+        </div>
 
-      {/* Mobile Banner - shown on small screens */}
-      <div className="relative w-full h-[85vh] overflow-hidden block md:hidden">
-        <div className="">
-          <img
+        {/* Mobile Image */}
+        <div className="block md:hidden w-full">
+          <Image
             src="/faculty/mob-banner.png"
-            alt="EAT Mobile Banner"
-            className="w-full h-full object-cover"
+            alt="Faculty"
+            width={800}
+            height={1000} // adjust as per your actual image ratio
+            className="object-cover object-center w-full h-auto"
+            priority
           />
         </div>
       </div>
 
-      <div className="container mx-auto py-5 md:pt-14 px-4 md:px-0">
+      <div className="container mx-auto md:px-0 px-4">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Faculty", href: "/about-us/faculty" },
+          ]}
+        />
+      </div>
+
+      <div className="container mx-auto py-5 md:pt-8 px-4 md:px-0">
         <h3 className="text-base md:text-xl text-black font-light w-full md:w-11/12 font-tthoves-extralight">
           At AYRA, our faculty are more than subject experts—they are inspiring
           coaches, dedicated to helping each student discover and unfold their

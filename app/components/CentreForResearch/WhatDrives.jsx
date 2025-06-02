@@ -10,13 +10,13 @@ const WhatDrives = () => {
   ]
 
   return (
-    <div className="pt-0 md:py-10">
+    <div className="pt-5 md:py-10">
       <div className="container mx-auto px-4 md:px-0">
-        <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#2050B1] mb-6">
+        <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#2050B1]">
           WHAT DRIVES RESEARCH <br className="hidden md:block" /> AT AYRA?
         </h1>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 py-5">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 py-5 md:mt-5">
           {/* Image Left */}
           <div>
             <Image

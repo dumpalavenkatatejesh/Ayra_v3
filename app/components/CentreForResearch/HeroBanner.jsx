@@ -1,21 +1,46 @@
+import Image from "next/image"
 import React from "react"
+import Breadcrumbs from "../../utils/Breadcrumbs"
 
 const HeroBanner = () => {
   return (
     <>
-      <div className="relative h-[110vh] md:h-[90vh] w-screen md:w-full hidden md:block">
-        <div className="absolute inset-0 bg-cover bg-[url('/centre-for-research/mob-banner.png')] md:bg-[url('/centre-for-research/banner.png')]"></div>
-      </div>
-
-      {/* Mobile Banner - shown on small screens */}
-      <div className="relative w-full h-screen overflow-hidden block md:hidden">
-        <div className="">
-          <img
-            src="/centre-for-research/mob-banner.png"
-            alt="EAT Mobile Banner"
-            className="w-full h-full object-cover"
+      <div className="relative w-full bg-[#2050B2]">
+        {/* Desktop Image */}
+        <div className="hidden md:block w-full">
+          <Image
+            src="/centre-for-research/banner.png"
+            alt="Centre For Research"
+            width={1920}
+            height={1080}
+            className="object-cover object-center w-full h-auto"
+            priority
           />
         </div>
+
+        {/* Mobile Image */}
+        <div className="block md:hidden w-full">
+          <Image
+            src="/centre-for-research/mob-banner.png"
+            alt="Centre For Research"
+            width={800}
+            height={1000} // adjust as per your actual image ratio
+            className="object-cover object-center w-full h-auto"
+            priority
+          />
+        </div>
+      </div>
+
+      <div className="container mx-auto md:px-0 px-4">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            {
+              label: "Centre For Research",
+              href: "/centres-for-excellence/centre-for-research",
+            },
+          ]}
+        />
       </div>
     </>
   )
