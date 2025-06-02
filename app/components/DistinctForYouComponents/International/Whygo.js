@@ -49,7 +49,7 @@ const Whygo = () => {
         </div>
         </div>
 
-        <div className="p-5">
+        <div className="">
           <div className="mb-10">
             <div className="relative w-full container mx-auto py-4">
               {/* Background Image */}
@@ -67,7 +67,7 @@ const Whygo = () => {
                   src="/international/int-faculty-mob.png"
                   alt="Who Can Apply Background"
                   fill
-                  className="lg:hidden p-5 w-full h-full"
+                  className="lg:hidden object-cover"
                   priority
                 />
               </div>
