@@ -147,9 +147,8 @@ const RenderSubmenu = ({
           {item.name}
           {item.submenu?.length > 0 && (
             <span
-              className={`transform transition-transform duration-200 ${
-                activeSubmenu === key ? "rotate-180" : ""
-              }`}
+              className={`transform transition-transform duration-200 ${activeSubmenu === key ? "rotate-180" : ""
+                }`}
             >
               <MdKeyboardArrowRight
                 className={`${activeSubmenu === key ? "rotate-90" : ""}`}
@@ -316,7 +315,7 @@ const NavBarContent = ({
             setIsMobileMenuOpen(!isMobileMenuOpen)
             if (!isMobileMenuOpen) setActiveSubmenu(null)
           }}
-          className="text-white p-2 z-50"
+          className="text-white p-2 z-0"
           aria-label="Toggle mobile menu"
         >
           {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -424,13 +423,27 @@ const NavBarContent = ({
           </ul>
         </div>
         <div
-          className="w-[25%] bg-black bg-opacity-50 cursor-pointer"
+          className="w-[25%] bg-black bg-opacity-50 cursor-pointer relative"
           onClick={() => {
             setIsMobileMenuOpen(false)
             setActiveSubmenu(null)
             setActiveNestedSubmenu(null)
           }}
-        />
+        >
+          {/* Close button on overlay */}
+          <button
+            className="absolute top-4 right-4 text-white bg-black z-50 text-4xl lg:hidden"
+            aria-label="Close menu"
+            onClick={e => {
+              e.stopPropagation();
+              setIsMobileMenuOpen(false)
+              setActiveSubmenu(null)
+              setActiveNestedSubmenu(null)
+            }}
+          >
+            <FaTimes />
+          </button>
+        </div>
       </div>
     )}
   </>
@@ -500,6 +513,45 @@ const NavBar = () => {
     }
     prevIsScrolled.current = isScrolled
   }, [isScrolled])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let scrollY = 0;
+    if (isMobileMenuOpen && isMobile) {
+      scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.overflow = "hidden";
+      document.body.style.width = "100%";
+      document.body.style.height = "100vh";
+      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.height = "100%";
+      return () => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflow = "";
+        document.body.style.width = "";
+        document.body.style.height = "";
+        document.documentElement.style.overflow = "";
+        document.documentElement.style.height = "";
+        window.scrollTo(0, scrollY);
+      };
+    } else {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.overflow = "";
+      document.body.style.width = "";
+      document.body.style.height = "";
+      document.documentElement.style.overflow = "";
+      document.documentElement.style.height = "";
+    }
+  }, [isMobileMenuOpen, isMobile]);
 
   return (
     <>
