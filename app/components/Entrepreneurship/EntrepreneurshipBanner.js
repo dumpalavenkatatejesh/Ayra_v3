@@ -9,8 +9,8 @@ const Banner = () => {
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
-            src="/entrepreneurship/entrepreneurship.png "
-            alt="Bachelor Program Desktop Banner"
+            src="/entrepreneurship/Banner.png "
+            alt="Center for Entrepreneurship Desktop Banner"
             width={1920}
             height={1080}
             className="object-cover object-center w-full h-auto"
@@ -21,8 +21,8 @@ const Banner = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <Image
-            src="/entrepreneurship/Mobile-Banner.png "
-            alt="Bachelor Program Mobile Banner"
+            src="/entrepreneurship/Banner-Mobile.png "
+            alt="Center for Entrepreneurship Mobile Banner"
             width={800}
             height={1000}
             className="object-cover object-center w-full h-auto"
@@ -30,7 +30,7 @@ const Banner = () => {
           />
         </div>
       </div>
-      
+
       <div className="container mx-auto md:px-0 px-4">
         <Breadcrumbs
           items={[

@@ -6,12 +6,11 @@ const SSBanner = () => {
     <>
       {/* Sports Sciences Banner */}
       <div className="relative w-full bg-[#2050B2]">
-
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
             src="/schools/sports-and-sciences/sport-sciences-banner.png"
-            alt="Bachelor Program Desktop Banner"
+            alt="Sports Sciences Desktop Banner"
             width={1920}
             height={1080}
             className="object-cover object-center w-full h-auto"
@@ -23,7 +22,7 @@ const SSBanner = () => {
         <div className="block md:hidden w-full">
           <Image
             src="/schools/sports-and-sciences/sport-sciences-mobile.png"
-            alt="Bachelor Program Mobile Banner"
+            alt="Sports Sciences Mobile Banner"
             width={800}
             height={1000}
             className="object-cover object-center w-full h-auto"
@@ -46,4 +45,3 @@ const SSBanner = () => {
 }
 
 export default SSBanner
-

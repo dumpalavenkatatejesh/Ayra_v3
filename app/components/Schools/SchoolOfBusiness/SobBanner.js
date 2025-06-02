@@ -6,12 +6,11 @@ const SobBanner = () => {
     <>
       {/* Business Banner */}
       <div className="relative w-full bg-[#2050B2]">
-
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
             src="/schools/school-of-business/school-of-business.png"
-            alt="Bachelor Program Desktop Banner"
+            alt="Business Desktop Banner"
             width={1920}
             height={1080}
             className="object-cover object-center w-full h-auto"
@@ -23,7 +22,7 @@ const SobBanner = () => {
         <div className="block md:hidden w-full">
           <Image
             src="/schools/school-of-business/business-mobile.png"
-            alt="Bachelor Program Mobile Banner"
+            alt="Business Mobile Banner"
             width={800}
             height={1000}
             className="object-cover object-center w-full h-auto"

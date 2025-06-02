@@ -9,7 +9,7 @@ const Banner = () => {
         <div className="hidden md:block w-full">
           <Image
             src="/overview/distinct_banner.png"
-            alt="Bachelor Program Desktop Banner"
+            alt="Overview Desktop Banner"
             width={1920}
             height={1080}
             className="object-cover object-center w-full h-auto"
@@ -21,7 +21,7 @@ const Banner = () => {
         <div className="block md:hidden w-full">
           <Image
             src="/overview/Mobile-Banner.png"
-            alt="Bachelor Program Mobile Banner"
+            alt="Overview Mobile Banner"
             width={800}
             height={1000}
             className="object-cover object-center w-full h-auto"

@@ -14,7 +14,7 @@ const EntrepreneurialThinkers = () => {
         {/* Background Image */}
         <Image
           src="/entrepreneurship/img2.png"
-          alt="entrepreneurship"
+          alt="Center for Entrepreneurship Desktop Banner"
           fill
           className="object-cover object-center"
           priority

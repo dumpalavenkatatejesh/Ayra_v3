@@ -10,7 +10,7 @@ const CTLOffer = () => {
         <div className="md:w-[40%] px-4 md:px-0">
           <Image
             src="/teaching-and-learning/head_line.png"
-            alt="Head Line"
+            alt="Center for Teaching and Learning"
             width={500}
             height={500}
             priority
@@ -21,7 +21,7 @@ const CTLOffer = () => {
         <div className=" my-8">
           <Image
             src="/teaching-and-learning/CTL-image.png"
-            alt="Teaching and Learning"
+            alt="Center for Teaching and Learning"
             width={1920}
             height={600}
             className="w-full h-full"

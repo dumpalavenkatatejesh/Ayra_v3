@@ -10,7 +10,7 @@ const CTLBanner = () => {
         <div className="hidden md:block w-full">
           <Image
             src="/teaching-and-learning/CTL-Banner.png"
-            alt="Bachelor Program Desktop Banner"
+            alt="Center for Teaching & Learning Desktop Banner"
             width={1920}
             height={1080}
             className="object-cover object-center w-full h-auto"
@@ -22,7 +22,7 @@ const CTLBanner = () => {
         <div className="block md:hidden w-full">
           <Image
             src="/teaching-and-learning/Mobile-Banner.png"
-            alt="Bachelor Program Mobile Banner"
+            alt="Center for Teaching & Learning Mobile Banner"
             width={800}
             height={1000}
             className="object-cover object-center w-full h-auto"

@@ -9,7 +9,7 @@ const StudentLife = () => {
       <div className="w-full md:w-1/2">
         <Image
           src="/overview/img2.png"
-          alt="Discover Your Campus"
+          alt="Student Life"
           width={600}
           height={500}
           className="w-full h-auto object-contain"

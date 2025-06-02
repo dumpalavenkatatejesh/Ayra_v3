@@ -6,12 +6,11 @@ const HospitalityBanner = () => {
     <>
       {/* Hospitality Banner */}
       <div className="relative w-full bg-[#2050B2]">
-
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
             src="/schools/hospitality/HospitalityBanner.png"
-            alt="Bachelor Program Desktop Banner"
+            alt="Hospitality Desktop Banner"
             width={1920}
             height={1080}
             className="object-cover object-center w-full h-auto"
@@ -23,7 +22,7 @@ const HospitalityBanner = () => {
         <div className="block md:hidden w-full">
           <Image
             src="/schools/hospitality/MobileBanner.png"
-            alt="Bachelor Program Mobile Banner"
+            alt="Hospitality Mobile Banner"
             width={800}
             height={1000}
             className="object-cover object-center w-full h-auto"
