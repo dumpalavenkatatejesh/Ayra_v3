@@ -6,7 +6,7 @@ import {
   RiArrowLeftSLine,
   RiArrowRightSLine,
 } from "react-icons/ri"
-import { sectionsData } from "@/app/utils/FlipData"
+import { sectionsData } from "../../../utils/FlipData"
 
 const FoldOnHoverRoll = () => {
   const [hovered, setHovered] = useState(false)
