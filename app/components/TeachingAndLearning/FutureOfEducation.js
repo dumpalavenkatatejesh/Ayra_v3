@@ -32,7 +32,7 @@ const FutureOfEducation = () => {
         <div className="mt-4 ">
           <Image
             src="/teaching-and-learning/img1.png"
-            alt="Teaching and Learning"
+            alt="Center for Teaching and Learning"
             width={1200}
             height={600}
             className="w-full"

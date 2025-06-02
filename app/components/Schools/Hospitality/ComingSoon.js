@@ -8,7 +8,7 @@ const ComingSoon = () => {
         <div className="flex justify-center items-center">
           <Image
             src="/schools/hospitality/coming_soon.png"
-            alt="School of Business Banner"
+            alt="Coming Soon"
             width={1200}
             height={400}
             className="w-full max-w-[1200px] h-auto"

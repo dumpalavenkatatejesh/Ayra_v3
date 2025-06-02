@@ -14,7 +14,7 @@ const CTL = () => {
         {/* Background image */}
         <Image
           src="/teaching-and-learning/CTL.png"
-          alt="Discover Your Campus"
+          alt="Center for Teaching and Learning"
           fill
           className="object-cover object-center"
           priority

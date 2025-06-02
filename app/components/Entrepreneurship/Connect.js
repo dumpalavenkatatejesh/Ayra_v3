@@ -7,7 +7,7 @@ const Connect = () => {
         <div className="px-4 md:px-0 py-10 md:py-14 flex justify-center items-center border-b border-dashed border-gray-300 ">
           <Image
             src="/entrepreneurship/connect.png"
-            alt="What We Offer"
+            alt="Connect Collaborate Create"
             width={1200}
             height={800}
             priority

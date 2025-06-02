@@ -44,7 +44,7 @@ const DiscoverYourCampus = () => {
         <div className="md:w-1/2  pt-4 md:pt-0 pb-4 md:pb-0">
           <Image
             src="/overview/img1.png"
-            alt="Campus Visual"
+            alt="Discover Your Campus"
             width={700}
             height={1000}
             priority

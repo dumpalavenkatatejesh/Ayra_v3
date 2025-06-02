@@ -9,7 +9,7 @@ const Action = () => {
           <div className="flex justify-center w-full  my-10 px-4 md:px-0">
             <Image
               src="/leadership/LIA.png"
-              alt="Discover Your Campus"
+              alt="Leadership In Action"
               width={650}
               height={400}
               priority
