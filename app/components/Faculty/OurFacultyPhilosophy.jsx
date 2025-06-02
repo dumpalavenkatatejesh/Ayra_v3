@@ -16,8 +16,8 @@ const TextSection = () => {
   const blocks = [
     {
       type: "text",
-      title: "THE OPEN CANVAS PHILOSOPHY",
-      text: "At AYRA, students co-create their journey. Whether they want to move faster or slower, specialise or stay broad, we support them in building an education that reflects who they are and who they want to become.",
+      title: "Learning as a Partnership",
+      text: "Teaching at Ayra is grounded in dialogue, co-creation, and mentorship. Faculty are collaborators in your learning journey, not just instructors.",
     },
     {
       type: "image",
@@ -26,8 +26,8 @@ const TextSection = () => {
     },
     {
       type: "text",
-      title: "Designed Around You",
-      text: "From flexible academic structures to a diverse ecosystem of learning and mentorship, every aspect of Ayra has been built around the evolving needs of young people today.",
+      title: "Bridging Theory and Practice",
+      text: "From corporate boardrooms to field research, our faculty bring diverse experiences into the classroom, making learning dynamic, applied, and relevant.",
     },
     {
       type: "image",
@@ -36,8 +36,18 @@ const TextSection = () => {
     },
     {
       type: "text",
-      title: "Future-Ready Curriculum",
-      text: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought.",
+      title: "Interdisciplinary by Default",
+      text: "You’ll find business professors collaborating with tech faculty, and artists working with data scientists. Because at Ayra, problems don’t come in silos—so neither should learning.",
+    },
+    {
+      type: "image",
+      src: "/admissions/masters_programs/what_set_us_1.png",
+      alt: "Designed Around You",
+    },
+    {
+      type: "text",
+      title: "Always Evolving",
+      text: "Our faculty are lifelong learners themselves. They continuously evolve their teaching practice to respond to new knowledge, technologies, and student needs.",
     },
   ]
 
@@ -57,47 +67,73 @@ const TextSection = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Handle internal transitions (both directions)
+  // Handle desktop wheel and mobile touch
   useEffect(() => {
+    const threshold = 100
+    let touchStartY = 0
+
     const handleWheel = (e) => {
       if (!insideRef.current) return
 
       const atFirst = currentIndexRef.current === 0
       const atLast = currentIndexRef.current === blocks.length - 1
 
-      // If at first or last, allow scroll out
+      // Prevent scrolling past bounds
       if ((e.deltaY < 0 && atFirst) || (e.deltaY > 0 && atLast)) return
 
-      // Prevent scrolling page
       e.preventDefault()
 
-      // Reset progress if scroll direction changes
-      if (
-        (scrollProgressRef.current > 0 && e.deltaY < 0) ||
-        (scrollProgressRef.current < 0 && e.deltaY > 0)
-      ) {
-        scrollProgressRef.current = 0
-      }
-
-      scrollProgressRef.current += e.deltaY
-
-      const threshold = 100
-
-      if (
-        Math.abs(scrollProgressRef.current) >= threshold &&
-        !isAnimatingRef.current
-      ) {
+      // Only change slide if not currently animating
+      if (!isAnimatingRef.current) {
         isAnimatingRef.current = true
 
-        let nextIndex =
-          scrollProgressRef.current > 0
+        // Determine direction based on scroll
+        const nextIndex =
+          e.deltaY > 0
             ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
             : Math.max(currentIndexRef.current - 1, 0)
 
         setCurrentSlide(nextIndex)
         currentIndexRef.current = nextIndex
-        scrollProgressRef.current = 0
 
+        // Reset animation lock after transition
+        setTimeout(() => {
+          isAnimatingRef.current = false
+        }, 700)
+      }
+    }
+
+    const handleTouchStart = (e) => {
+      if (!insideRef.current) return
+      touchStartY = e.touches[0].clientY
+    }
+
+    const handleTouchMove = (e) => {
+      if (!insideRef.current) return
+
+      const touchEndY = e.touches[0].clientY
+      const deltaY = touchStartY - touchEndY
+
+      const atFirst = currentIndexRef.current === 0
+      const atLast = currentIndexRef.current === blocks.length - 1
+
+      if ((deltaY < 0 && atFirst) || (deltaY > 0 && atLast)) return
+
+      e.preventDefault()
+
+      // Only change slide if the touch movement is significant and not currently animating
+      if (Math.abs(deltaY) >= 50 && !isAnimatingRef.current) {
+        isAnimatingRef.current = true
+
+        const nextIndex =
+          deltaY > 0
+            ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
+            : Math.max(currentIndexRef.current - 1, 0)
+
+        setCurrentSlide(nextIndex)
+        currentIndexRef.current = nextIndex
+
+        // Reset animation lock after transition
         setTimeout(() => {
           isAnimatingRef.current = false
         }, 700)
@@ -105,7 +141,14 @@ const TextSection = () => {
     }
 
     window.addEventListener("wheel", handleWheel, { passive: false })
-    return () => window.removeEventListener("wheel", handleWheel)
+    window.addEventListener("touchstart", handleTouchStart, { passive: false })
+    window.addEventListener("touchmove", handleTouchMove, { passive: false })
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel)
+      window.removeEventListener("touchstart", handleTouchStart)
+      window.removeEventListener("touchmove", handleTouchMove)
+    }
   }, [blocks.length])
 
   return (
@@ -119,15 +162,15 @@ const TextSection = () => {
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
         {/* Left Panel */}
-        <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-6 md:h-screen md:sticky md:top-0 bg-white">
-          <h1 className="text-4xl md:text-8xl font-schabo text-[#2050B1] tracking-wide text-center md:text-left leading-tight">
+        <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
+          <h2 className="text-6xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
             OUR FACULTY <br className="hidden md:block" /> PHILOSOPHY
-          </h1>
+          </h2>
         </div>
 
         {/* Right Panel */}
-        <div className="w-full md:w-1/2 h-[50vh] md:h-screen overflow-hidden relative">
-          <div className="h-full w-full">
+        <div className="w-full md:w-1/2 h-[75vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
+          <div className="relative w-full h-full">
             {blocks.map((block, index) => (
               <div
                 key={index}
@@ -146,11 +189,15 @@ const TextSection = () => {
                 }}
               >
                 {block.type === "text" ? (
-                  <div className="max-w-xl px-4 md:px-0">
-                    <h3 className="text-lg sm:text-xl md:text-4xl font-ebold text-[#2050B1] font-tthoves-medium mb-2 md:mb-4 uppercase">
+                  <div
+                    className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <h3 className="text-lg sm:text-xl md:text-2xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
                       {block.title}
                     </h3>
-                    <p className="text-sm sm:text-base md:text-2xl text-gray-700 font-tthoves-light">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-700">
                       {block.text}
                     </p>
                   </div>
@@ -158,7 +205,9 @@ const TextSection = () => {
                   <img
                     src={block.src}
                     alt={block.alt}
-                    className="w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0"
+                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
                   />
                 )}
               </div>
