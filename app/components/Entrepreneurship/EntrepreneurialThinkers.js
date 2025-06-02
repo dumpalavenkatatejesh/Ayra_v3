@@ -9,8 +9,9 @@ const EntrepreneurialThinkers = () => {
 
   return (
     <>
+      {/* Desktop & Tablet */}
       <div className="relative w-full h-[500px] md:h-[600px] container mx-auto mb-5 hidden md:block">
-        {/* Background image */}
+        {/* Background Image */}
         <Image
           src="/entrepreneurship/img2.png"
           alt="entrepreneurship"
@@ -19,10 +20,10 @@ const EntrepreneurialThinkers = () => {
           priority
         />
 
-        {/* Overlay text */}
+        {/* Overlay Text */}
         <div className="absolute bottom-28 left-4 right-4 md:right-[60px] md:left-auto flex justify-end items-center">
           <div className="text-white w-full md:max-w-[45%] p-4 md:p-0 rounded-md">
-            <ul className="mt-2 md:mt-6 space-y-3 text-sm md:text-base font-tthoves-extralight">
+            <ul className="space-y-3 text-sm md:text-base font-tthoves-extralight leading-relaxed">
               {paragraphs.map((text, idx) => (
                 <li className="flex items-start gap-2" key={idx}>
                   <span>{text}</span>
@@ -33,10 +34,10 @@ const EntrepreneurialThinkers = () => {
         </div>
       </div>
 
-      {/* Mobile  */}
-      <div className="my-10 bg-[url('/entrepreneurship/entrepreneurship-mobile.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#002561]">
-        <div className="flex items-center px-4 pb-10  ">
-          <ul className="mt-2 md:mt-10 space-y-5 text-sm font-tthoves-extralight text-white">
+      {/* Mobile */}
+      <div className="my-10 bg-[#002561] bg-[url('/entrepreneurship/entrepreneurship-mobile.png')] bg-cover bg-center h-[100dvh] flex items-end md:hidden">
+        <div className="px-4 pb-10 w-full">
+          <ul className="space-y-5 text-sm font-tthoves-extralight text-white leading-relaxed">
             {paragraphs.map((text, idx) => (
               <li className="flex items-start gap-2" key={idx}>
                 <span>{text}</span>
@@ -50,5 +51,3 @@ const EntrepreneurialThinkers = () => {
 }
 
 export default EntrepreneurialThinkers
-
-// /entrepreneurship/entrepreneurship-mobile.png

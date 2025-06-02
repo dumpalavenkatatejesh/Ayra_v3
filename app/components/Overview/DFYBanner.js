@@ -1,27 +1,44 @@
+import Image from "next/image"
 import React from "react"
-
-const DFYBanner = () => {
+import Breadcrumbs from "../../utils/Breadcrumbs"
+const Banner = () => {
   return (
-    <div className="relative w-full h-screen md:h-[90vh] overflow-hidden">
-      {/* Mobile Banner for screens < md */}
-      <div className="block md:hidden">
-        <img
-          src="/overview/Mobile-Banner.png"
-          alt="Mobile Banner"
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <>
+      <div className="relative w-full bg-[#2050B2]">
+        {/* Desktop Image */}
+        <div className="hidden md:block w-full">
+          <Image
+            src="/overview/distinct_banner.png"
+            alt="Bachelor Program Desktop Banner"
+            width={1920}
+            height={1080}
+            className="object-cover object-center w-full h-auto"
+            priority
+          />
+        </div>
 
-      {/* Desktop Banner for md and up */}
-      <div className="hidden md:block">
-        <img
-          src="/overview/distinct_banner.png"
-          alt="Desktop Banner"
-          className="w-full h-full object-cover"
+        {/* Mobile Image */}
+        <div className="block md:hidden w-full">
+          <Image
+            src="/overview/Mobile-Banner.png"
+            alt="Bachelor Program Mobile Banner"
+            width={800}
+            height={1000}
+            className="object-cover object-center w-full h-auto"
+            priority
+          />
+        </div>
+      </div>
+      <div className="container mx-auto md:px-0 px-4">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Overview", href: "/distinct-for-you/overview" },
+          ]}
         />
       </div>
-    </div>
+    </>
   )
 }
 
-export default DFYBanner
+export default Banner

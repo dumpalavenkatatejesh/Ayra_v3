@@ -18,11 +18,11 @@ const CTLOffer = () => {
         </div>
 
         {/* Main Image */}
-        <div className="md:h-[300px] my-8 ">
+        <div className=" my-8">
           <Image
-            src="/teaching-and-learning/img2.png"
+            src="/teaching-and-learning/CTL-image.png"
             alt="Teaching and Learning"
-            width={1200}
+            width={1920}
             height={600}
             className="w-full h-full"
             priority

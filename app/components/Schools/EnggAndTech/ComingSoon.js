@@ -3,15 +3,15 @@ import Image from "next/image"
 const ComingSoon = () => {
   return (
     <>
+      {/* Coming Soon */}
       <div className="container mx-auto ">
-        {/* Coming soon image below banner  MobileBanner.png */}
-        <div className="flex justify-center items-center  md:px-3 md:pb-4 pb-5">
+        <div className="flex justify-center items-center">
           <Image
             src="/schools/engg_and_tech/coming_soon.png"
             alt="School of Business Banner"
             width={1200}
-            height={400}
-            className="w-full max-w-[1200px] h-auto"
+            height={300}
+            className="w-full max-w-[1200px] h-auto "
             priority
           />
         </div>

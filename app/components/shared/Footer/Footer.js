@@ -7,7 +7,7 @@ import ScrollToTop from "../../ScrollToTop/ScrollToTop"
 
 const Footer = () => {
   return (
-    <footer className="bg-[#002561] text-white font-['TT_Hoves_Pro'] relative px-4  ">
+    <footer className="bg-[#002561] text-white font-['TT_Hoves_Pro'] relative px-4 border-t border-gray-600">
       <div className="lg:border-b border-dashed border-white/20  ">
         {/* Main Footer Content */}
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8   relative container mx-auto ">
