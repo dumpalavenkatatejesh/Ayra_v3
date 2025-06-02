@@ -23,12 +23,12 @@ const Banner = () => {
         : '/opencanvas/Banner-Img-Space-01.png';
 
     return (
-        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#2050B2]">
+        <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#012461]">
             <Image
                 src={imageSrc}
                 alt="Bachelor Program Banner"
                 fill
-                className="object-cover object-center"
+                className="px-4"
                 priority
             />
         </div>
