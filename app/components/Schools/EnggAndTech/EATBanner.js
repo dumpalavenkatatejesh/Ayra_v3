@@ -9,7 +9,7 @@ const EATBanner = () => {
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
-            src="/schools/engg_and_tech/Banner.png "
+            src="/schools/engg_and_tech/engg-tech-new.png"
             alt="Engg-and-Tech"
             width={1920}
             height={1080}
@@ -21,7 +21,7 @@ const EATBanner = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <Image
-            src="/schools/engg_and_tech/Mobile-banner.png "
+            src="/schools/engg_and_tech/engg-tech-new-mobile.png"
             alt="Engg-and-Tech"
             width={800}
             height={1000}
