@@ -21,7 +21,7 @@ const Ayraadapt = () => {
               src="/opencanvas/opc-choose-footer.png"
               alt="Who Can Apply Background"
               fill
-              className="lg:hidden p-5"
+              className="lg:hidden object-cover bg-[#002560]"
               priority
             />
           </div>

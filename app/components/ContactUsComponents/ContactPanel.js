@@ -11,7 +11,9 @@ const ContactPanel = () => {
             For inquiries, program details, or application guidance, drop us a
             message
           </p>
-          <p className="font-tthoves-demibold mt-5 text-xl">contact.ayra.com</p>
+          <p className="font-tthoves-demibold mt-5 text-xl">
+            <a href="mailto:contact@ayra.com">contact.ayra.com</a>
+          </p>
         </div>
         <hr className="border-[#A9B8D5] border-dashed" />
 
@@ -22,7 +24,9 @@ const ContactPanel = () => {
             Prefer to speak with someone directly? Our admissions and support
             teams are happy to assist.
           </p>
-          <p className="font-bold mt-5 text-xl">1800 102 3330</p>
+          <p className="font-bold mt-5 text-xl">
+            <a href="tel:18001023330">1800 102 3330</a>
+          </p>
         </div>
         <hr className="border-[#A9B8D5] border-dashed" />
 

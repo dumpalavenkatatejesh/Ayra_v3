@@ -22,7 +22,7 @@ const WhoCanApply = () => {
               src="/admissions/apply-now/who-can-apply-mobile.png"
               alt="Who Can Apply Background"
               fill
-              className="lg:hidden p-5"
+              className="lg:hidden p- object-cover"
               priority
             />
           </div>
@@ -36,7 +36,7 @@ const WhoCanApply = () => {
                 tailored to industry needs.
               </p>
 
-              <h2 className="text-4xl md:text-6xl py-5 tracking-wide text-[#fff] font-schabo leading-tight text-center md:text-left">
+              <h2 className="text-4xl md:text-6xl py-5 tracking-wide text-[#fff] font-schabo leading-tight md:text-left">
                 SCHOLARSHIPS
               </h2>
               <p className="lg:text-base text-sm">

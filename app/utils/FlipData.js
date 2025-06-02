@@ -6,7 +6,7 @@ export const sectionsData = [
         "Blending different subjects to create a unique career path",
         "Balancing academics with hands-on, industry-driven learning",
       ],
-      bgColor: "bg-[#D7DEEB]",
+      bgColor: "bg-[#D8DEEB]",
     },
     {
       title: "WHAT KIND OF FLEXIBILITY DO YOU NEED IN YOUR ACADEMIC JOURNEY?",
@@ -24,7 +24,7 @@ export const sectionsData = [
         "I have a clear career goal and want to tailor my studies to match it",
         "I’m interested in entrepreneurship and want to build something of my own",
       ],
-      bgColor: "bg-[#D8DEEA]",
+      bgColor: "bg-[#D8DEEB]",
     },
   ]
   

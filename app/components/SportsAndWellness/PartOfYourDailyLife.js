@@ -23,7 +23,7 @@ const PartOfYourDailyLife = () => {
                 src="/sports-and-wellness/daily-life-mobile.png"
                 alt="Who Can Apply Background"
                 fill
-                className="lg:hidden p-5"
+                className="lg:hidden p- object-cover"
                 priority
               />
             </div>

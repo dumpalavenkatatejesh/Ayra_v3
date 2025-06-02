@@ -113,18 +113,25 @@ const FoldOnHoverRoll = () => {
             <div
               key={index}
               className={`absolute left-0 transition-all duration-700 ease-in-out shadow-md p-4 ${section.bgColor} flex flex-col justify-between`}
+              // style={{
+              //   width: "100%",
+              //   height: `${mobileSectionHeight}px`, // increased height
+              //   top: `${index * mobileSectionHeight}px`,
+              //   transformOrigin: "top center",
+              //   transform:
+              //     isFirst || opened ? "rotateX(0deg)" : "rotateX(-90deg)",
+              //   transitionDelay: `${delay}s`,
+              //   zIndex: sectionsData.length - index,
+              //   backfaceVisibility: "hidden",
+              //   opacity: isFirst || opened ? 1 : 0,
+              // }}
               style={{
                 width: "100%",
-                height: `${mobileSectionHeight}px`, // increased height
+                height: `${mobileSectionHeight}px`,
                 top: `${index * mobileSectionHeight}px`,
-                transformOrigin: "top center",
-                transform:
-                  isFirst || opened ? "rotateX(0deg)" : "rotateX(-90deg)",
-                transitionDelay: `${delay}s`,
                 zIndex: sectionsData.length - index,
-                backfaceVisibility: "hidden",
-                opacity: isFirst || opened ? 1 : 0,
               }}
+              
             >
               <div className="w-full flex items-center px-2">
                 <h3 className="font-extrabold text-[#2050B1] text-[18px] font-tthoves-demibold text-left leading-tight">
