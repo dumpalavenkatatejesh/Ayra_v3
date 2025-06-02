@@ -1,7 +1,8 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa"
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6"
 import ScrollToTop from "../../ScrollToTop/ScrollToTop"
 
 const Footer = () => {
@@ -25,7 +26,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
                 >
                   Contact
@@ -79,10 +80,18 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/programs"
+                  href="/admissions/bachelors-programs"
                   className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
                 >
-                  Programs
+                  Bachelor's Programs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/admissions/masters-programs"
+                  className="text-gray-300 hover:text-white text-[14px] 2xl:text-[18px] leading-[27px] font-normal"
+                >
+                  Master's Programs
                 </Link>
               </li>
               <li>
@@ -159,7 +168,7 @@ const Footer = () => {
             href="https://twitter.com"
             className="bg-white p-2 rounded hover:bg-gray-200"
           >
-            <FaTwitter className="text-[#002561] w-5 h-5" />
+            <FaXTwitter className="text-[#002561] w-5 h-5" />
           </Link>
         </div>
 
