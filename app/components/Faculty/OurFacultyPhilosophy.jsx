@@ -152,30 +152,33 @@ const TextSection = () => {
   }, [blocks.length])
 
   return (
-    <div
-      ref={trackRef}
-      style={{ height: `${blocks.length * 100}vh` }}
-      className="relative"
-    >
+    <div className="relative">
+      {/* Scroll Track Container */}
       <div
-        ref={sectionRef}
-        className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
+        ref={trackRef}
+        style={{ height: `${(blocks.length + 1) * 100}vh` }} // <-- +1 to release scroll
+        className="relative"
       >
-        {/* Left Panel */}
-        <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
-          <h2 className="text-6xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
-            OUR FACULTY <br className="hidden md:block" /> PHILOSOPHY
-          </h2>
-        </div>
+        {/* Sticky Section */}
+        <div
+          ref={sectionRef}
+          className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500 z-10"
+        >
+          {/* Left Panel */}
+          <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
+              OUR FACULTY <br className="hidden md:block" /> PHILOSOPHY
+            </h2>
+          </div>
 
-        {/* Right Panel */}
-        <div className="w-full md:w-1/2 h-[75vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
-          <div className="relative w-full h-full">
-            {blocks.map((block, index) => (
-              <div
-                key={index}
-                ref={(el) => (blocksRef.current[index] = el)}
-                className={`absolute top-0 left-0 w-full h-full flex justify-center items-center px-4 md:px-12 transition-all duration-700 ease-out
+          {/* Right Panel */}
+          <div className="w-full md:w-1/2 h-[75vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
+            <div className="relative w-full h-full">
+              {blocks.map((block, index) => (
+                <div
+                  key={index}
+                  ref={(el) => (blocksRef.current[index] = el)}
+                  className={`absolute top-0 left-0 w-full h-full flex justify-center items-center px-4 md:px-12 transition-all duration-700 ease-out
                   ${
                     index === currentSlide
                       ? "opacity-100 translate-x-0"
@@ -183,37 +186,35 @@ const TextSection = () => {
                       ? "opacity-0 -translate-x-full"
                       : "opacity-0 translate-x-full"
                   }`}
-                style={{
-                  transitionProperty: "opacity, transform",
-                  zIndex: index === currentSlide ? 1 : 0,
-                }}
-              >
-                {block.type === "text" ? (
-                  <div
-                    className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${
-                      index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <h3 className="text-lg sm:text-xl md:text-2xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
-                      {block.title}
-                    </h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-700">
-                      {block.text}
-                    </p>
-                  </div>
-                ) : (
-                  <img
-                    src={block.src}
-                    alt={block.alt}
-                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${
-                      index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                )}
-              </div>
-            ))}
+                  style={{
+                    transitionProperty: "opacity, transform",
+                    zIndex: index === currentSlide ? 1 : 0,
+                  }}
+                >
+                  {block.type === "text" ? (
+                    <div className="max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700">
+                      <h3 className="text-lg sm:text-xl md:text-4xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
+                        {block.title}
+                      </h3>
+                      <p className="text-sm sm:text-base md:text-xl text-gray-700 font-tthoves-extralight">
+                        {block.text}
+                      </p>
+                    </div>
+                  ) : (
+                    <img
+                      src={block.src}
+                      alt={block.alt}
+                      className="w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* Spacer after sticky block to allow normal scroll */}
+        <div className="h-screen bg-white z-0" />
       </div>
     </div>
   )
