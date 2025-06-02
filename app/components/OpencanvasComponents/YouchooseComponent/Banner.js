@@ -12,10 +12,10 @@ const Banner = () => {
             setIsMobile(window.innerWidth < 640);
         }; 
 
-        // Initial check
+      
         handleResize();
 
-        // Listen to resize events
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
