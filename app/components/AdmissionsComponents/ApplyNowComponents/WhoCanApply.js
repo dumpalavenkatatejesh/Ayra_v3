@@ -6,7 +6,7 @@ const WhoCanApply = () => {
   return (
     <div className="">
       <div className="border-b-2 border-dashed border-[#D0E3FF] mb-10">
-        <div className="relative w-full  lg:max-w-7xl mx-auto my-4">
+        <div className="relative w-full container mx-auto my-4">
           {/* Background Image */}
           <div className="h-[500px] md:h-[600px] lg:h-[700px]">
             <Image
@@ -61,7 +61,7 @@ const WhoCanApply = () => {
           <h2 className="text-4xl md:text-6xl py-5 tracking-wide text-[#000] font-schabo leading-tight text-center md:text-left">
             NEED HELP?
           </h2>
-          <p className="text-[#2050B1] text-3xl font-tthoves-bold">
+          <p className="text-[#2050B1] lg:text-3xl text-xl font-tthoves-bold">
             Our admissions team is here to assist you.
           </p>
           <p className="text-[#002561] text-md">

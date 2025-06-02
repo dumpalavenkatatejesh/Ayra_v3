@@ -331,7 +331,7 @@ export default function ApplicationForm() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto lg:px-0 px-4 py-8">
+    <div className="container mx-auto lg:px-0 px-4 py-8">
       <h2 className="text-3xl font-tthoves-bold mb-6">APPLICATION FORM:</h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Row 1 */}
@@ -657,7 +657,7 @@ export default function ApplicationForm() {
                 <div className="relative w-5 h-5 border border-[#A9B8D5] bg-white">
                   <input
                     type="checkbox"
-                    className="absolute opacity-0 w-5 h-5"
+                    className="absolute opacity-0 w-10 h-5"
                     checked={formData[key]}
                     onChange={(e) =>
                       setFormData({ ...formData, [key]: e.target.checked })
@@ -674,7 +674,7 @@ export default function ApplicationForm() {
                     </>
                   )}
                 </div>
-                <span>
+                <span className="text-xs">
                   {i === 0
                     ? "I confirm that all the information provided is accurate and complete"
                     : "I understand that my application will be reviewed based on the provided documents and criteria"}

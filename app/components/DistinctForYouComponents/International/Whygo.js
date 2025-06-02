@@ -1,5 +1,5 @@
-import React from "react"
-import Image from "next/image"
+import React from "react";
+import Image from "next/image";
 
 const Whygo = () => {
   const items = [
@@ -28,7 +28,7 @@ const Whygo = () => {
       description:
         "The International Centre works closely with students to map the right opportunity to their academic and career goals",
     },
-  ]
+  ];
 
   return (
     <>
@@ -47,36 +47,51 @@ const Whygo = () => {
             ))}
           </div>
         </div>
+        </div>
 
-        {/* Image + Overlay */}
-        <div className="relative w-full h-[80vh] container mx-auto my-10 ">
-          {/* Background Image */}
-          <Image
-            src="/international/int-img-3.png"
-            alt="Leadership & Entrepreneurship Clubs"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+        <div className="p-5">
+          <div className="mb-10">
+            <div className="relative w-full container mx-auto py-4">
+              {/* Background Image */}
+              <div className="h-[500px] md:h-[600px] lg:h-[700px]">
+                <Image
+                  src="/international/int-img-3.png"
+                  alt="Who Can Apply Background"
+                  fill
+                  className="object-cover lg:block hidden"
+                  priority
+                />
+              </div>
+              <div className="h-[20vh] lg:h-auto w-full">
+                <Image
+                  src="/international/int-faculty-mob.png"
+                  alt="Who Can Apply Background"
+                  fill
+                  className="lg:hidden p-5 w-full h-full"
+                  priority
+                />
+              </div>
+              {/* Overlay Content */}
+              <div className="absolute lg:bottom-[9rem] bottom-28 lg:left-[55%] left-[0%] flex items-center">
+                <div className=" text-white px-5">
+                  <p className="lg:text-base text-sm px-4">
+                    AYRA regularly hosts international experts, visiting
+                    scholars, and guest faculty to enrich classroom discussions
+                    and bring global expertise into every school. From
+                    masterclasses to collaborative workshops. students benefit
+                    from a global learning ecosystem-right here on campus.
+                  </p>
 
-          {/* Overlay Content */}
-          <div className="absolute inset-0 top-60 md:right-50 right-10 flex justify-end md:items-center items-end p-4">
-            <div className="text-white md:max-w-[30%] w-full">
-              <div className="space-y-5">
-                <p className="text-sm font-light text-white font-tthoves-extralight">
-                  AYRA regularly hosts international experts, visiting scholars,
-                  and guest faculty to enrich classroom discussions and bring
-                  global expertise into every school. From masterclasses to
-                  collaborative workshops. students benefit from a global
-                  learning ecosystem-right here on campus.
-                </p>
+                  {/* <div className="pt-5">
+                        <HoverButton5 text="Know more" />
+                      </div> */}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="flex flex-col md:flex-row  gap-8 md:gap-16 py-16 container mx-auto px-4">
+     
+      <div className="flex flex-col md:flex-row  gap-8 md:gap-16 lg:py-16 pb-10 container mx-auto px-4">
         {/* Left Section */}
         <div className="md:w-1/2 space-y-4">
           <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6">
@@ -119,13 +134,10 @@ const Whygo = () => {
             height={600}
             className="w-full h-auto "
           />
-          <p className="text-xs text-white bg-black/60 px-2 py-1 absolute mt-[-30px] ml-2 rounded">
-            iStock · Credit: eyesfoto
-          </p>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Whygo
+export default Whygo;

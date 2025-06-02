@@ -5,7 +5,7 @@ import React from "react";
 import ApplicationProcess from "./ApplicationProcess";
 const YourApplication = () => {
   return (
-    <div>
+    <div className="border-t-2 border-dashed border-[#D0E3FF]">
       <div className="flex flex-col items-center justify-center container mx-auto border-l-2 border-r-2 border-dashed border-[#D0E3FF] p-5">
         <Image
           src="/admissions/apply-now/your-app.png"

@@ -1,32 +1,53 @@
-import React from "react"
+import Image from "next/image";
+import React from "react";
 
 const Ayraadapt = () => {
   return (
-    <>
-      <div className="lg:p-10 p-5">
-      <div
-        className=" h-[90vh] bg-cover bg-center text-white relative  bg-[#002560] 
-         bg-[url('/opencanvas/opc-play-footer.png')]  // mobile background
-         md:bg-[url('/opencanvas/opc-you-img-04.jpg')] // desktop background"
-      >
-        {/* Responsive Centered Paragraphs at Bottom */}
-        <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[74%] lg:bottom-28">
-          <p className="text-sm font-light text-start lg:w-[500px] mx-auto opacity-90 lg:text-base">
-            At AYRA, your academic path isn’t predefined—it’s built by you.
-            Whether you want to blend multiple disciplines, explore
-            unconventional career paths, or specialise in an emerging field, you
-            have the flexibility to create a curriculum that works for your
-            goals.
-          </p>
+    <div className="py-5">
+      <div className="mb-10">
+        <div className="relative w-full container mx-auto my-4">
+          {/* Background Image */}
+          <div className="h-[500px] md:h-[600px] lg:h-[700px]">
+            <Image
+              src="/opencanvas/opc-you-img-04.jpg"
+              alt="Who Can Apply Background"
+              fill
+              className="object-cover lg:block hidden"
+              priority
+            />
+          </div>
+          <div className="lg:h-auto h-[25vh] w-full">
+            <Image
+              src="/opencanvas/opc-play-footer.png"
+              alt="Who Can Apply Background"
+              fill
+              className="lg:hidden p-5"
+              priority
+            />
+          </div>
+          {/* Overlay Content */}
+          <div className="absolute lg:bottom-24 bottom-20 lg:left-[55%] left-[0%] flex items-center">
+            <div className=" text-white px-5">
+              <p className="lg:text-base text-sm px-4">
+                At AYRA, your education isn’t just about degrees—it’s about
+                discovery, challenge, and self-expression.From state-of-the-art
+                sports facilities and university teams to performing arts,
+                student-led clubs, and leadership programs, AYRA ensures that
+                your learning experience is as dynamic as you are.
+              </p>
 
-          <p className="text-sm font-light text-start lg:w-[500px] mx-auto opacity-90 lg:text-base">
-            This is your education. You choose how to shape it.
-          </p>
+              <p className="lg:text-base text-sm px-4">
+              This is your university experience. You choose how to shape it.
+              </p>
+              {/* <div className="pt-5">
+                <HoverButton5 text="Know more" />
+              </div> */}
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default Ayraadapt
+export default Ayraadapt;

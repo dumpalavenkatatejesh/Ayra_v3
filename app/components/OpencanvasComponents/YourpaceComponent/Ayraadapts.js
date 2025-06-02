@@ -1,36 +1,55 @@
 
+import Image from "next/image";
+import React from "react";
 
-import React from "react"
-
-const Ayraadapts = () => {
+const Ayraadapt = () => {
   return (
-    <>
-        <div className="lg:p-10 p-5">
-      <div
-        className=" h-[90vh] bg-cover bg-center text-white relative bg-[#002560]
-         bg-[url('/opencanvas/opc-pace-footer.png')]  // mobile background
-         md:bg-[url('/opencanvas/opc-img02-pace.jpg')] // desktop background"
-      >
-        {/* Responsive Centered Paragraphs at Bottom */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center px-4 w-[90%] sm:w-4/5 md:w-3/4 lg:w-1/2 lg:left-[74%] lg:bottom-20">
-          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
-          Learning at AYRA is designed to be as dynamic as you are. Whether
+    <div className="py-5">
+      <div className="mb-10">
+        <div className="relative w-full container mx-auto my-4">
+          {/* Background Image */}
+          <div className="h-[500px] md:h-[600px] lg:h-[700px]">
+            <Image
+              src="/opencanvas/opc-img02-pace.jpg"
+              alt="Who Can Apply Background"
+              fill
+              className="object-cover lg:block hidden"
+              priority
+            />
+          </div>
+          <div className="lg:h-auto h-[25vh] w-full">
+            <Image
+              src="/opencanvas/opc-pace-footer.png"
+              alt="Who Can Apply Background"
+              fill
+              className="lg:hidden p-5"
+              priority
+            />
+          </div>
+          {/* Overlay Content */}
+          <div className="absolute lg:bottom-24 bottom-20 lg:left-[55%] left-[0%] flex items-center">
+            <div className=" text-white px-5">
+              <p className="lg:text-base text-sm px-4">
+              Learning at AYRA is designed to be as dynamic as you are. Whether
             you want to fast-track your degree, earn industry certifications, or
             take the time to explore multiple disciplines, your journey is yours
             to shape. With multiple exit points, entrepreneurial incubators, and
             experiential learning opportunities, we ensure that education adapts
             to you, not the other way around.
-          </p>
+              </p>
 
-          <p className="text-sm font-light text-start lg:w-2/3 mx-auto opacity-90 lg:text-base">
-          This is your education. At your pace. In your way.
-          </p>
+              <p className="lg:text-base text-sm px-4">
+              This is your education. At your pace. In your way.
+              </p>
+              {/* <div className="pt-5">
+                <HoverButton5 text="Know more" />
+              </div> */}
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default Ayraadapts
-
+export default Ayraadapt;

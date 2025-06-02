@@ -10,12 +10,12 @@ export default function GlobalExchangePrograms() {
   ]
   return (
     <>
-      <div className="w-full">
-        <div className="container mx-auto border-r border-l border-dashed border-gray-300">
+      <div className="w-full border-gray-300 border-t-2 border-dashed">
+        <div className="container mx-auto border-r-2 border-l-2 border-dashed border-gray-300">
           <div className="max-w-4xl mx-auto py-12 px-4  md:px-8 space-y-8">
             <div className=" text-center">
               <p className="text-md ">
-                At AYRA, we don't just prepare students for careers—we help them
+                At AYRA, we don&apos;t just prepare students for careers—we help them
                 launch them.
               </p>
               <p className="text-md text-gray-700 leading-relaxed">
@@ -26,7 +26,7 @@ export default function GlobalExchangePrograms() {
             </div>
             <div className="text-center">
               <p className="text-md text-gray-700 leading-relaxed">
-                Whether you're pursuing engineering, liberal arts, business,
+                Whether you&apos;re pursuing engineering, liberal arts, business,
                 hospitality, or sports sciences, we support you with resources,
                 guidance, and access to top organisations and mentors.
               </p>
