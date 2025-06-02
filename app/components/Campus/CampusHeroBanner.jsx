@@ -4,11 +4,11 @@ import React from "react"
 const CampusHeroBanner = () => {
   return (
     <>
-      <div className="relative h-screen md:h-[90vh] w-screen md:w-full hidden md:block">
+      <div className="relative md:h-[90vh] w-screen md:w-full hidden md:block">
         <div className="absolute inset-0 bg-cover bg-[url('/campus/campus-mob-banner.png')] md:bg-[url('/campus/campus-banner.png')]"></div>
       </div>
 
-      <div className="relative w-full h-screen md:h-[90vh] overflow-hidden block md:hidden">
+      <div className="relative w-full h-screen overflow-hidden block md:hidden">
         {/* Mobile Banner - shown on small screens */}
         <div className="">
           <img
