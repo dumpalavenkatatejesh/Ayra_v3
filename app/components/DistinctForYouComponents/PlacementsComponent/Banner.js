@@ -1,47 +1,52 @@
-'use client';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import Breadcrumbs from '../../../utils/Breadcrumbs'
+"use client";
+import Image from "next/image";
+import React from "react";
+import Breadcrumbs from "../../../utils/Breadcrumbs";
 
 const Banner = () => {
-    const [isMobile, setIsMobile] = useState(false);
+  return (
+    <>
+      <div className="relative w-full bg-[#2050B2] m-0 p-0">
+        {/* Desktop Image */}
+        <div className="hidden md:block w-full">
+          <Image
+            src="/admissions/placements/placements_banner.png"
+            alt="Bachelor Program Desktop Banner"
+            width={1920}
+            height={1080}
+            className="object-cover object-center w-full lg:h-[90vh]"
+            priority
+          />
+        </div>
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 640); // Tailwind's "sm" breakpoint
-        };
+        {/* Mobile Image */}
+        <div className="block md:hidden w-full">
+          <Image
+            src="/admissions/placements/placements_mob_banner.png"
+            alt="Bachelor Program Mobile Banner"
+            width={800}
+            height={1000}
+            className="w-full h-auto align-top"
+            priority
+          />
+        </div>
+      </div>
 
-        // Initial check
-        handleResize();
+      {/* Breadcrumb Section – No spacing added */}
 
-        // Listen for screen resize
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const imageSrc = isMobile
-        ? '/admissions/placements/placements_mob_banner.png'
-        : '/admissions/placements/placements_banner.png';
-
-    return (
-        <>
-            <div className="relative w-full h-[100vh] md:h-[90vh] bg-[#002560]">
-                <Image
-                    src={imageSrc}
-                    alt="Placements Program Banner"
-                    fill
-                    className="px-6"
-                    priority
-                />
-            </div>
-            <div className='container mx-auto md:px-0 px-4'>
-                <Breadcrumbs items={[
-                    { label: 'Home', href: '/' },
-                    { label: 'Placements and Internships', href: '/distinct-for-you/placements-internship' },
-                ]} />
-            </div>
-        </>
-    );
+      <div className="container mx-auto md:px-0 px-4">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            {
+              label: "Placements and Internships",
+              href: "/distinct-for-you/placements-internship",
+            },
+          ]}
+        />
+      </div>
+    </>
+  );
 };
 
 export default Banner;

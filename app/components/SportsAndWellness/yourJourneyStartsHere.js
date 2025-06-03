@@ -36,6 +36,15 @@ const yourJourneyStartsHere = () => {
           <button className="relative px-10 py-2 bg-white group-hover:bg-white text-[#2050B1] border border-dashed border-[#000] group-hover:border-[#2050B1] overflow-hidden cursor-pointer transition-all duration-300">
             Explore Facilities
           </button>
+          {/* dotted */}
+          {/* <div>
+            <button className="relative text-[#2050B1] px-5 py-2 w-36 bg-[#fff] transition-all cursor-pointer group hover:shadow-inner border border-dashed border-[#000]">
+              Know more
+              <span className="absolute top-0 right-0 w-0 h-0 border-dashed border-transparent group-hover:border-r-[15px] border-[#000] group-hover:border-b-[15px] transition-all duration-75 ease-out border-r-[#2050B1] border-b-[#3B76CB]"></span>
+            </button>
+          </div> */}
+
+          {/* dotted end */}
         </div>
       </div>
     </div>
