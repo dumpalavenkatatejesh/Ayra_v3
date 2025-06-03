@@ -5,7 +5,7 @@ const Meritscholarship = () => {
   return (
     <>
       {/* Text and first image container */}
-      <div className="w-full flex flex-col items-center bg-gray-100 md:px-0">
+      <div className="w-full flex flex-col items-center bg-gray-100 md:px-0 border-t-2 border-dashed border-[#A9B8D5]">
         <div className="container mx-auto flex flex-col items-center border-r-2 border-l-2 border-dashed border-[#A9B8D5] py-10 px-4">
 
           {/* Full width image */}
