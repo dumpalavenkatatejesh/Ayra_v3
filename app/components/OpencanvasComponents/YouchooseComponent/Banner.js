@@ -10,7 +10,7 @@ const Banner = () => {
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
-            src="/opencanvas/Banner-Img-Choose-03.png"
+            src="/opencanvas/you-choose/you-choose-banner-new.png"
             alt="Bachelor Program Desktop Banner"
             width={1920}
             height={1080}
