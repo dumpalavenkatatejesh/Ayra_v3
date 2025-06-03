@@ -1,9 +1,9 @@
 import React from "react"
-import CFE from "../../components/Entrepreneurship"
+import Cfe from "../../components/Entrepreneurship"
 const page = () => {
   return (
     <>
-      <CFE />
+      <Cfe />
     </>
   )
 }

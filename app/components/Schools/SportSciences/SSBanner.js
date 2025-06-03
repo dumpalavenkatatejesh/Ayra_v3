@@ -13,7 +13,7 @@ const SSBanner = () => {
             alt="Sports Sciences Desktop Banner"
             width={1920}
             height={1080}
-            className="object-cover object-center w-full h-auto"
+            className="object-cover object-center w-full lg:h-[90vh]"
             priority
           />
         </div>
