@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react"
 
-const TextSection = () => {
+const OurFacultyPhilosophy = () => {
   const sectionRef = useRef(null)
   const trackRef = useRef(null)
   const blocksRef = useRef([])
@@ -219,4 +219,4 @@ const TextSection = () => {
   )
 }
 
-export default TextSection
+export default OurFacultyPhilosophy

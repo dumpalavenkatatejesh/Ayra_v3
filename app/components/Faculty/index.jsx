@@ -5,12 +5,18 @@ import BeyondTheClassroom from "./BeyondTheClassroom"
 import WhatOurStudentsCanExpect from "./WhatOurStudentsCanExpect"
 import AtAyra from "./AtAyra"
 import OurFacultyPhilosophy from "./OurFacultyPhilosophy"
+import OurFacultyPhilosophyMobile from "./OurFacultyPhilosophyMobile"
 
 const index = () => {
   return (
     <>
       <FacultyHeroBanner />
-      <OurFacultyPhilosophy />
+      <div className="hidden md:block">
+        <OurFacultyPhilosophy />
+      </div>
+      <div className="block md:hidden">
+        <OurFacultyPhilosophyMobile />
+      </div>
       <FacultyHighlights />
       <BeyondTheClassroom />
       <WhatOurStudentsCanExpect />
