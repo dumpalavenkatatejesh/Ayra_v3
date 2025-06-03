@@ -36,7 +36,7 @@ const Banner = () => {
         <div className='container mx-auto md:px-0 px-4'>
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
-          { label: 'Bachelors Programs', href: '/bachelors-programs' }, 
+          { label: "Bachelor's Programs", href: '/bachelors-programs' }, 
         ]} />
       </div>
         </>
