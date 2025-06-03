@@ -15,32 +15,36 @@ const ApproachAnimation = () => {
 
   const blocks = [
     {
-      type: "text",
+      isText: true,
       title: "STUDENT-CENTRIC <br/> THINKING",
-      text: "Every decision is filtered through one lens: what’s best for the learner. From curriculum design to campus life, our leadership ensures that student agency and wellbeing remain central.",
+      content:
+        "Every decision is filtered through one lens: what’s best for the learner. From curriculum design to campus life, our leadership ensures that student agency and wellbeing remain central.",
     },
     {
-      type: "image",
-      src: "/admissions/masters_programs/what_set_us.png",
+      isText: false,
+      image: "/admissions/masters_programs/what_set_us.png",
       alt: "ACADEMIC EXCELLENCE, REINVENTED",
     },
     {
-      type: "text",
+      isText: true,
       title: "ACADEMIC EXCELLENCE, <br/> REINVENTED",
-      text: "We uphold rigorous academic standards while questioning outdated models. Our leaders bring progressive pedagogy, future-focused frameworks, and global best practices to the table.",
+      content:
+        "We uphold rigorous academic standards while questioning outdated models. Our leaders bring progressive pedagogy, future-focused frameworks, and global best practices to the table.",
     },
     {
-      type: "image",
-      src: "/leadership/img2.png",
-      alt: "Designed Around You",
+      isText: false,
+      image: "/leadership/img2.png",
+      content: "Designed Around You",
     },
     {
-      type: "text",
+      isText: true,
       title: "COLLABORATION ACROSS <br/> BORDERS",
-      text: "Our leadership cultivates relationships with leading universities, industries, and policy bodies—ensuring Ayra remains connected, relevant, and globally engaged.",
+      content:
+        "Our leadership cultivates relationships with leading universities, industries, and policy bodies—ensuring Ayra remains connected, relevant, and globally engaged.",
     },
   ]
 
+  // Track scroll to enable/disable internal lock
   useEffect(() => {
     const handleScroll = () => {
       const trackEl = trackRef.current
@@ -56,43 +60,73 @@ const ApproachAnimation = () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Handle desktop wheel and mobile touch
   useEffect(() => {
+    const threshold = 100
+    let touchStartY = 0
+
     const handleWheel = (e) => {
       if (!insideRef.current) return
 
       const atFirst = currentIndexRef.current === 0
       const atLast = currentIndexRef.current === blocks.length - 1
 
+      // Prevent scrolling past bounds
       if ((e.deltaY < 0 && atFirst) || (e.deltaY > 0 && atLast)) return
 
       e.preventDefault()
 
-      if (
-        (scrollProgressRef.current > 0 && e.deltaY < 0) ||
-        (scrollProgressRef.current < 0 && e.deltaY > 0)
-      ) {
-        scrollProgressRef.current = 0
-      }
-
-      scrollProgressRef.current += e.deltaY
-
-      const threshold = 100
-
-      if (
-        Math.abs(scrollProgressRef.current) >= threshold &&
-        !isAnimatingRef.current
-      ) {
+      // Only change slide if not currently animating
+      if (!isAnimatingRef.current) {
         isAnimatingRef.current = true
 
-        let nextIndex =
-          scrollProgressRef.current > 0
+        // Determine direction based on scroll
+        const nextIndex =
+          e.deltaY > 0
             ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
             : Math.max(currentIndexRef.current - 1, 0)
 
         setCurrentSlide(nextIndex)
         currentIndexRef.current = nextIndex
-        scrollProgressRef.current = 0
 
+        // Reset animation lock after transition
+        setTimeout(() => {
+          isAnimatingRef.current = false
+        }, 700)
+      }
+    }
+
+    const handleTouchStart = (e) => {
+      if (!insideRef.current) return
+      touchStartY = e.touches[0].clientY
+    }
+
+    const handleTouchMove = (e) => {
+      if (!insideRef.current) return
+
+      const touchEndY = e.touches[0].clientY
+      const deltaY = touchStartY - touchEndY
+
+      const atFirst = currentIndexRef.current === 0
+      const atLast = currentIndexRef.current === blocks.length - 1
+
+      if ((deltaY < 0 && atFirst) || (deltaY > 0 && atLast)) return
+
+      e.preventDefault()
+
+      // Only change slide if the touch movement is significant and not currently animating
+      if (Math.abs(deltaY) >= 50 && !isAnimatingRef.current) {
+        isAnimatingRef.current = true
+
+        const nextIndex =
+          deltaY > 0
+            ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
+            : Math.max(currentIndexRef.current - 1, 0)
+
+        setCurrentSlide(nextIndex)
+        currentIndexRef.current = nextIndex
+
+        // Reset animation lock after transition
         setTimeout(() => {
           isAnimatingRef.current = false
         }, 700)
@@ -100,14 +134,21 @@ const ApproachAnimation = () => {
     }
 
     window.addEventListener("wheel", handleWheel, { passive: false })
-    return () => window.removeEventListener("wheel", handleWheel)
+    window.addEventListener("touchstart", handleTouchStart, { passive: false })
+    window.addEventListener("touchmove", handleTouchMove, { passive: false })
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel)
+      window.removeEventListener("touchstart", handleTouchStart)
+      window.removeEventListener("touchmove", handleTouchMove)
+    }
   }, [blocks.length])
 
   return (
     <div
       ref={trackRef}
       style={{ height: `${blocks.length * 100}vh` }}
-      className="relative"
+      className="relative hidden md:block"
     >
       <div
         ref={sectionRef}
@@ -121,7 +162,7 @@ const ApproachAnimation = () => {
         </div>
 
         {/* Right Panel */}
-        <div className="w-full md:w-1/2 h-[100vh] overflow-hidden relative flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-[50vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
           <div className="relative w-full h-full">
             {blocks.map((block, index) => (
               <div
@@ -140,21 +181,27 @@ const ApproachAnimation = () => {
                   zIndex: index === currentSlide ? 1 : 0,
                 }}
               >
-                {block.type === "text" ? (
-                  <div className="max-w-xl px-4 md:px-0 text-center md:text-left ">
+                {block.isText ? (
+                  <div
+                    className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
                     <h3
                       className="text-2xl md:text-3xl  text-[#2050B1] mb-2 md:mb-4 uppercase font-tthoves-bold"
                       dangerouslySetInnerHTML={{ __html: block.title }}
                     ></h3>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
-                      {block.text}
+                      {block.content}
                     </p>
                   </div>
                 ) : (
                   <img
-                    src={block.src}
+                    src={block.image}
                     alt={block.alt}
-                    className="w-full max-w-[90%] max-h-[45vh] sm:max-h-[50vh] md:max-h-[80vh] object-contain mx-auto shadow-lg"
+                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
                   />
                 )}
               </div>
