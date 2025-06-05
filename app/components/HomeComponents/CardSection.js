@@ -15,7 +15,7 @@ const cardData = [
     description:
       "Design your academic journey, explore interdisciplinary learning, and embrace opportunities beyond the classroom.",
     description2:
-      "Discover how you can shape your future at AYRA..",
+      "Discover how you can shape your future at AYRA.",
     button:
       "Learn More",
     url:
