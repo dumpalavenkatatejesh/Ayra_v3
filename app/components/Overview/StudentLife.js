@@ -4,7 +4,7 @@ import CustomHoverButton from "../../utils/CustomHoverButton"
 
 const StudentLife = () => {
   return (
-    <div className="container mx-auto px-4 py-4 md:py-10 w-full flex flex-col md:flex-row gap-10 md:h-[600px]">
+    <div className="container mx-auto px-4 py-4 md:py-10 w-full flex flex-col-reverse md:flex-row gap-10 md:h-[600px]">
       {/* Left Side Image */}
       <div className="w-full md:w-1/2">
         <Image
@@ -15,6 +15,7 @@ const StudentLife = () => {
           className="w-full h-auto object-contain"
         />
       </div>
+
       {/* Right Side Content */}
       <div className="md:w-1/2 flex flex-col items-start justify-center space-y-4 md:pl-20">
         <div className="max-w-[300px] w-full">

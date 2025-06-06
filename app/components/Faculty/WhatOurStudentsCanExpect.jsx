@@ -42,7 +42,7 @@ const WhatOurStudentsCanExpect = () => {
         </div>
       </div>
 
-      <div className="my-10 bg-[url('/faculty/what-our-student-mobile.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#002561]">
+      <div className="my-10 bg-[url('/faculty/what-our-student-mobile.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#2050B1]">
         <div className="flex items-center px-4 pb-16">
           <ul className="mt-2 md:mt-6 space-y-3 text-sm font-tthoves-extralight text-white">
             {items.map((text, idx) => (

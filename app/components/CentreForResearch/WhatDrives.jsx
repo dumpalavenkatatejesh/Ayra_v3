@@ -63,13 +63,16 @@ export default function GlobalExchangePrograms() {
 
   return (
     <>
-      <style>
+   <style>
         {`
           @media (max-width: 768px) {
             .slick-dots li button:before {
-              font-size: 8px !important; /* Make the dot smaller */
+              font-size: 10px !important; /* Make the dot smaller */
               color: #2050B1 !important; /* Change the dot color */
             }
+               .slick-dots li.slick-active button:before {
+        color: blue !important; /* Active dot color */
+      }
 
             .slick-dots {
               bottom: -20px !important; /* Optional: adjust position if needed */
