@@ -35,7 +35,7 @@ const EntrepreneurialThinkers = () => {
       </div>
 
       {/* Mobile */}
-      <div className="my-10 bg-[#002561] bg-[url('/entrepreneurship/entrepreneurship-mobile.png')] bg-cover bg-center h-[100dvh] flex items-end md:hidden">
+      <div className="my-10 bg-[#2050B1] bg-[url('/entrepreneurship/entrepreneurship-mobile.png')] bg-cover bg-center h-[100dvh] flex items-end md:hidden">
         <div className="px-4 pb-10 w-full">
           <ul className="space-y-5 text-sm font-tthoves-extralight text-white leading-relaxed">
             {paragraphs.map((text, idx) => (

@@ -33,8 +33,8 @@ const EmpoweringResearch = () => {
         </div>
       </div>
 
-      <div className="my-10 bg-[url('/centre-for-research/empowering-mob.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#002561]">
-        <div className="flex items-center px-4 pb-10">
+      <div className="my-10 bg-[url('/centre-for-research/empowering-mob-01.png')] bg-cover bg-center h-screen flex items-end md:hidden bg-[#2050B1]">
+        <div className="flex items-center px-4 lg:pb-10 pb-2">
           <ul className="mt-2 md:mt-6 space-y-3 text-sm font-tthoves-extralight text-white">
             {items.map((text, idx) => (
               <li className="flex items-start gap-2" key={idx}>
