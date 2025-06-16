@@ -37,7 +37,7 @@ const OurFacultyPhilosophy = () => {
     {
       type: "text",
       title: "Interdisciplinary by Default",
-      text: "You’ll find business professors collaborating with tech faculty, and artists working with data scientists. Because at AYRA, problems don’t come in silos—so neither should learning.",
+      text: "You'll find business professors collaborating with tech faculty, and artists working with data scientists. Because at AYRA, problems don't come in silos—so neither should learning.",
     },
     {
       type: "image",
@@ -48,7 +48,7 @@ const OurFacultyPhilosophy = () => {
       type: "text",
       title: "Always Evolving",
       text: "Our faculty are lifelong learners themselves. They continuously evolve their teaching practice to respond to new knowledge, technologies, and student needs.",
-    },
+    }
   ]
 
   // Track scroll to enable/disable internal lock
@@ -71,21 +71,44 @@ const OurFacultyPhilosophy = () => {
   useEffect(() => {
     const threshold = 100
     let touchStartY = 0
+    let lastScrollTime = 0
+    const scrollCooldown = 1000 // 1.5 second cooldown between scrolls
+    const scrollThreshold = 50 // Minimum scroll amount to trigger slide change
 
     const handleWheel = (e) => {
       if (!insideRef.current) return
 
+      const now = Date.now()
+      if (now - lastScrollTime < scrollCooldown) {
+        e.preventDefault()
+        return
+      }
+
       const atFirst = currentIndexRef.current === 0
       const atLast = currentIndexRef.current === blocks.length - 1
 
-      // Prevent scrolling past bounds
-      if ((e.deltaY < 0 && atFirst) || (e.deltaY > 0 && atLast)) return
+      // Allow normal scroll when at last item and scrolling down
+      if (atLast && e.deltaY > 0) {
+        return
+      }
+
+      // Allow normal scroll when at first item and scrolling up
+      if (atFirst && e.deltaY < 0) {
+        return
+      }
+
+      // Only trigger if scroll amount is significant
+      if (Math.abs(e.deltaY) < scrollThreshold) {
+        e.preventDefault()
+        return
+      }
 
       e.preventDefault()
 
       // Only change slide if not currently animating
       if (!isAnimatingRef.current) {
         isAnimatingRef.current = true
+        lastScrollTime = now
 
         // Determine direction based on scroll
         const nextIndex =
@@ -93,13 +116,17 @@ const OurFacultyPhilosophy = () => {
             ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
             : Math.max(currentIndexRef.current - 1, 0)
 
-        setCurrentSlide(nextIndex)
-        currentIndexRef.current = nextIndex
+        // Force a re-render by setting current slide to null first
+        setCurrentSlide(null)
+        setTimeout(() => {
+          setCurrentSlide(nextIndex)
+          currentIndexRef.current = nextIndex
+        }, 50)
 
         // Reset animation lock after transition
         setTimeout(() => {
           isAnimatingRef.current = false
-        }, 700)
+        }, 1000)
       }
     }
 
@@ -117,12 +144,26 @@ const OurFacultyPhilosophy = () => {
       const atFirst = currentIndexRef.current === 0
       const atLast = currentIndexRef.current === blocks.length - 1
 
-      if ((deltaY < 0 && atFirst) || (deltaY > 0 && atLast)) return
+      // Allow normal scroll when at last item and swiping down
+      if (atLast && deltaY > 0) {
+        return
+      }
+
+      // Allow normal scroll when at first item and swiping up
+      if (atFirst && deltaY < 0) {
+        return
+      }
+
+      // Only trigger if touch movement is significant
+      if (Math.abs(deltaY) < scrollThreshold) {
+        e.preventDefault()
+        return
+      }
 
       e.preventDefault()
 
-      // Only change slide if the touch movement is significant and not currently animating
-      if (Math.abs(deltaY) >= 50 && !isAnimatingRef.current) {
+      // Only change slide if not currently animating
+      if (!isAnimatingRef.current) {
         isAnimatingRef.current = true
 
         const nextIndex =
@@ -130,13 +171,17 @@ const OurFacultyPhilosophy = () => {
             ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
             : Math.max(currentIndexRef.current - 1, 0)
 
-        setCurrentSlide(nextIndex)
-        currentIndexRef.current = nextIndex
+        // Force a re-render by setting current slide to null first
+        setCurrentSlide(null)
+        setTimeout(() => {
+          setCurrentSlide(nextIndex)
+          currentIndexRef.current = nextIndex
+        }, 50)
 
         // Reset animation lock after transition
         setTimeout(() => {
           isAnimatingRef.current = false
-        }, 700)
+        }, 1000)
       }
     }
 
@@ -157,7 +202,7 @@ const OurFacultyPhilosophy = () => {
       style={{ height: `${blocks.length * 100}vh` }}
       className="relative"
     >
-      <div
+      <div 
         ref={sectionRef}
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
@@ -166,7 +211,7 @@ const OurFacultyPhilosophy = () => {
           <h2 className="text-6xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
             OUR FACULTY <br className="hidden md:block" /> PHILOSOPHY
           </h2>
-        </div>
+        </div> 
 
         {/* Right Panel */}
         <div className="w-full md:w-1/2 h-[75vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
@@ -175,40 +220,41 @@ const OurFacultyPhilosophy = () => {
               <div
                 key={index}
                 ref={(el) => (blocksRef.current[index] = el)}
-                className={`absolute top-0 left-0 w-full h-full flex justify-center items-center px-4 md:px-12 transition-all duration-700 ease-out
-                  ${
-                    index === currentSlide
-                      ? "opacity-100 translate-x-0"
-                      : index < currentSlide
+                className={`absolute top-0 left-0 w-full h-full flex justify-center items-center transition-all duration-1000 ease-in-out
+                  ${index === currentSlide
+                    ? "opacity-100 translate-x-0"
+                    : index < currentSlide
                       ? "opacity-0 -translate-x-full"
                       : "opacity-0 translate-x-full"
                   }`}
                 style={{
                   transitionProperty: "opacity, transform",
                   zIndex: index === currentSlide ? 1 : 0,
+                  pointerEvents: index === currentSlide ? "auto" : "none",
+                  visibility: index === currentSlide ? "visible" : "hidden"
                 }}
               >
                 {block.type === "text" ? (
                   <div
-                    className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${
-                      index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
+                    className={`w-full max-w-2xl px-8 md:px-12 text-center transition-all duration-1000 ${index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                      }`}
                   >
-                    <h3 className="text-lg sm:text-xl md:text-4xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl text-[#2050B1] font-tthoves-bold mb-6 md:mb-8 uppercase">
                       {block.title}
                     </h3>
-                    <p className="text-sm sm:text-base md:text-xl font-tthoves-extralight text-gray-700">
+                    <p className="text-base sm:text-lg md:text-2xl font-tthoves-extralight text-gray-700 leading-relaxed">
                       {block.text}
                     </p>
                   </div>
                 ) : (
-                  <img
-                    src={block.src}
-                    alt={block.alt}
-                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${
-                      index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
+                  <div className="w-full h-full flex items-center justify-center px-4 md:px-8">
+                    <img
+                      src={block.src}
+                      alt={block.alt}
+                      className={`w-full h-auto max-h-[60vh] md:max-h-[80vh] object-contain transition-all duration-1000 ${index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                        }`}
+                    />
+                  </div>
                 )}
               </div>
             ))}

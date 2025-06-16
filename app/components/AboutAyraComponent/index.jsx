@@ -6,10 +6,12 @@ import AyraIsForTheStudent from './AyraIsForTheStudent'
 import ScrollSectionMobile from './ScrollSectionMobile'
 const index = () => {
   return (
-    <div>
+    <div> 
         <Banner />
         <OurMission />
+        <div className="hidden md:block">
         <ScrollAnimation />
+        </div>
         <ScrollSectionMobile />
         <AyraIsForTheStudent />
     </div>

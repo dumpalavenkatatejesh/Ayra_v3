@@ -6,7 +6,7 @@ import WhatOurStudentsCanExpect from "./WhatOurStudentsCanExpect"
 import AtAyra from "./AtAyra"
 import OurFacultyPhilosophy from "./OurFacultyPhilosophy"
 import OurFacultyPhilosophyMobile from "./OurFacultyPhilosophyMobile"
-
+import Faq from "./Faq"
 const index = () => {
   return (
     <>
@@ -16,11 +16,13 @@ const index = () => {
       </div>
       <div className="block md:hidden">
         <OurFacultyPhilosophyMobile />
-      </div>
+      </div> 
+      <Faq />
       <FacultyHighlights />
       <BeyondTheClassroom />
       <WhatOurStudentsCanExpect />
       <AtAyra />
+
     </>
   )
 }

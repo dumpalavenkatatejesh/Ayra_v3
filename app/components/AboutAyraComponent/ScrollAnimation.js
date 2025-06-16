@@ -1,203 +1,260 @@
-'use client';
+"use client"
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react"
 
-const TextSection = () => {
-  const sectionRef = useRef(null);
-  const trackRef = useRef(null);
-  const blocksRef = useRef([]);
-  const currentIndexRef = useRef(0);
-  const isAnimatingRef = useRef(false);
-  const scrollProgressRef = useRef(0);
-  const insideRef = useRef(false);
+const OurFacultyPhilosophy = () => {
+  const sectionRef = useRef(null)
+  const trackRef = useRef(null) 
+  const blocksRef = useRef([])
+  const currentIndexRef = useRef(0)
+  const isAnimatingRef = useRef(false)
+  const scrollProgressRef = useRef(0)
+  const insideRef = useRef(false)
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   const blocks = [
     {
-      isText: true,
+      type: "text",
       title: 'THE OPEN CANVAS PHILOSOPHY',
-      content: "At AYRA, students co-create their journey. Whether they want to move faster or slower, specialise or stay broad, we support them in building an education that reflects who they are and who they want to become."
+      text: "At AYRA, students co-create their journey. Whether they want to move faster or slower, specialise or stay broad, we support them in building an education that reflects who they are and who they want to become."
     },
     {
-      isText: false,
-      image: '/admissions/masters_programs/what_set_us.png',
+      type: "image",
+      src: '/admissions/masters_programs/what_set_us.png',
       alt: 'Future Ready'
     },
     {
-      isText: true,
+      type: "text",
       title: 'Designed Around You',
-      content: 'From flexible academic structures to a diverse ecosystem of learning and mentorship, every aspect of AYRA has been built around the evolving needs of young people today.'
+      text: 'From flexible academic structures to a diverse ecosystem of learning and mentorship, every aspect of AYRA has been built around the evolving needs of young people today.'
     },
     {
-      isText: false,
-      image: '/admissions/masters_programs/what_set_us_1.png',
+      type: "image",
+      src: '/admissions/masters_programs/what_set_us_1.png',
       alt: 'Designed Around You'
     },
     {
-      isText: true,
+      type: "text",
       title: 'Future-Ready Curriculum',
-      content: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought."
+      text: "With a strong foundation in liberal arts, technology, business, hospitality, and sports sciences, our academic offerings are designed to meet the demands of tomorrow's world - while fostering curiosity, creativity, and critical thought."
     },
-       {
-      isText: false,
-      image: '/admissions/masters_programs/what_set_us_1.png',
+    {
+      type: "image",
+      src: '/admissions/masters_programs/what_set_us_1.png',
       alt: 'Designed Around You'
     },
     {
-      isText: true,
+      type: "text",
       title: 'Rooted in India, Open to the World',
-      content: "Based in Bengaluru, India’s innovation capital, Ayra connects the local and global. We bring the best of both worlds—deep contextual understanding and international standards."
+      text: "Based in Bengaluru, India’s innovation capital, Ayra connects the local and global. We bring the best of both worlds—deep contextual understanding and international standards."
     }
-
-    
-  ];
+  ]
 
   // Track scroll to enable/disable internal lock
   useEffect(() => {
     const handleScroll = () => {
-      const trackEl = trackRef.current;
-      if (!trackEl) return;
+      const trackEl = trackRef.current
+      if (!trackEl) return
 
-      const rect = trackEl.getBoundingClientRect();
-      const isInside = rect.top <= 0 && rect.bottom > window.innerHeight;
+      const rect = trackEl.getBoundingClientRect()
+      const isInside = rect.top <= 0 && rect.bottom > window.innerHeight
 
-      insideRef.current = isInside;
-    };
+      insideRef.current = isInside
+    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   // Handle desktop wheel and mobile touch
   useEffect(() => {
-    const threshold = 100;
-    let touchStartY = 0;
+    const threshold = 100
+    let touchStartY = 0
+    let lastScrollTime = 0
+    const scrollCooldown = 1000 // 1.5 second cooldown between scrolls
+    const scrollThreshold = 50 // Minimum scroll amount to trigger slide change
 
     const handleWheel = (e) => {
-      if (!insideRef.current) return;
+      if (!insideRef.current) return
 
-      const atFirst = currentIndexRef.current === 0;
-      const atLast = currentIndexRef.current === blocks.length - 1;
+      const now = Date.now()
+      if (now - lastScrollTime < scrollCooldown) {
+        e.preventDefault()
+        return
+      }
 
-      // Prevent scrolling past bounds
-      if ((e.deltaY < 0 && atFirst) || (e.deltaY > 0 && atLast)) return;
+      const atFirst = currentIndexRef.current === 0
+      const atLast = currentIndexRef.current === blocks.length - 1
 
-      e.preventDefault();
+      // Allow normal scroll when at last item and scrolling down
+      if (atLast && e.deltaY > 0) {
+        return
+      }
+
+      // Allow normal scroll when at first item and scrolling up
+      if (atFirst && e.deltaY < 0) {
+        return
+      }
+
+      // Only trigger if scroll amount is significant
+      if (Math.abs(e.deltaY) < scrollThreshold) {
+        e.preventDefault()
+        return
+      }
+
+      e.preventDefault()
 
       // Only change slide if not currently animating
       if (!isAnimatingRef.current) {
-        isAnimatingRef.current = true;
+        isAnimatingRef.current = true
+        lastScrollTime = now
 
-        // Determine direction based on scroll 
-        const nextIndex = e.deltaY > 0
-          ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
-          : Math.max(currentIndexRef.current - 1, 0);
+        // Determine direction based on scroll
+        const nextIndex =
+          e.deltaY > 0
+            ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
+            : Math.max(currentIndexRef.current - 1, 0)
 
-        setCurrentSlide(nextIndex);
-        currentIndexRef.current = nextIndex;
+        // Force a re-render by setting current slide to null first
+        setCurrentSlide(null)
+        setTimeout(() => {
+          setCurrentSlide(nextIndex)
+          currentIndexRef.current = nextIndex
+        }, 50)
 
         // Reset animation lock after transition
         setTimeout(() => {
-          isAnimatingRef.current = false;
-        }, 700);
+          isAnimatingRef.current = false
+        }, 1000)
       }
-    };
+    }
 
     const handleTouchStart = (e) => {
-      if (!insideRef.current) return;
-      touchStartY = e.touches[0].clientY;
-    };
+      if (!insideRef.current) return
+      touchStartY = e.touches[0].clientY
+    }
 
     const handleTouchMove = (e) => {
-      if (!insideRef.current) return;
+      if (!insideRef.current) return
 
-      const touchEndY = e.touches[0].clientY;
-      const deltaY = touchStartY - touchEndY;
+      const touchEndY = e.touches[0].clientY
+      const deltaY = touchStartY - touchEndY
 
-      const atFirst = currentIndexRef.current === 0;
-      const atLast = currentIndexRef.current === blocks.length - 1;
+      const atFirst = currentIndexRef.current === 0
+      const atLast = currentIndexRef.current === blocks.length - 1
 
-      if ((deltaY < 0 && atFirst) || (deltaY > 0 && atLast)) return;
+      // Allow normal scroll when at last item and swiping down
+      if (atLast && deltaY > 0) {
+        return
+      }
 
-      e.preventDefault();
+      // Allow normal scroll when at first item and swiping up
+      if (atFirst && deltaY < 0) {
+        return
+      }
 
-      // Only change slide if the touch movement is significant and not currently animating
-      if (Math.abs(deltaY) >= 50 && !isAnimatingRef.current) {
-        isAnimatingRef.current = true;
+      // Only trigger if touch movement is significant
+      if (Math.abs(deltaY) < scrollThreshold) {
+        e.preventDefault()
+        return
+      }
 
-        const nextIndex = deltaY > 0
-          ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
-          : Math.max(currentIndexRef.current - 1, 0);
+      e.preventDefault()
 
-        setCurrentSlide(nextIndex);
-        currentIndexRef.current = nextIndex;
+      // Only change slide if not currently animating
+      if (!isAnimatingRef.current) {
+        isAnimatingRef.current = true
+
+        const nextIndex =
+          deltaY > 0
+            ? Math.min(currentIndexRef.current + 1, blocks.length - 1)
+            : Math.max(currentIndexRef.current - 1, 0)
+
+        // Force a re-render by setting current slide to null first
+        setCurrentSlide(null)
+        setTimeout(() => {
+          setCurrentSlide(nextIndex)
+          currentIndexRef.current = nextIndex
+        }, 50)
 
         // Reset animation lock after transition
         setTimeout(() => {
-          isAnimatingRef.current = false;
-        }, 700);
+          isAnimatingRef.current = false
+        }, 1000)
       }
-    };
+    }
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('touchstart', handleTouchStart, { passive: false });
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener("wheel", handleWheel, { passive: false })
+    window.addEventListener("touchstart", handleTouchStart, { passive: false })
+    window.addEventListener("touchmove", handleTouchMove, { passive: false })
 
     return () => {
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, [blocks.length]);
+      window.removeEventListener("wheel", handleWheel)
+      window.removeEventListener("touchstart", handleTouchStart)
+      window.removeEventListener("touchmove", handleTouchMove)
+    }
+  }, [blocks.length])
 
   return (
-    <div ref={trackRef} style={{ height: `${blocks.length * 100}vh` }} className="relative hidden md:block">
-      <div  
+    <div
+      ref={trackRef}
+      style={{ height: `${blocks.length * 100}vh` }}
+      className="relative"
+    > 
+      <div 
         ref={sectionRef}
         className="sticky top-0 h-[100vh] flex flex-col md:flex-row bg-white transition-opacity duration-500"
       >
         {/* Left Panel */}
         <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
-          <h2 className="text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
-            What Sets Us
-            <br />
-            Apart
+          <h2 className="text-6xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
+          WHAT SETS US <br className="hidden md:block" /> APART
           </h2>
         </div>
 
         {/* Right Panel */}
-        <div className="w-full md:w-1/2 h-[50vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-[75vh] md:h-[100vh] overflow-hidden relative flex items-center justify-center">
           <div className="relative w-full h-full">
             {blocks.map((block, index) => (
               <div
                 key={index}
                 ref={(el) => (blocksRef.current[index] = el)}
-                className={`absolute top-0 left-0 w-full h-full flex justify-center items-center px-4 md:px-12 transition-all duration-700 ease-out
+                className={`absolute top-0 left-0 w-full h-full flex justify-center items-center transition-all duration-1000 ease-in-out
                   ${index === currentSlide
-                    ? 'opacity-100 translate-x-0'
+                    ? "opacity-100 translate-x-0"
                     : index < currentSlide
-                      ? 'opacity-0 -translate-x-full'
-                      : 'opacity-0 translate-x-full'
+                      ? "opacity-0 -translate-x-full"
+                      : "opacity-0 translate-x-full"
                   }`}
                 style={{
-                  transitionProperty: 'opacity, transform',
+                  transitionProperty: "opacity, transform",
                   zIndex: index === currentSlide ? 1 : 0,
+                  pointerEvents: index === currentSlide ? "auto" : "none",
+                  visibility: index === currentSlide ? "visible" : "hidden"
                 }}
               >
-                {block.isText ? (
-                  <div className={`max-w-xl px-4 md:px-0 text-center md:text-left transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
-                    <h3 className="text-xl md:text-2xl text-[#2050B1] font-tthoves-bold mb-2 md:mb-4 uppercase">
+                {block.type === "text" ? (
+                  <div
+                    className={`w-full max-w-2xl px-8 md:px-12 text-center transition-all duration-1000 ${index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                      }`}
+                  >
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl text-[#2050B1] font-tthoves-bold mb-6 md:mb-8 uppercase">
                       {block.title}
                     </h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-700">{block.content}</p>
+                    <p className="text-base sm:text-lg md:text-2xl font-tthoves-extralight text-gray-700 leading-relaxed">
+                      {block.text}
+                    </p>
                   </div>
                 ) : (
-                  <img
-                    src={block.image}
-                    alt={block.alt}
-                    className={`w-full h-auto max-h-[40vh] md:max-h-[80vh] shadow-lg px-4 md:px-0 object-contain transition-opacity duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-                  />
+                  <div className="w-full h-full flex items-center justify-center px-4 md:px-8">
+                    <img
+                      src={block.src}
+                      alt={block.alt}
+                      className={`w-full h-auto max-h-[60vh] md:max-h-[80vh] object-contain transition-all duration-1000 ${index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                        }`}
+                    />
+                  </div>
                 )}
               </div>
             ))}
@@ -205,7 +262,7 @@ const TextSection = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TextSection;
+export default OurFacultyPhilosophy
