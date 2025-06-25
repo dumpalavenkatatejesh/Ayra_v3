@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect, useRef } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { FaSearch, FaBars, FaTimes } from "react-icons/fa"
-import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md"
-import { usePathname } from "next/navigation"
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
+import { usePathname } from "next/navigation";
 
 // --- Menu Data and Utility ---
 const menuItems = [
@@ -84,27 +84,27 @@ const menuItems = [
       { name: "Faculty", slug: "faculty" },
     ],
   },
-]
+];
 
 const generateHref = (item, parent) => {
-  if (!item.slug) return "#"
-  if (parent === "Open Canvas") return `/open-canvas/${item.slug}`
-  if (parent === "Open Canvas") return `/open-canvas/${item.slug}`
-  if (parent === "Distinct for You") return `/distinct-for-you/${item.slug}`
-  if (parent === "Admissions") return `/admissions/${item.slug}`
-  if (parent === "Distinct for You") return `/distinct-for-you/${item.slug}`
-  if (parent === "Schools") return `/schools/${item.slug}`
+  if (!item.slug) return "#";
+  if (parent === "Open Canvas") return `/open-canvas/${item.slug}`;
+  if (parent === "Open Canvas") return `/open-canvas/${item.slug}`;
+  if (parent === "Distinct for You") return `/distinct-for-you/${item.slug}`;
+  if (parent === "Admissions") return `/admissions/${item.slug}`;
+  if (parent === "Distinct for You") return `/distinct-for-you/${item.slug}`;
+  if (parent === "Schools") return `/schools/${item.slug}`;
   if (parent === "Centres for Excellence")
-    return `/centres-for-excellence/${item.slug}`
-  if (parent === "About Us") return `/about-us/${item.slug}`
+    return `/centres-for-excellence/${item.slug}`;
+  if (parent === "About Us") return `/about-us/${item.slug}`;
   // if (parent === 'Admissions') {
   //     if (item.slug === 'bachelors-programs') return '/admissions/bachelors-programs'
   //     if (item.slug === 'masters-programs') return '/admissions/masters-programs'
   //     return `/admissions/${item.slug}`
   // }
-  if (parent === "Focus Centres") return `/focus-centre/${item.slug}`
-  return `/${item.slug}`
-}
+  if (parent === "Focus Centres") return `/focus-centre/${item.slug}`;
+  return `/${item.slug}`;
+};
 
 // --- Submenu Renderer ---
 const RenderSubmenu = ({
@@ -118,7 +118,7 @@ const RenderSubmenu = ({
   setIsMobileMenuOpen,
 }) =>
   items.map((item, idx) => {
-    const key = `${parentKey}-${idx}`
+    const key = `${parentKey}-${idx}`;
     if (!item.submenu) {
       return (
         <Link
@@ -127,14 +127,14 @@ const RenderSubmenu = ({
           className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px] 2xl:text-[18px]"
           onClick={() => {
             if (isMobile) {
-              setIsMobileMenuOpen(false)
-              setActiveSubmenu(null)
+              setIsMobileMenuOpen(false);
+              setActiveSubmenu(null);
             }
           }}
         >
           {item.name}
         </Link>
-      )
+      );
     }
     return (
       <div key={key} className="border-b border-white/20">
@@ -147,8 +147,9 @@ const RenderSubmenu = ({
           {item.name}
           {item.submenu?.length > 0 && (
             <span
-              className={`transform transition-transform duration-200 ${activeSubmenu === key ? "rotate-180" : ""
-                }`}
+              className={`transform transition-transform duration-200 ${
+                activeSubmenu === key ? "rotate-180" : ""
+              }`}
             >
               <MdKeyboardArrowRight
                 className={`${activeSubmenu === key ? "rotate-90" : ""}`}
@@ -171,8 +172,8 @@ const RenderSubmenu = ({
           </div>
         )}
       </div>
-    )
-  })
+    );
+  });
 
 // Extract NavBar content to avoid duplication
 const NavBarContent = ({
@@ -253,12 +254,12 @@ const NavBarContent = ({
                 key={idx}
                 className="relative group h-full flex items-center"
                 onMouseEnter={() => {
-                  setHoveredMenu(idx)
-                  setHoveredSubmenu(null)
+                  setHoveredMenu(idx);
+                  setHoveredSubmenu(null);
                 }}
                 onMouseLeave={() => {
-                  setHoveredMenu(null)
-                  setHoveredSubmenu(null)
+                  setHoveredMenu(null);
+                  setHoveredSubmenu(null);
                 }}
               >
                 <span className="hover:text-gray-300 text-[16px] 2xl:text-[18px] cursor-default">
@@ -268,8 +269,8 @@ const NavBarContent = ({
                   <div className="absolute top-full left-0 bg-[#002561] shadow-[0_3px_8px_#0000005C] pt-2 z-50 min-w-[220px]">
                     {item.submenu.map((subitem, subIdx) => {
                       const hasNested =
-                        subitem.submenu && subitem.submenu.length > 0
-                      const key = `${idx}-${subIdx}`
+                        subitem.submenu && subitem.submenu.length > 0;
+                      const key = `${idx}-${subIdx}`;
                       return (
                         <div
                           key={key}
@@ -280,26 +281,31 @@ const NavBarContent = ({
                           {!subitem.submenu ? (
                             <Link
                               href={generateHref(subitem, item.name)}
-                              className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px] "
+                              className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
                             >
                               {subitem.name}
                             </Link>
                           ) : (
                             <span className="px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px] flex justify-between items-center">
-                              {subitem.name} {hasNested && <span>▼</span>}
+                              {subitem.name}
+                              <MdKeyboardArrowRight className="text-white" />
                             </span>
                           )}
                           {hasNested && hoveredSubmenu === key && (
                             <div className="absolute left-full top-0 min-w-[200px] bg-[#002561] shadow-[0_3px_8px_#0000005C] z-50">
-                              <RenderSubmenu
-                                items={subitem.submenu}
-                                parentKey={key}
-                                parentName={subitem.name}
-                              />
+                              {subitem.submenu.map((nestedItem, nestedIdx) => (
+                                <Link
+                                  key={`${key}-${nestedIdx}`}
+                                  href={generateHref(nestedItem, subitem.name)}
+                                  className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
+                                >
+                                  {nestedItem.name}
+                                </Link>
+                              ))}
                             </div>
                           )}
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 )}
@@ -312,8 +318,8 @@ const NavBarContent = ({
       <div className="lg:hidden flex items-center justify-end px-4">
         <button
           onClick={() => {
-            setIsMobileMenuOpen(!isMobileMenuOpen)
-            if (!isMobileMenuOpen) setActiveSubmenu(null)
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+            if (!isMobileMenuOpen) setActiveSubmenu(null);
           }}
           className="text-white p-2 z-0"
           aria-label="Toggle mobile menu"
@@ -333,8 +339,8 @@ const NavBarContent = ({
                   onClick={() => {
                     setActiveSubmenu(
                       activeSubmenu === `${idx}` ? null : `${idx}`
-                    )
-                    setActiveNestedSubmenu(null)
+                    );
+                    setActiveNestedSubmenu(null);
                   }}
                   className="w-full flex justify-between items-center text-white px-4 py-3 text-lg font-semibold"
                 >
@@ -364,7 +370,7 @@ const NavBarContent = ({
                                   activeNestedSubmenu === `${idx}-${subIdx}`
                                     ? null
                                     : `${idx}-${subIdx}`
-                                )
+                                );
                               }}
                               className="w-full flex justify-between items-center text-white px-4 py-2 text-[14px]"
                             >
@@ -389,9 +395,9 @@ const NavBarContent = ({
                                       )}
                                       className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
                                       onClick={() => {
-                                        setIsMobileMenuOpen(false)
-                                        setActiveSubmenu(null)
-                                        setActiveNestedSubmenu(null)
+                                        setIsMobileMenuOpen(false);
+                                        setActiveSubmenu(null);
+                                        setActiveNestedSubmenu(null);
                                       }}
                                     >
                                       {nestedItem.name}
@@ -406,9 +412,9 @@ const NavBarContent = ({
                             href={generateHref(subitem, item.name)}
                             className="block px-4 py-2 border-b border-white/20 hover:bg-white/10 text-[14px]"
                             onClick={() => {
-                              setIsMobileMenuOpen(false)
-                              setActiveSubmenu(null)
-                              setActiveNestedSubmenu(null)
+                              setIsMobileMenuOpen(false);
+                              setActiveSubmenu(null);
+                              setActiveNestedSubmenu(null);
                             }}
                           >
                             {subitem.name}
@@ -425,20 +431,20 @@ const NavBarContent = ({
         <div
           className="w-[25%] bg-black bg-opacity-50 cursor-pointer relative"
           onClick={() => {
-            setIsMobileMenuOpen(false)
-            setActiveSubmenu(null)
-            setActiveNestedSubmenu(null)
+            setIsMobileMenuOpen(false);
+            setActiveSubmenu(null);
+            setActiveNestedSubmenu(null);
           }}
         >
           {/* Close button on overlay */}
           <button
             className="absolute top-4 right-4 text-white bg-black z-50 text-4xl lg:hidden"
             aria-label="Close menu"
-            onClick={e => {
+            onClick={(e) => {
               e.stopPropagation();
-              setIsMobileMenuOpen(false)
-              setActiveSubmenu(null)
-              setActiveNestedSubmenu(null)
+              setIsMobileMenuOpen(false);
+              setActiveSubmenu(null);
+              setActiveNestedSubmenu(null);
             }}
           >
             <FaTimes />
@@ -447,72 +453,87 @@ const NavBarContent = ({
       </div>
     )}
   </>
-)
+);
 
 const NavBar = () => {
-  const [hoveredMenu, setHoveredMenu] = useState(null)
-  const [hoveredSubmenu, setHoveredSubmenu] = useState(null)
-  const [activeSubmenu, setActiveSubmenu] = useState(null)
-  const [activeNestedSubmenu, setActiveNestedSubmenu] = useState(null)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const pathname = usePathname()
-  const prevIsScrolled = useRef(false)
+  const [hoveredMenu, setHoveredMenu] = useState(null);
+  const [hoveredSubmenu, setHoveredSubmenu] = useState(null);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [activeNestedSubmenu, setActiveNestedSubmenu] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const prevIsScrolled = useRef(false);
   const [transitionStyle, setTransitionStyle] = useState(
     "opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)"
-  )
-  const prevScrollY = useRef(0)
+    
+  );
+  
+  const prevScrollY = useRef(0);
 
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
       "scrollRestoration" in window.history
     ) {
-      window.history.scrollRestoration = "manual"
+      window.history.scrollRestoration = "manual";
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, behavior: "smooth" })
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [pathname])
+  }, [pathname]);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024)
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
 
   useEffect(() => {
     const handleScroll = () => {
-      const threshold = 10 // 10px
-      const currentScrollY = window.scrollY
-      if (currentScrollY > threshold && currentScrollY > prevScrollY.current) {
-        setIsScrolled(true)
-      } else if (currentScrollY <= threshold) {
-        setIsScrolled(false)
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
-      prevScrollY.current = currentScrollY
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    };
 
-  useEffect(() => {
-    if (isScrolled && !prevIsScrolled.current) {
-      // Scrolling down: smooth
-      setTransitionStyle(
-        "opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)"
-      )
-    } else if (!isScrolled && prevIsScrolled.current) {
-      // Scrolling up: instant
-      setTransitionStyle("opacity 0s, transform 0s")
-    }
-    prevIsScrolled.current = isScrolled
-  }, [isScrolled])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const threshold = 0; // 10px
+  //     const currentScrollY = window.scrollY;
+  //     if (currentScrollY > threshold && currentScrollY > prevScrollY.current) {
+  //       setIsScrolled(true);
+  //     } else if (currentScrollY <= threshold) {
+  //       setIsScrolled(false);
+  //     }
+  //     prevScrollY.current = currentScrollY;
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
+  // useEffect(() => {
+  //   if (isScrolled && !prevIsScrolled.current) {
+  //     // Scrolling down: smooth
+  //     setTransitionStyle(
+  //       "opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1)"
+  //     );
+  //   } else if (!isScrolled && prevIsScrolled.current) {
+  //     // Scrolling up: instant
+  //     setTransitionStyle("opacity 0s, transform 0s");
+  //   }
+  //   prevIsScrolled.current = isScrolled;
+  // }, [isScrolled]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -557,13 +578,10 @@ const NavBar = () => {
     <>
       {/* Static NavBar (always visible) */}
       <nav
-        className="bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] w-full border-b border-white/20"
-        style={{
-          position: "static",
-          opacity: 1,
-          transform: "none",
-          zIndex: 10,
-        }}
+        className={`navbar bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] w-full fixed top-0 left-0 z-50 border-b border-white/20 ${
+          isScrolled ? "scrolled" : ""
+        }`}
+        
       >
         <NavBarContent
           menuItems={menuItems}
@@ -582,7 +600,7 @@ const NavBar = () => {
       </nav>
 
       {/* Fixed NavBar (appears after scroll, overlays static) */}
-      <nav
+      {/* <nav
         className="bg-[#002561] text-white shadow-[0_3px_8px_#0000005C] w-full fixed top-0 left-0 z-50"
         style={{
           transition: transitionStyle,
@@ -605,9 +623,9 @@ const NavBar = () => {
           setIsMobileMenuOpen={setIsMobileMenuOpen}
           isMobile={isMobile}
         />
-      </nav>
+      </nav> */}
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

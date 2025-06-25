@@ -4,7 +4,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="relative w-full bg-[#2050B2]">
+        <div className="relative w-full bg-[#2050B2] lg:pt-[5.6%] pt-20">
             {/* Desktop Image */}
             <div className="hidden md:block w-full">
                 <Image

@@ -9,7 +9,7 @@ const Breadcrumbs = ({ items = [] }) => {
     if (!items.length) return null
     return (
         <>
-            <div className="w-full bg-[#002560] flex flex-col justify-center items-center">
+            <div className="w-full bg-[#002560] flex flex-col justify-center items-center pt-24">
                 <div className="container">
                     <nav aria-label="Breadcrumb" className="py-4">
                         <ol className="flex items-center space-x-1 px-4 lg:px-0 text-gray-500">
