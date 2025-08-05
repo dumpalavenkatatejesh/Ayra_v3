@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { workSpansData } from "../../utils/WorkSpansData/WorkSpansData";
+import { workSpansData } from "../../utils/WorkSpansData/workSpansData";
 
 const PathWays = () => {
   return (
