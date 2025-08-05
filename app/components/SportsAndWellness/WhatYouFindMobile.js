@@ -11,7 +11,7 @@ const WhatYouFindMobile = () => {
           alt="yourApplication"
           width={800}
           height={300}
-          className="px-10 pt-5"
+          className="px-10"
         />
       </div>
       <div className="lg:hidden p-5">
