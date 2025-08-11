@@ -20,7 +20,7 @@ const HeroBanner = () => {
         {/* Desktop Image */}
         <div className="hidden md:block w-full">
           <Image
-            src="/centre-for-inner-peace/banner.png"
+            src="/centre-for-inner-peace/banner-new.png"
             alt="Centre For Inner Peace"
             width={1920}
             height={1080}
@@ -32,7 +32,7 @@ const HeroBanner = () => {
         {/* Mobile Image */}
         <div className="block md:hidden w-full">
           <Image
-            src="/centre-for-inner-peace/mobile-banner.png"
+            src="/centre-for-inner-peace/mobile-banner-002.png"
             alt="Centre For Research"
             width={800}
             height={1000} // adjust as per your actual image ratio
