@@ -24,8 +24,8 @@ const menuItems = [
       { name: "Overview", slug: "overview" },
       { name: "Campus", slug: "campus" },
       { name: "Life at AYRA", slug: "life-at-ayra" },
-      { name: "International Centre", slug: "international-centre" },
-      { name: "Placements & Internship", slug: "placements-internship" },
+      // { name: "International Centre", slug: "international-centre" },
+      // { name: "Placements & Internship", slug: "placements-internship" },
       {
         name: "Focus Centres",
         slug: "focus-centre",
@@ -45,7 +45,7 @@ const menuItems = [
         slug: "focus-centre",
         submenu: [
           { name: "Centre for International Relations", slug: "distinct-for-you/international-centre" },
-          { name: "Centre for Corporate Relations, Career and Alumni (placements and internships)", slug: "distinct-for-you/placements-internship" },
+          { name: "Centre for Corporate Relations, Career and Alumni", slug: "distinct-for-you/placements-internship" },
           { name: "Centre for Community Engagement", slug: "focus-centre/centre-for-community-engagement" },
          
         ],

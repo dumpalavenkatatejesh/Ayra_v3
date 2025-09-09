@@ -14,7 +14,7 @@ const Core = () => {
         "Gender sensitization drives and open forums for intercultural dialogue",
     },
     {
-      title: "Celebrations & Community:",
+      title: "Celebrations & Community",
       description:
         "Festivals and cultural activities that strengthen social bonding",
     },

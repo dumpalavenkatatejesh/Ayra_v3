@@ -19,7 +19,7 @@ const Core = () => {
         "Vaccinations, screenings, infection control, and wellness monitoring.",
     },
     {
-      title: "Health Education & Promotion:",
+      title: "Health Education & Promotion",
       description:
         "Workshops on nutrition, hygiene, mental health, and awareness campaigns for global health days.",
     },
