@@ -1,8 +1,8 @@
 import Image from "next/image"
-import { FaPaperPlane } from "react-icons/fa"
 
 const SustainabilitySection = () => {
   return (
+    <>
     <section className="my-7 border-t border-dashed border-gray-300">
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-10 container mx-auto">
         {/* Center Vertical Dashed Border */}
@@ -47,6 +47,8 @@ const SustainabilitySection = () => {
         />
       </div>
     </section>
+
+    </>
   )
 }
 

@@ -68,7 +68,8 @@ export const CorePrinciplesData = [
   },
   {
     title: "Ethical Responsibility",
-    description: "– Prioritising the well-being of research subjects, communities, and ecosystems",
+    description:
+      "– Prioritising the well-being of research subjects, communities, and ecosystems",
   },
   {
     title: "Rigour & Quality",
@@ -76,7 +77,8 @@ export const CorePrinciplesData = [
   },
   {
     title: "Integrity & Accountability",
-    description: "–  Zero tolerance for plagiarism, data falsification, or misconduct",
+    description:
+      "–  Zero tolerance for plagiarism, data falsification, or misconduct",
   },
   {
     title: "Inclusivity & Access",
