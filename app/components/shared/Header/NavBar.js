@@ -134,7 +134,7 @@ const menuItems = [
   //   ],
   // },
   {
-    name: "Admissions & Fee",
+    name: "Admissions",
     submenu: [
       {
         name: "Admissions Process & Guidelines",
@@ -161,11 +161,11 @@ const menuItems = [
     submenu: [
       {
         name: "Research at AYRA",
-        slug: "/centres-for-excellence/centre-for-research",
+        slug: "/coming-soon",
       },
       {
         name: "Entrepreneurship",
-        slug: "/centres-for-excellence/centre-for-entrepreneurship",
+        slug: "/coming-soon",
       },
     ],
   },
@@ -247,14 +247,14 @@ const menuItems = [
     submenu: [
       {
         name: "Sports Facilities",
-        slug: "focus-centre/sports-and-wellness-centre",
+        slug: "/coming-soon",
       },
       { name: "NCC/NSS", slug: "/coming-soon" },
       { name: "Hostel Details", slug: "/coming-soon" },
       { name: "Placement Cell", slug: "/coming-soon" },
       {
         name: "Health facilities",
-        slug: "focus-centre/centre-for-healthcare-and-infirmary",
+        slug: "/coming-soon",
       },
       { name: "Internal Complaint Committee", slug: "/coming-soon" },
       {
