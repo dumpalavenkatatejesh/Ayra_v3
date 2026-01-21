@@ -64,7 +64,7 @@ const NewsAndEvents = () => {
       <div className="w-full flex flex-col justify-center items-center">
         <div className="container flex flex-col gap-10">
           <div className="flex flex-col items-center px-4">
-            <div className="container mx-auto  border-l border-r border-dashed border-[#000000] flex items-center justify-center flex-col  text-left">
+            <div className="container mx-auto  lg:border-l lg:border-r border-dashed border-[#000000] flex items-center justify-center flex-col  text-left">
               <p className="text-left lg:w-2/3 pt-4 ">
                 At AYRA, programs are not fixed paths you must follow. They are
                 starting points you can shape.
