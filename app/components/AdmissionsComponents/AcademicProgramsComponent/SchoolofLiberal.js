@@ -1,9 +1,6 @@
 "use client"
 import Image from "next/image"
 import React from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 
 const NewsAndEventData = [
   {
@@ -35,32 +32,10 @@ const NewsAndEventData = [
   //   },
 ]
 
-const sliderSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  pauseOnHover: true,
-  swipeToSlide: true,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        dots: true,
-      },
-    },
-  ],
-}
-
 const NewsAndEvents = () => {
   return (
     <>
-      <div className="md:border-b border-t md:border-dashed md:border-black  py-5`  ">
+      <div className="md:border-b border-t md:border-dashed md:border-black  py-5  ">
         <div className="flex flex-col justify-center items-center md:flex-row  container mx-auto px-4">
           <div className="w-full md:w-1/2 flex flex-col items-center lg:items-start justify-start ">
             <Image
@@ -83,48 +58,11 @@ const NewsAndEvents = () => {
           </div>
         </div>
       </div>
-      {/* Carousel Section */}
+      {/* Programs Grid Section */}
       <div className=" py-10">
         <div className="container mx-auto px-4">
-          {/* Mobile: Carousel */}
-          <div className="block md:hidden">
-            <Slider {...sliderSettings}>
-              {NewsAndEventData.map((item) => (
-                <div key={item.id} className="px-2">
-                  <div className="relative overflow-hidden shadow-lg">
-                    <Image
-                      src={item.image}
-                      width={450}
-                      height={700}
-                      alt={item.title}
-                      className="w-full h-auto object-cover"
-                    />
-                    <div className="absolute bottom-10 w-full p-4 leading-tight space-y-2">
-                      <h2 className="text-3xl font-schabo text-white text-end">
-                        {item.title}
-                      </h2>
-                      {item.duration && (
-                        <p className="text-white text-end mt-2">
-                          Duration : {item.duration}
-                        </p>
-                      )}
-                      {item.seats && (
-                        <p className="text-white text-end">
-                          Seats : {item.seats}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                  {item.description && (
-                    <p className="text-black mt-4 px-2">{item.description}</p>
-                  )}
-                </div>
-              ))}
-            </Slider>
-          </div>
-
-          {/* Desktop: Grid */}
-          <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6  ">
+          {/* Grid: Mobile (1 column), Desktop (2 columns), Large Desktop (3 columns) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {NewsAndEventData.map((item) => (
               <div key={item.id}>
                 <div className="relative overflow-hidden shadow-lg">
@@ -136,7 +74,7 @@ const NewsAndEvents = () => {
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute bottom-10 w-full p-4 leading-tight space-y-2">
-                    <h2 className="text-3xl lg:text-5xl font-schabo text-white text-end h-40">
+                    <h2 className="text-3xl lg:text-5xl font-schabo text-white text-end h-14">
                       {item.title}
                     </h2>
                     {item.duration && (

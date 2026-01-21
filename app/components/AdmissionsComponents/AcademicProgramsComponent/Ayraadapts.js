@@ -27,7 +27,7 @@ const Ayraadapt = () => {
             />
           </div>
           {/* Overlay Content */}
-          <div className="absolute lg:bottom-24 bottom-20 lg:left-[55%] left-[0%] flex items-center">
+          <div className="absolute lg:bottom-24 bottom-8 lg:left-[55%] left-[0%] flex items-center">
             <div className=" text-white px-5">
               <p className="lg:text-base text-sm px-4">
               At AYRA, your program does not define you. You define how your program unfolds.
