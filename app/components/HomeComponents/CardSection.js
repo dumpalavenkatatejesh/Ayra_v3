@@ -68,17 +68,31 @@ const CardSection = () => {
                   </div>
 
                   <div>
-                    <h2 className=" text-[#002561] md:text-[70px] text-[50px] font-schabo">
+                    {/* Previous Code - Inline CSS */}
+                    {/* <h2 className=" text-[#002561] md:text-[70px] text-[50px] font-schabo">
+                      {card.title}
+                    </h2> */}
+
+                    {/* New Code - Following globals.css typography (h2 for SEO, font-schabo for branding) */}
+                    <h2 className="text-[#002561] font-schabo">
                       {card.title}
                     </h2>
                   </div>
 
                   <div className="lg:h-16">
-                    <p >{card.description}</p>
+                    {/* Previous Code - Inline CSS */}
+                    {/* <p >{card.description}</p> */}
+
+                    {/* New Code - Following globals.css typography */}
+                    <p>{card.description}</p>
                   </div>
-                  <p >
+                  {/* Previous Code - Inline CSS */}
+                  {/* <p >
                     {card.description2}
-                  </p>
+                  </p> */}
+
+                  {/* New Code - Following globals.css typography */}
+                  <p>{card.description2}</p>
 
                   <Link href={card.url}>
                     <div className="group inline-block">

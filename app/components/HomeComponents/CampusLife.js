@@ -10,9 +10,9 @@ const CampusLife = () => {
         <div className="w-full md:w-1/2 bg-[#2050B1] text-white flex items-center justify-center ">
           <div className=" flex flex-col">
             <div className="border-b-2 border-dashed boder-[#FFFFFF] flex flex-col gap-4 py-4 p-6 mt-10 lg:px-20">
-              <p className="font-schabo text-4xl text-[80px]  text-[#66A4F9]">
+              <h2 className="font-schabo highlight-heading text-[#66A4F9]">
                 CAMPUS LIFE
-              </p>
+              </h2>
               <p className="text-xl md:text-2xl font-bold ">
                 Vibrant. Inclusive. Student-Driven.
               </p>

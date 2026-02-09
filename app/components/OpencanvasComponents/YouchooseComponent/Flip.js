@@ -61,7 +61,7 @@ const FoldOnHoverRoll = () => {
               }}
             >
               <div className="w-full flex items-center px-2">
-                <h3 className="font-extrabold text-[#2050B1] text-[20px] font-tthoves-demibold text-left leading-tight">
+                <h3 className="font-extrabold text-[#2050B1] text-large font-tthoves-demibold text-left leading-tight">
                   {section.title}
                 </h3>
               </div>

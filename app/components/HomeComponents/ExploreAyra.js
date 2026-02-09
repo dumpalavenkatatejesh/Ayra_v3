@@ -43,8 +43,15 @@ const ExploreAyra = () => {
             {/* Content overlay (same for now, can be adjusted too) */}
             <div className="absolute inset-0 top-48 md:right-50 right-10 flex justify-end md:items-center items-end p-4">
                 <div className="text-white md:max-w-[35%] w-full md:space-y-3 space-y-2 mb-5 md:mb-0">
-                    <h3 className="md:text-3xl text-2xl font-tthoves-demibold">Designed for a Changing World</h3>
-                    <p className="md:text-lg text-sm font-light font-tthoves-extralight">
+                    {/* Previous Code - Inline CSS */}
+                    {/* <h3 className="md:text-3xl text-2xl font-tthoves-demibold">Designed for a Changing World</h3> */}
+                    {/* <p className="md:text-lg text-sm font-light font-tthoves-extralight">
+                        AYRA is built for this moment—and for what comes next.
+                    </p> */}
+
+                    {/* New Code - Following globals.css typography (h3 for SEO) */}
+                    <h2 className="sub-heading font-tthoves-demibold">Designed for a Changing World</h2>
+                    <p className="font-tthoves-extralight">
                         AYRA is built for this moment—and for what comes next.
                     </p>
                     <ul className="md:space-y-3 md:mb-5">
@@ -57,7 +64,11 @@ const ExploreAyra = () => {
                                     height={16}
                                     className="mt-1 rotate-[50deg]"
                                 />
-                                <span className='md:text-lg text-sm font-light font-tthoves-extralight'>{point}</span>
+                                {/* Previous Code - Inline CSS */}
+                                {/* <span className='md:text-lg text-sm font-light font-tthoves-extralight'>{point}</span> */}
+
+                                {/* New Code - Following globals.css typography */}
+                                <span className='font-tthoves-extralight'>{point}</span>
                             </li>
                         ))}
                     </ul>

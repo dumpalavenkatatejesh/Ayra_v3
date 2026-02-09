@@ -241,7 +241,7 @@ const FoldOnHoverRoll = () => {
         {/* Desktop Horizontal Fold */}
         <div className="mt-20 mb-20 sm:flex hidden flex-col justify-center items-center">
           <p
-            className={`text-[#2050B1] font-semibold text-[25px] mb-4 font-tthoves-bold transition-all duration-500 ${
+            className={`text-[#2050B1] font-semibold sub-heading mb-4 font-tthoves-bold transition-all duration-500 ${
               hovered
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 -translate-y-full"
@@ -311,7 +311,7 @@ const FoldOnHoverRoll = () => {
 
         {/* Mobile Vertical Fold (No Animations) */}
         <div className="sm:hidden flex flex-col justify-center items-center mt-10 mb-10">
-          <p className="text-[#2050B1] font-semibold text-[20px] font-tthoves-bold mb-6 text-center">
+          <p className="text-[#2050B1] font-semibold sub-heading font-tthoves-bold mb-6 text-center">
             {introText}
           </p>
 

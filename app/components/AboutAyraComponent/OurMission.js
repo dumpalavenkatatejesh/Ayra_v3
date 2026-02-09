@@ -23,11 +23,11 @@ const OurMission = () => {
                         />
                     </div>
                     <div className="w-full md:w-1/2 lg:w-3/5 space-y-6 md:space-y-8 flex flex-col justify-end items-center md:items-end">
-                        <h2 className="text-xl md:text-xl font-light leading-tight text-center md:text-left">
+                        <p className="sub-heading text-lg font-light leading-tight text-center md:text-left">
                             To be a transformative force in higher education—
                             <br />
                             where students don&apos;t just follow paths, they create them.
-                        </h2>
+                        </p>
                         {/* <ul className="space-y-4 font-light w-full md:w-auto md:pe-10">
                             {bulletPoints.map((point, index) => (
                                 <li key={index} className="flex items-start md:items-end gap-3 md:gap-4 text-sm md:text-md px-2 md:px-0 md:me-10">
@@ -59,7 +59,7 @@ const OurMission = () => {
                         />
                     </div>
                     <div className="w-full md:w-1/2 lg:w-3/5 space-y-6 md:space-y-8 font-light">
-                        <p className="text-xl md:text-xl leading-relaxed text-center md:text-left">
+                        <p className="sub-heading text-lg  leading-relaxed text-center md:text-left">
                             To cultivate lifelong learners, innovative thinkers, and ethical
                             leaders by offering a flexible, interdisciplinary education
                             grounded in academic excellence, critical inquiry, and social

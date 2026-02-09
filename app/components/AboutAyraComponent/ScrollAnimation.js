@@ -208,7 +208,7 @@ const OurFacultyPhilosophy = () => {
       >
         {/* Left Panel */}
         <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
-          <h2 className="text-6xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
+          <h2 className=" font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
           WHAT SETS US <br className="hidden md:block" /> APART
           </h2>
         </div>
@@ -239,10 +239,10 @@ const OurFacultyPhilosophy = () => {
                     className={`w-full max-w-2xl px-8 md:px-12 text-center transition-all duration-1000 ${index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       }`}
                   >
-                    <h3 className="text-2xl sm:text-3xl md:text-5xl text-[#2050B1] font-tthoves-bold mb-6 md:mb-8 uppercase">
+                    <h2 className="cards-heading text-[#2050B1] font-tthoves-bold mb-6 md:mb-8 uppercase">
                       {block.title}
-                    </h3>
-                    <p className="text-base sm:text-lg md:text-2xl font-tthoves-extralight text-gray-700 leading-relaxed">
+                    </h2>
+                    <p className="text-large font-tthoves-extralight text-gray-700 leading-relaxed">
                       {block.text}
                     </p>
                   </div>

@@ -27,7 +27,7 @@ const Action = () => {
               at AYRA.
             </p>
 
-            <p className="text-lg md:text-xl font-bold py-2 font-tthoves-light">
+            <p className="text-large font-bold py-2 font-tthoves-light">
               Because here, leadership is not about hierarchy.
             </p>
 
