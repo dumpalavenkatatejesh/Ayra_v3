@@ -97,6 +97,8 @@ export default function GlobalExchangePrograms() {
                 className="object-center w-full h-auto"
                 priority
               />
+
+              
             </div>
 
             {/* Right Carousel */}
