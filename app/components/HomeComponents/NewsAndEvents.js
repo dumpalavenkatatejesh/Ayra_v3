@@ -65,9 +65,9 @@ const NewsAndEvents = () => {
         <div className="bg-[#2050B1] flex flex-col pb-10">
           <div className="flex flex-col md:flex-row md:border-b md:border-dashed md:border-white ">
             <div className="w-full md:w-1/2 md:border-r md:border-dashed md:border-white flex flex-col items-center">
-              <p className="font-schabo text-4xl md:text-[80px] text-[#66A4F9] leading-tight p-4 pb-0">
+              <h2 className="font-schabo highlight-heading text-[#66A4F9] leading-tight p-4 pb-0">
                 STORIES IN THE <br className="md:flex hidden" /> MAKING
-              </p>
+              </h2>
             </div>
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-4">
               <p className="text-white md:w-[60%] font-tthoves-light">
@@ -97,9 +97,9 @@ const NewsAndEvents = () => {
                       className="w-full h-auto object-cover"
                     />
                     <div className="absolute bottom-10 w-full p-4 leading-tight space-y-2">
-                      <h2 className="text-3xl font-schabo text-white text-end">
+                      <h3 className="cards-heading font-schabo text-white text-end">
                         {item.title}
-                      </h2>
+                      </h3>
                     </div>
                   </div>
                 </div>
@@ -119,9 +119,9 @@ const NewsAndEvents = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute bottom-10 w-full p-4 leading-tight space-y-2">
-                  <h2 className="text-3xl lg:text-5xl font-schabo text-white text-end">
+                  <h3 className="cards-heading font-schabo text-white text-end">
                     {item.title}
-                  </h2>
+                  </h3>
                 </div>
               </div>
             ))}

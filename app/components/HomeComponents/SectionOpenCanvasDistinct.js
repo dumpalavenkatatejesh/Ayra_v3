@@ -47,7 +47,6 @@ const SectionOpenCanvasDistinct = () => {
                     </div>
                 </div>
             </div>
-
         </>
     );
 };

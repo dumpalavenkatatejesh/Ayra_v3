@@ -105,10 +105,10 @@ export default function PaperFoldingScroll() {
             {/* Text */}
             <div className="w-full md:w-[70%] flex flex-col  pr-4 relative items-center justify-center ">
               <div className="h-auto px-6 md:ps-28">
-                <h2 className="text-2xl md:text-[60px] uppercase text-[#002561] mb-4 leading-tight lg:text-left text-center font-schabo">
+                <h2 className=" uppercase text-[#002561] mb-4 leading-tight lg:text-left text-center font-schabo">
                   {headings[activeIndex]}
                 </h2>
-                <p className="text-base md:text-xl text-black font-medium lg:text-left text-center ">
+                <p className="text-large text-black font-medium lg:text-left text-center ">
                   {subtexts[activeIndex]}
                 </p>
               </div>

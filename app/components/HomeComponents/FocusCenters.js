@@ -13,12 +13,22 @@ const FocusCenters = () => {
           <div className="flex flex-col md:flex-row lg:gap-8 gap-4">
             {/* Left Side */}
             <div className="md:w-1/2 md:pr-8 relative lg:py-10">
-              <h4 className="font-schabo text-[80px] text-[#002561]">
+              {/* Previous Code - Inline CSS (h4 - not ideal for SEO) */}
+              {/* <h4 className="font-schabo text-[80px] text-[#002561]">
                 FOCUS CENTRES
-              </h4>
-              <p className="font-tthoves-demibold text-[24px] leading-tight">
+              </h4> */}
+              {/* <p className="font-tthoves-demibold text-[24px] leading-tight">
                 Learning That Moves <br /> Beyond Classrooms
-              </p>
+              </p> */}
+
+              {/* New Code - Following globals.css typography (h2 for SEO - main section) */}
+              <h2 className="font-schabo text-[#002561]">
+                FOCUS CENTRES
+              </h2>
+              {/* h3 for sub-heading - SEO friendly */}
+              <h3 className="font-tthoves-demibold">
+                Learning That Moves <br /> Beyond Classrooms
+              </h3>
               {/* Center Dotted Divider for md+ screens */}
               <div
                 className="hidden md:block absolute top-0 right-0 h-full w-0.5"
@@ -27,7 +37,14 @@ const FocusCenters = () => {
             </div>
             {/* Right Side */}
             <div className="md:w-1/2 lg:py-10">
-              <p className="text-[20px] font-tthoves-medium leading-tight">
+              {/* Previous Code - Inline CSS */}
+              {/* <p className="text-[20px] font-tthoves-medium leading-tight">
+                From entrepreneurship to wellness, AYRA&apos;s Focus Centres
+                help you develop skills for life, not just for work.
+              </p> */}
+
+              {/* New Code - Following globals.css typography */}
+              <p className="font-tthoves-medium">
                 From entrepreneurship to wellness, AYRA&apos;s Focus Centres
                 help you develop skills for life, not just for work.
               </p>

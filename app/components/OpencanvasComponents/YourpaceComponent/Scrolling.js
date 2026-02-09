@@ -103,10 +103,10 @@ export default function PaperFoldingScroll() {
           {/* Text on bottom for mobile, left for desktop */}
           <div className="w-full md:w-[70%] flex flex-col justify-center px-4 md:pr-4 relative text-center md:text-left">
             <div className="h-auto">
-              <h2 className="text-2xl md:text-[60px] uppercase text-[#002561] mb-4 leading-tight font-schabo">
+              <h2 className=" uppercase text-[#002561] mb-4 leading-tight font-schabo">
                 {headings[activeIndex]}
               </h2>
-              <p className="text-base md:text-xl text-black font-medium">
+              <p className="text-large  text-black font-medium">
                 {subtexts[activeIndex]}
               </p>
             </div>

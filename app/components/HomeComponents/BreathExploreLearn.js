@@ -5,10 +5,10 @@ const BreathExploreLearn = () => {
     <>
       <div className="bg-[url('/home/breath-explore-learn.png')] h-[90vh] bg-cover bg-center flex flex-row justify-center items-end p-4 lg:p-0">
         <div className="container">
-          <p className="font-schabo lg:text-[100px] text-[50px] text-white text-center leading-tight">
+          <h2 className="font-schabo lg:text-[100px] text-[50px] text-white text-center leading-tight">
             BREATHE, EXPLORE, LEARN. <br />
             IN THE SHADOW OF THE NANDI HILLS.
-          </p>
+          </h2>
         </div>
       </div>
       <div className="w-full flex flex-row justify-center items-end p-4 lg:p-0">
@@ -19,10 +19,10 @@ const BreathExploreLearn = () => {
             surrounded by verdant stretches of green to the north and east.
           </p>
 
-          <p className="font-tthoves-medium text-[24px]">
+          <h3 className="font-tthoves-medium ">
             More than just a campus, it’s a space to think deeply, live
             mindfully, and grow freely.
-          </p>
+          </h3>
           {/* buttons */}
           <div className="flex md:flex-row flex-col justify-center items-center md:gap-10 gap-4 mt-5">
             <div className="group inline-block">

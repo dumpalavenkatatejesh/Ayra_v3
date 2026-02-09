@@ -167,7 +167,7 @@ const ApproachAnimation = () => {
       >
         {/* Left Panel */}
         <div className="w-full md:w-1/2 flex justify-center md:items-center items-end px-4 md:px-6 h-[50vh] md:h-[100vh] bg-white">
-          <h2 className="text-5xl sm:text-6xl md:text-8xl font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
+          <h2 className="highlight-heading   font-schabo text-[#2050B1] leading-tight uppercase text-center md:text-start">
             WHAT GUIDES OUR <br /> LEADERSHIP <br /> APPROACH
           </h2>
         </div>
@@ -199,7 +199,7 @@ const ApproachAnimation = () => {
                     }`}
                   >
                     <h3
-                      className="text-2xl md:text-3xl  text-[#2050B1] mb-2 md:mb-4 uppercase font-tthoves-bold"
+                      className="cards-heading  text-[#2050B1] mb-2 md:mb-4 uppercase font-tthoves-bold"
                       dangerouslySetInnerHTML={{ __html: block.title }}
                     ></h3>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700">
