@@ -5,9 +5,9 @@ const WhatYouFind = () => {
   return (
     <div className="bg-white py-10">
       <div className="container mx-auto px-4 md:px-0">
-        <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561]">
+        <h2 className="highlight-heading tracking-wider font-schabo text-[#002561]">
           WHAT YOU&apos;LL <br className="hidden md:block" /> FIND HERE
-        </h1>
+        </h2>
       </div>
       <div className="flex flex-col items-center justify-center container mx-auto lg:p-5">
         <Image

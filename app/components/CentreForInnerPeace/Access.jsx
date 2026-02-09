@@ -12,9 +12,9 @@ const Access = () => {
     <div className="bg-[#002561] pt-10">
       <div className="container mx-auto px-4 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5 text-white justify-center items-center">
-          <h1 className="text-3xl md:text-8xl tracking- font-schabo text-[#66A4F9]">
+          <h2 className="highlight-heading tracking- font-schabo text-[#66A4F9]">
             ACCESSIBLE TO ALL
-          </h1>
+          </h2>
           <p className="text-sm md:text-base font-tthoves-extralight self-center text-white">
             AYRA is committed to ensuring that this journey is not reserved for
             a few. The Centre will host experiences and programmes available to

@@ -18,9 +18,9 @@ const DetailedProgram = () => {
           <div className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-10 py-5">
             {/* Description */}
             <div>
-              <h1 className="text-3xl md:text-8xl text-[#2050B1] tracking-wider font-schabo">
+              <h2 className="highlight-heading text-[#2050B1] tracking-wider font-schabo">
                 DETAILED PROGRAM <br className="hidden md:block" /> FEATURES
-              </h1>
+              </h2>
               <ul className="mt-5 space-y-4 text-sm md:text-base text-black font-tthoves-extralight">
                 {highlights.map((text, idx) => (
                   <li className="flex items-start gap-2" key={idx}>

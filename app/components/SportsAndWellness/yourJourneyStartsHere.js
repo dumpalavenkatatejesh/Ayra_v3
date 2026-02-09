@@ -16,12 +16,12 @@ const yourJourneyStartsHere = () => {
         </div>
       </div>
       <div className="flex items-center justify-center flex-col text-[#FFFFFF] lg:p-0 p-4">
-        <p className="text-center lg:w-2/3 text-lg">
+        <p className="text-center ">
           Whether you’re a competitive athlete or looking to integrate fitness
           and well-being into your lifestyle, AYRA’s Sports & Wellness Centre
           provides an open canvas for growth, exploration, and performance.
         </p>
-        <p className="text-xl font-tthoves-demibold text-center pt-3">
+        <p className=" font-tthoves-demibold text-center pt-3">
           Discover what’s possible at AYRA
         </p>
       </div>
