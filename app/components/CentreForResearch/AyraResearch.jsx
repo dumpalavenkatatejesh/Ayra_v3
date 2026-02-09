@@ -12,10 +12,10 @@ const AyraResearch = () => {
     <div className="bg-[#2050B1] py-10">
       <div className="container mx-auto px-4 md:px-0">
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5 text-white">
-          <h1 className="text-3xl md:text-8xl tracking-wider font-schabo">
+          <h2 className="highlight-heading tracking-wider font-schabo">
             AYRA RESEARCH <br className="hidden md:block" /> CENTRES &
             INITIATIVES
-          </h1>
+          </h2>
           <p className="text-sm md:text-base font-tthoves-extralight self-center">
             To bring this vision to life, AYRA has launched the AYRA Research
             and Consultancy Hub (ARCH)—a central space for ideation,
@@ -29,7 +29,7 @@ const AyraResearch = () => {
           <div className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-10 py-5">
             {/* Description */}
             <div>
-              <h2 className="text-xl md:text-3xl text-white font-bold">
+              <h2 className="sub-heading text-white font-bold">
                 Key Features Include:
               </h2>
               <ul className="mt-5 space-y-4 text-sm md:text-base text-white font-tthoves-extralight">

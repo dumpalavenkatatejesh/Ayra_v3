@@ -96,9 +96,9 @@ export default function GlobalExchangePrograms() {
       </style>
     <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center bg-no-repeat py-8">
       <div className="container mx-auto px-4 md:px-0">
-        <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6">
+        <h2 className="highlight-heading tracking-wider font-schabo text-[#2050B1] mb-6">
           WHAT WE OFFER
-        </h1>
+        </h2>
 
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 py-5">
           {/* Left Image */}
@@ -119,7 +119,7 @@ export default function GlobalExchangePrograms() {
               {slides.map((slide, index) => (
                 <div key={index} className="p-2">
                   <div className="transition-all duration-500 ease-in-out">
-                    <h2 className="text-2xl md:text-[48px] leading-[28px] lg:leading-[48px] text-[#2050B1] font-tthoves-bold">
+                    <h2 className="carousel-heading-desktop leading-[28px] lg:leading-[48px] text-[#2050B1] font-tthoves-bold">
                       {slide.title}
                     </h2>
                     <h2 className="lg:text-2xl text-xl mt-4 text-black font-tthoves-regular">

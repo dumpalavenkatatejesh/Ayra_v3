@@ -16,9 +16,9 @@ export default function WhatDrivesUS() {
       <div className="bg-white py-8">
         <div className="container mx-auto px-4 md:px-0 lg:flex justify-center items-center">
           <div className="md:w-[60%]">
-            <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561]">
+            <h2 className="highlight-heading tracking-wider font-schabo text-[#002561]">
               {title}
-            </h1>
+            </h2>
           </div>
           <div className="md:w-[40%] pt-4">
             <p className="font-tthoves-light text-[#002561]">{subtext}</p>
@@ -29,9 +29,9 @@ export default function WhatDrivesUS() {
         </div>
         <div className="container mx-auto px-4 md:px-0 lg:flex justify-center items-center">
           <div className="md:w-[80%]">
-            <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561]">
+            <h2 className="highlight-heading tracking-wider font-schabo text-[#002561]">
               {title2}
-            </h1>
+            </h2>
           </div>
           <div className="md:w-[40%] pt-4">
             <p className="font-tthoves-light text-[#000]">{subtext2}</p>

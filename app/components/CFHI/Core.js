@@ -34,9 +34,9 @@ const Core = () => {
     <>
       <div className="container mx-auto px-4 md:px-10 lg:px-14 py-6 md:py-10">
         <div>
-          <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561] text-center pb-5">
+          <h2 className="highlight-heading tracking-wider font-schabo text-[#002561] text-center pb-5">
           CORE SERVICES
-          </h1>
+          </h2>
         </div>
         {/* Points Grid */}
         <div className="container mx-auto ">

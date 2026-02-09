@@ -24,7 +24,7 @@ const ForStudents = () => {
           <div className="text-white w-full md:max-w-[45%] p-4 md:p-0 rounded-md">
             <ul className="mt-2 md:mt-6 space-y-5 text-xl font-tthoves-extralight">
               {items.map((text, idx) => (
-                <li className="flex items-start gap-2" key={idx}>
+                <li className="text-large flex items-start gap-2" key={idx}>
                   <span className={idx === 1 ? "font-tthoves-medium" : ""}>{text}</span>
                 </li>
               ))}

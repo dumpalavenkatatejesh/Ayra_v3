@@ -18,9 +18,9 @@ const Counselling = () => {
           <div className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-10 py-5">
             {/* Description */}
             <div>
-              <h1 className="text-3xl md:text-8xl text-[#2050B1] tracking-wider font-schabo">
+              <h2 className="highlight-heading text-[#2050B1] tracking-wider font-schabo">
                 COUNSELLING & <br className="hidden md:block" /> MENTORSHIP CELL
-              </h1>
+              </h2>
               <h4 className="text-lg pt-5">
                 Within the Centre, the Counselling and Mentorship Cell is led by
                 a licensed psychotherapist with a trained team of counsellors.

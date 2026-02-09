@@ -6,9 +6,9 @@ const Pillars = () => {
   return (
     <div className="lg:py-10">
       <div className="container mx-auto px-4 md:px-0 ">
-        <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561] text-center pb-5">
+        <h2 className="highlight-heading tracking-wider font-schabo text-[#002561] text-center pb-5">
           THE PILLARS OF IKS AT AYRA
-        </h1>
+        </h2>
 
         <div className="">
           <Image

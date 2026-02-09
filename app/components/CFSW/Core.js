@@ -34,9 +34,9 @@ const Core = () => {
     <>
       <div className="container mx-auto px-4 md:px-10 lg:px-14 py-6 md:py-10">
         <div>
-          <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561] text-center pb-5">
+          <h2 className="highlight-heading tracking-wider font-schabo text-[#002561] text-center pb-5">
           CORE INITIATIVES
-          </h1>
+          </h2>
         </div>
         {/* Points Grid */}
         <div className="container mx-auto ">
@@ -45,10 +45,10 @@ const Core = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  lg:divide-x divide-dashed divide-[#4FA6FF]">
               {items.map((item, index) => (
                 <div key={index} className="px-2 lg:px-">
-                  <h1
-                    className="text-xl md:text-2xl text-[#2050B1] font-tthoves-bold lg:h-24"
+                  <p
+                    className=" text-[#2050B1] font-tthoves-bold lg:h-24"
                     dangerouslySetInnerHTML={{ __html: item.title }}
-                  ></h1>
+                  ></p>
                   <p className="text-sm mt-2">{item.description}</p>
                 </div>
               ))}

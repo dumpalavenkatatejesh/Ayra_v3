@@ -32,7 +32,7 @@ const Whygo = () => {
 
   return (
     <>
-      <h2 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6 mt-8 container mx-auto px-4 ">
+      <h2 className="highlight-heading tracking-wider font-schabo text-[#2050B1] mb-6 mt-8 container mx-auto px-4 ">
         <span class="block">WHY GO GLOBAL WITH AYRA?</span>
       </h2>
 
@@ -109,9 +109,9 @@ const Whygo = () => {
       <div className="flex flex-col md:flex-row  gap-8 md:gap-16 lg:py-16 pb-10 container mx-auto px-4">
         {/* Left Section */}
         <div className="md:w-1/2 space-y-4">
-          <h1 className="text-3xl md:text-7xl tracking-wider font-schabo text-[#2050B1] mb-6">
+          <h2 className="highlight-heading tracking-wider font-schabo text-[#2050B1] mb-6">
             STUDENT OUTCOMES <br /> WE AIM FOR
-          </h1>
+          </h2>
 
           <div>
             <h2 className=" text-2xl mt-4 text-black font-tthoves-regular mb-4 ">
