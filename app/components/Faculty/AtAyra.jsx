@@ -3,7 +3,7 @@ import React from "react"
 const AtAyra = () => {
   return (
     <div className="my-5 flex flex-col items-center gap-3 px-4">
-      <p className="text-xl sm:text-2xl md:text-3xl text-black text-center font-tthoves-medium">
+      <p className="sub-heading text-black text-center font-tthoves-medium">
         At AYRA, you’re not just taught—you’re seen, heard, and supported.
       </p>
       <div>

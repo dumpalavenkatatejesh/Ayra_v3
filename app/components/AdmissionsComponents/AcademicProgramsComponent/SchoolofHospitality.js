@@ -47,7 +47,7 @@ const NewsAndEvents = () => {
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col justify-center items-center lg:items-center px-4 md:px-0">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black font-tthoves-bold w-full md:w-[85%] text-left">
+            <h2 className="carousel-heading-desktop font-bold text-black font-tthoves-bold w-full md:w-[85%] text-left">
               Craft skills. Culture. Conscious creation.
             </h2>
             <p className="text-black font-tthoves-light w-full md:w-[85%] pt-5  text-left">
@@ -75,7 +75,7 @@ const NewsAndEvents = () => {
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute bottom-10 w-full p-4 leading-tight space-y-2">
-                    <h2 className="text-3xl lg:text-5xl font-schabo text-white text-end h-14">
+                    <h2 className="carousel-heading-desktop font-schabo text-white text-end h-14">
                       {item.title}
                     </h2>
                     {item.duration && (

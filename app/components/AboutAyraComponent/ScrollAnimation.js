@@ -239,7 +239,7 @@ const OurFacultyPhilosophy = () => {
                     className={`w-full max-w-2xl px-8 md:px-12 text-center transition-all duration-1000 ${index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       }`}
                   >
-                    <h2 className="cards-heading text-[#2050B1] font-tthoves-bold mb-6 md:mb-8 uppercase">
+                    <h2 className=" text-[#2050B1] font-tthoves-bold mb-6 md:mb-8 uppercase">
                       {block.title}
                     </h2>
                     <p className="text-large font-tthoves-extralight text-gray-700 leading-relaxed">

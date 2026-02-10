@@ -28,7 +28,7 @@ const FacultyHighlights = () => {
 
         {/* Right Description */}
         <div className="pl-6 md:pl-12 space-y-5 text-white text-base md:text-lg z-10">
-          <h2 className="text-2xl font-extrabold leading-tight">
+          <h2 className="sub-heading font-extrabold leading-tight">
             Our growing team includes:
           </h2>
           <ul className="mt-6 space-y-4 text-sm md:text-base font-tthoves-extralight">
