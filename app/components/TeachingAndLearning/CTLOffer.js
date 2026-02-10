@@ -72,9 +72,10 @@ const CTLOffer = () => {
 
       {/* Bottom CTA Section */}
       <div className="bg-[#002561] text-white py-8  text-sm md:text-2xl px-2 md:px-0 flex items-center justify-center border-b border-gray-300 border-dashed">
-        <p className="text-large text-center md:max-w-6xl font-tthoves-light ">
+        <p className="text-large   text-center md:max-w-6xl font-tthoves-light ">
           For learners and educators who believe in growing together, the Centre
           for Teaching & Learning is your space to evolve.
+          {/*  add a line break after the word "evolve" */}
         </p>
       </div>
     </>

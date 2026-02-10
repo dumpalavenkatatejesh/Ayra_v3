@@ -21,9 +21,9 @@ const AcademicAchievements = () => {
             <div className="w-full lg:w-3/5 space-y-10 md:py-20 py-10">
               {/* Academic Section */}
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-tthoves-bold whitespace-pre-line">
+                <h2 className="carousel-heading-desktop lg:text-5xl font-tthoves-bold whitespace-pre-line">
                   {academicContent.title}
-                </h1>
+                </h2>
                 <p className="mt-2 text-gray-600">
                   {academicContent.description}
                 </p>
@@ -31,9 +31,9 @@ const AcademicAchievements = () => {
 
               {/* Sports Section */}
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-tthoves-bold whitespace-pre-line">
+                <h2 className="carousel-heading-desktop lg:text-5xl font-tthoves-bold whitespace-pre-line">
                   {sportsContent.title}
-                </h1>
+                </h2>
                 <p className="mt-2 text-gray-600">
                   {sportsContent.description}
                 </p>
@@ -63,9 +63,9 @@ const AcademicAchievements = () => {
                 communityDevelopment,
               ].map((section, idx) => (
                 <div key={idx}>
-                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-tthoves-bold whitespace-pre-line uppercase">
+                  <h2 className="carousel-heading-desktop lg:text-5xl font-tthoves-bold whitespace-pre-line uppercase">
                     {section.title}
-                  </h1>
+                  </h2>
                   <p className="mt-2 text-gray-600">{section.description}</p>
                 </div>
               ))}
