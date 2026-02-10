@@ -3,9 +3,9 @@ import React from "react"
 const AtAyra = () => {
   return (
     <div className="my-5 flex flex-col items-center gap-3 px-4">
-      <p className="sub-heading text-black text-center font-tthoves-medium">
+      <h2 className="sub-heading  text-black text-center font-tthoves-medium">
         At AYRA, you’re not just taught—you’re seen, heard, and supported.
-      </p>
+      </h2>
       <div>
         <p className="text-sm sm:text-base text-black font-tthoves-extralight text-center max-w-3xl mb-4">
           Our faculty believe in potential, not perfection. And they’re here to

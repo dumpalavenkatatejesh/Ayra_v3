@@ -17,7 +17,7 @@ const BeyondTheClassroom = () => {
 
         {/* Description */}
         <div className="space-y-5 text-[#002561] text-base md:text-lg md:pr-12 z-10">
-          <h2 className="sub-heading text-black font-tthoves-medium leading-tight">
+          <h2 className=" !text-[24px] text-black font-tthoves-medium leading-tight">
             AYRA faculty don’t disappear after lectures—they stay engaged,
             offering guidance on:
           </h2>

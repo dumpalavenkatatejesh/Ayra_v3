@@ -189,7 +189,7 @@ export default function EnquiryForm() {
   return (
     <div className="flex flex-col lg:flex-row bg-white text-[#0D2556]">
       <div className="w-full lg:w-2/3 p-5 lg:p-10">
-        <h2 className="text-3xl mb-6 font-tthoves-bold">ENQUIRY FORM</h2>
+        <h2 className="cards-heading mb-6 font-tthoves-bold">ENQUIRY FORM</h2>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Name fields */}
@@ -242,7 +242,7 @@ export default function EnquiryForm() {
 
           {/* Email */}
           <div>
-            <label className="block font-tthoves-demibold uppercase mb-2">
+            <label className="block font-tthoves-demibold uppercase mb-2 ">
               Email Address
             </label>
             <input

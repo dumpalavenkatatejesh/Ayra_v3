@@ -29,7 +29,7 @@ const YourApplication = () => {
             past performance to your personal passions, every part of your
             application helps us see the unique perspective you bring to AYRA.
           </p>
-          <p className="text-[#002561] font-tthoves-bold lg:text-3xl text-2xl text-center lg:w-2/3 pb-4">
+          <p className="text-[#002561] font-tthoves-bold cards-heading text-center lg:w-2/3 pb-4">
             Just like your fingerprint, your story is one of a kind. And we&apos;re
             here to help you shape what comes next.
           </p>

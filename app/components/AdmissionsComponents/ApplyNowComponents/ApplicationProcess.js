@@ -64,7 +64,7 @@ const ApplicationProcess = () => {
                 <div className="text-black lg:px-10 p-5 pt-5">
                   {checklistItems.map((item, index) => (
                     <div className="pt-5" key={index}>
-                      <h5 className="lg:text-xl text-lg mb-2">{item.title}</h5>
+                      <h3 className="lg:text-[24px] text-lg mb-2">{item.title}</h3>
                       <p>{item.description}</p>
                     </div>
                   ))}

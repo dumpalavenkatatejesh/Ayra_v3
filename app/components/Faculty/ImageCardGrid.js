@@ -46,23 +46,23 @@ const ImageCardGrid = ({ items }) => {
               {/* Initial content (BOTTOM) */}
               <div className="absolute bottom-0 w-full p-4 pb-20 space-y-2 z-20 transition-opacity duration-500 group-hover:opacity-0">
                 <h2
-                  className={`text-6xl text-white font-schabo tracking-wide inline-block px-2 ${titleBg}`}
+                  className={`!text-[55px] text-white font-schabo tracking-wide inline-block px-2 ${titleBg}`}
                 >
                   {item.title}
                 </h2>
                 <p
-                  className="lg:text-xl text-white font-tthoves-extralight"
+                  className="text-large text-white font-tthoves-extralight"
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 />
               </div>
 
               {/* Hover content (TOP) */}
               <div className="absolute top-0 w-full p-4 space-y-2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-[-20px] group-hover:translate-y-0">
-                <h2 className="text-3xl sm:text-4xl text-white font-bold border-b border-white border-dashed pb-1 min-h-[120px]">
+                <h2 className="!text-[55px] text-white font-bold border-b border-white border-dashed pb-1 min-h-[120px]">
                   {item.hoverTitle}
                 </h2>
                 <p
-                  className="text-base lg:text-xl text-white font-tthoves-extralight"
+                  className="text-large text-white font-tthoves-extralight"
                   dangerouslySetInnerHTML={{ __html: item.hoverDescription }}
                 />
               </div>
