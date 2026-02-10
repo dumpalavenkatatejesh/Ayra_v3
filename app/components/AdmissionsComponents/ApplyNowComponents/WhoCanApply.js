@@ -36,7 +36,7 @@ const WhoCanApply = () => {
                 tailored to industry needs.
               </p>
 
-              <h2 className="text-4xl md:text-6xl py-5 tracking-wide text-[#fff] font-schabo leading-tight md:text-left">
+              <h2 className=" py-5 tracking-wide text-[#fff] font-schabo leading-tight md:text-left">
                 SCHOLARSHIPS
               </h2>
               <p className="lg:text-base text-sm">
@@ -58,10 +58,10 @@ const WhoCanApply = () => {
         </div>
         {/* NEED HELP? */}
         <div className="container mx-auto p-5 flex flex-col items-center justify-center text-center">
-          <h2 className="text-4xl md:text-6xl py-5 tracking-wide text-[#000] font-schabo leading-tight text-center md:text-left">
+          <h2 className=" py-5 tracking-wide text-[#000] font-schabo leading-tight text-center md:text-left">
             NEED HELP?
           </h2>
-          <p className="text-[#2050B1] lg:text-3xl text-xl font-tthoves-bold">
+          <p className="text-[#2050B1] sub-heading font-tthoves-bold">
             Our admissions team is here to assist you.
           </p>
           <p className="text-[#002561] text-md">
