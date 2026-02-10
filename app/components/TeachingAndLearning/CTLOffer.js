@@ -9,9 +9,9 @@ const CTLOffer = () => {
       <div className="container mx-auto md:py-8">
         {/* Header Image */}
         <div className="md:w-[40%] px-4 md:px-0">
-          <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#002561]">
+          <h2 className="highlight-heading tracking-wider font-schabo text-[#002561]">
             WHAT THE CTL WILL OFFER:
-          </h1>
+          </h2>
         </div>
         {/* for desktop */}
         <div className=" flex justify-center items-center">
@@ -72,10 +72,11 @@ const CTLOffer = () => {
 
       {/* Bottom CTA Section */}
       <div className="bg-[#002561] text-white py-8  text-sm md:text-2xl px-2 md:px-0 flex items-center justify-center border-b border-gray-300 border-dashed">
-        <h2 className=" text-center md:max-w-6xl font-tthoves-light ">
+        <p className="text-large   text-center md:max-w-6xl font-tthoves-light ">
           For learners and educators who believe in growing together, the Centre
           for Teaching & Learning is your space to evolve.
-        </h2>
+          {/*  add a line break after the word "evolve" */}
+        </p>
       </div>
     </>
   );

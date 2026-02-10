@@ -7,9 +7,9 @@ const FutureOfEducation = () => {
         {/* Flex items */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
           <div className="z-10 md:px-0 px-4 md:mb-0">
-            <p className="text-5xl md:text-7xl tracking-wide text-[#002561] font-schabo leading-tight text-center md:text-left">
+            <h2 className="highlight-heading tracking-wide text-[#002561] font-schabo leading-tight text-center md:text-left">
               REIMAGINING THE <br /> FUTURE OF EDUCATION
-            </p>
+            </h2>
           </div>
 
           <div className="px-4 md:px-0 md:mt-0 mt-[-30px]">

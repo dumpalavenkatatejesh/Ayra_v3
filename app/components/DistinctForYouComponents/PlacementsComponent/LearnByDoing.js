@@ -36,13 +36,13 @@ const ExploreAyra = () => {
       <div className="absolute inset-0 top-48 md:right-50 right-10 flex justify-end md:items-center items-end p-4">
         <div className="text-white md:max-w-[30%] w-full">
           <div className="md:space-y-5 pb-10 md:pb-0">
-            <p className="text-sm font-light text-white font-tthoves-extralight">
+            <p className=" font-light text-white font-tthoves-extralight">
               From internships at leading hotels and sports organisations to
               research assistantships and entrepreneurial projects, the Centre
               ensures that every AYRA student gains real experience before
               graduation.
             </p>
-            <p className="text-sm font-light text-white font-tthoves-extralight">
+            <p className=" font-light text-white font-tthoves-extralight">
               We don’t just get you placement-ready. We help you discover what
               success means to you—and chart the path to get there.
             </p>

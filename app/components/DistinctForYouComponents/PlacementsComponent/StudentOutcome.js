@@ -6,9 +6,9 @@ const StudentOutcome = () => {
     <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16 md:py-16 py-10 container mx-auto px-4">
       {/* Left Section */}
       <div className="md:w-1/2 space-y-6 ">
-        <h1 className="text-4xl md:text-7xl font-schabo text-[#002D72] leading-tight">
+        <h2 className="highlight-heading font-schabo text-[#002D72] leading-tight">
           STUDENT OUTCOMES <br /> WE AIM FOR
-        </h1>
+        </h2>
         <p className="text-gray-800 text-base md:text-lg">
           Our ultimate goal is to ensure every AYRA student graduates with a
           clear path ahead, whether that means a job offer, a startup launch, or
@@ -16,7 +16,7 @@ const StudentOutcome = () => {
         </p>
 
         <div>
-          <h3 className="font-semibold text-3xl mb-4">
+          <h3 className="font-semibold  mb-4">
             Typical Outcomes Include:
           </h3>
           <ul className="space-y-3 text-gray-700">

@@ -82,9 +82,9 @@ export default function GlobalExchangePrograms() {
       </style>
       <div className="bg-[url('/opencanvas/opc-bg-img.png')] bg-cover bg-center bg-no-repeat py-8">
         <div className="container mx-auto px-4 md:px-0">
-          <h1 className="text-3xl md:text-8xl tracking-wider font-schabo text-[#2050B1]">
+          <h2 className="highlight-heading tracking-wider font-schabo text-[#2050B1]">
             WHAT DRIVES RESEARCH <br className="hidden md:block" /> AT AYRA?
-          </h1>
+          </h2>
 
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 py-5">
             {/* Left Image */}
