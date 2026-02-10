@@ -9,7 +9,7 @@ const ExploreOurProgram = () => {
     <section className="w-full pb-16">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <h2 className="text-4xl md:text-6xl font-tthoves-demibold text-[#002D72] text-center mb-8">
+        <h2 className=" font-tthoves-demibold text-[#002D72] text-center mb-8">
           EXPLORE OUR PROGRAMS
         </h2>
 

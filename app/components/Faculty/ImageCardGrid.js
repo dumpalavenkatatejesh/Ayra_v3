@@ -46,7 +46,7 @@ const ImageCardGrid = ({ items }) => {
               {/* Initial content (BOTTOM) */}
               <div className="absolute bottom-0 w-full p-4 pb-20 space-y-2 z-20 transition-opacity duration-500 group-hover:opacity-0">
                 <h2
-                  className={`text-7xl text-white font-schabo tracking-wide inline-block px-2 ${titleBg}`}
+                  className={`text-6xl text-white font-schabo tracking-wide inline-block px-2 ${titleBg}`}
                 >
                   {item.title}
                 </h2>

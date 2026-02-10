@@ -12,7 +12,7 @@ const YourFutureStartsHere = () => {
           <div key={index}>
             {/* Text Content */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center md:mb-12 mb-6">
-              <h1 className="text-6xl md:text-7xl font-schabo text-[#002D72] md:w-1/2 whitespace-pre-line">
+              <h1 className="highlight-heading font-schabo text-[#002D72] md:w-1/2 whitespace-pre-line">
                 {item.title}
               </h1>
               <p className="md:w-1/2 text-gray-600 mt-6 md:mt-0 text-base md:text-lg leading-relaxed">

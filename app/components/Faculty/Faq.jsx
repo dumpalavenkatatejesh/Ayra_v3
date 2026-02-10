@@ -14,7 +14,7 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => (
       onClick={onClick}
     >
       <span
-        className="font-schabo uppercase md:text-[70px] text-[28px] text-start"
+        className="highlight-heading font-schabo uppercase  text-start !text-[80px]"
         style={{ letterSpacing: "0.05em" }}
       >
         {title}
@@ -41,7 +41,7 @@ const AccordionItem = ({ title, children, isOpen, onClick }) => (
           transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
           className="overflow-hidden px-4"
         >
-          <div className="md:py-4 text-gray-700">{children}</div>
+          <div className="md:py-4 text-gray-700 highlight-heading">{children}</div>
         </motion.div>
       )}
     </AnimatePresence>
@@ -104,7 +104,7 @@ const Faq = () => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`w-1/2 py-3 font-schabo uppercase md:text-[80px] text-[28px] transition ${activeTab === tab.id
+              className={`w-1/2 py-3 font-schabo uppercase highlight-heading text-[28px] transition ${activeTab === tab.id
                 ? "bg-[#002562] text-white"
                 : "bg-[#D8DEEB] text-[#002562]"
                 }`}
